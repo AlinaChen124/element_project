@@ -1,50 +1,67 @@
-import {
-  defineComponent as n,
-  openBlock as t,
-  createElementBlock as e,
-  createElementVNode as o
-} from "vue";
-var u = n({
-  setup: function () {
-    return {
-      click: function () {
-        alert("11")
-      }
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+import 'core-js/modules/es.function.name.js';
+import { defineComponent, openBlock, createElementBlock, createElementVNode } from 'vue';
+
+var script$1 = defineComponent({
+  name: 'Button',
+  setup: function setup() {
+    function click() {
+      alert("11");
     }
+
+    return {
+      click: click
+    };
   }
 });
-u.render = function (n, u, c, l, i, r) {
-  return t(), e("div", null, [o("button", {
-    onClick: u[0] || (u[0] = function () {
-      return n.click && n.click.apply(n, arguments)
+
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [createElementVNode("button", {
+    onClick: _cache[0] || (_cache[0] = function () {
+      return _ctx.click && _ctx.click.apply(_ctx, arguments);
     }),
     class: "button"
-  }, "保存")])
-}, u.__file = "src/components/button/button.vue", u.install = function (n) {
-  n.component("MyButton", u)
-};
-var c = {
-    methods: {
-      onClick: function () {
-        alert("11")
-      }
-    }
-  },
-  l = [o("option", null, "苹果", -1), o("option", null, "桃子", -1)];
-
-function i(n) {
-  n.use(u), n.use(c)
+  }, "保存")]);
 }
-c.render = function (n, u, c, i, r, s) {
-  return t(), e("div", null, [o("select", {
-    onClick: u[0] || (u[0] = function () {
-      return s.onClick && s.onClick.apply(s, arguments)
-    })
-  }, l)])
-}, c.__file = "src/components/select/select.vue", c.install = function (n) {
-  n.component("MySelect", c)
-}, window && window.Vue && Vue.use(i);
-export {
-  u as button, i as
-  default, c as select
+
+script$1.render = render$1;
+script$1.__file = "src/components/Button/Button.vue";
+
+script$1.install = function (Vue) {
+  Vue.component(script$1.name, script$1);
 };
+
+var script = {
+  methods: {
+    onClick: function onClick() {
+      alert("11");
+    }
+  }
+};
+
+var _hoisted_1 = /*#__PURE__*/createElementVNode("option", null, "苹果", -1
+/* HOISTED */
+);
+
+var _hoisted_2 = /*#__PURE__*/createElementVNode("option", null, "桃子", -1
+/* HOISTED */
+);
+
+var _hoisted_3 = [_hoisted_1, _hoisted_2];
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [createElementVNode("select", {
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $options.onClick && $options.onClick.apply($options, arguments);
+    })
+  }, _hoisted_3)]);
+}
+
+script.render = render;
+script.__file = "src/components/select/select.vue";
+
+script.install = function (Vue) {
+  Vue.component("MySelect", script);
+};
+
+export { script$1 as Button, script as select };

@@ -3,62 +3,15 @@ import commonjs from "rollup-plugin-commonjs";
 import postcss from "rollup-plugin-postcss";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
-import vue from "rollup-plugin-vue";
+import PluginVue from "rollup-plugin-vue";
 import { terser } from "rollup-plugin-terser";
-import del from "rollup-plugin-delete";
-const glob = require("glob");
-const path = require("path");
+// 热更新
+import serve from 'rollup-plugin-serve';
+import livereload from 'rollup-plugin-livereload';
 
-// 获得所有组件 {"button":"./src/components/button/index.js"}
-const componentsObject = glob
-  .sync(`src/components/**/index.js`, {
-    dot: true,
-  })
-  .map((x) => path.resolve(x))
-  .map((x) => path.dirname(x).split(path.sep).pop())
-  .reduce((p, name) => {
-    p[name] = `./src/components/${name}/index.js`;
-    return p;
-  }, {});
-
-const configFn = (name) => ({
-  plugins: [
-    vue(),
-    babel({
-      exclude: "node_modules/**",
-      runtimeHelpers: true,
-    }),
-    commonjs(),
-    postcss({
-      plugins: [autoprefixer(), cssnano()],
-      extract: `theme-chalk/${name}.css`,
-    }),
-    terser(),
-  ],
-  external: [
-    //外部库， 使用'umd'文件时需要先引入这个外部库
-    "vue",
-  ],
-});
-
-const comConfigs = Object.keys(componentsObject).map((name) => {
-  const config = configFn(name);
-  config.input = [componentsObject[name]];
-  config.output = {
-    file: "./lib/" + name + ".js",
-    format: "es",
-  };
-  return config;
-});
-
-const umdConfig = {
+export default {
   input: "./src/index.js",
   output: [
-    { // umd模块
-      file: "./dist/my-lib-umd.js",
-      format: "umd",
-      name: "myLib",
-    },
     { // es6模块
       file: "./dist/my-lib-es.js",
       format: "es",
@@ -66,13 +19,34 @@ const umdConfig = {
     { // commonjs模块
       file: "./dist/my-lib-cjs.js",
       format: "cjs",
-    },{
+    },
+    {
       file: "./dist/my-lib-global.js",
       format: "iife",
+      name: 'myLib',
+      globals: {
+        "vue": "Vue"
+      }
     }
   ],
-  ...configFn("index"),
+  plugins: [
+    serve({
+      contentBase: '',  //服务器启动的文件夹，默认是项目根目录，需要在该文件下创建index.html
+      port: 8020   //端口号，默认10001
+    }),    
+    livereload('dist'),   //watch dist目录，当目录中的文件发生变化时，刷新页面
+    PluginVue({
+      name: 'Vue'
+    }),
+    babel({
+      exclude: "node_modules/**",
+      runtimeHelpers: true,
+    }),
+    commonjs(),
+    postcss({
+      plugins: [autoprefixer(), cssnano()],
+      extract: `theme-chalk/index.css`,
+    }),
+    // terser(),
+  ],
 };
-umdConfig.plugins.unshift(del({ targets: ["lib/*", "dist/*"] }));
-
-export default [umdConfig, ...comConfigs];

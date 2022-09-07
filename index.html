@@ -5,23 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="dist/theme-chalk/index.css" rel="stylesheet" type="text/css" />
   <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
   <div id="app">
-    <MyButton></MyButton>
+    <my-button></my-button>
   </div>
 </body>
 <script src="dist/my-lib-global.js"></script>
-<script async>
+<script>
   const { createApp } = Vue
 
-createApp({
+  console.log('myLib', myLib)
+
+const app = createApp({
+  components: {
+    MyButton: myLib.Button
+  },
   data() {
     return {
       message: 'Hello Vue!'
     }
   }
 }).mount('#app')
+
+
 </script>
 </html>
