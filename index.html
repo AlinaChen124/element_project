@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+  <div id="app">
+    <MyButton></MyButton>
+  </div>
+</body>
+<script src="dist/my-lib-global.js"></script>
+<script async>
+  const { createApp } = Vue
+
+createApp({
+  data() {
+    return {
+      message: 'Hello Vue!'
+    }
+  }
+}).mount('#app')
+</script>
+</html>
