@@ -21,6 +21,7 @@ export default defineComponent({
   
   <style>
   .button {
-    background-color: blue;
+    background-color: green;
+    color: white;
   }
   </style>

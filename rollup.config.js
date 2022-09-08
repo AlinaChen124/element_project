@@ -47,6 +47,6 @@ export default {
       plugins: [autoprefixer(), cssnano()],
       extract: `theme-chalk/index.css`,
     }),
-    // terser(),
+    terser(),
   ],
 };
