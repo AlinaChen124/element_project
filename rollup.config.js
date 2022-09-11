@@ -55,6 +55,7 @@ export default {
       extract: `theme-chalk/index.css`,
     }),
     // 将文件压缩
-    // terser(),
+    // terser()
+    terser(),
   ],
 };
