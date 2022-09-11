@@ -1,26 +1,59 @@
 <template>
-  <div>
-    <button @click="click" class="button">保存</button>
-  </div>
+
+    <button  
+      class="y-button"
+      :disabled = "disabled"
+      :class="styleClass"
+      @click="handleClick">
+      <slot></slot>
+    </button>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent,computed } from 'vue';
 export default defineComponent({
   name: 'Button',
-  setup(){
-    function click(){
+  props:{
+    type:{
+      type: String,
+      default: "",
+      validator: value => {
+        return ["", "primary", "success", "warning", "danger"].includes(value);
+      }
+    },
+    disabled:{
+      type:Boolean,
+      default:false
+    },
+    round:{// radius
+      type:Boolean,
+      default:false
+    },
+    icon:{
+      type:String,
+      default:""
+    }
+  },
+  setup(props){
+    const styleClass = computed(()=>{
+      return {
+        [`y-button--${props.type}`]: props.type,
+        ["is-round"]: props.round,
+        "is-disabled": props.disabled
+      };
+    })
+    function handleClick(){
       alert("11");
+
     }
     return {
-      click,
+      handleClick,
+      styleClass
     }
   }
 })
 </script>
   
-  <style>
-  .button {
-    background-color: blue;
-  }
+  <style scoped lang="scss">
+    @import "./styles.scss";
   </style>

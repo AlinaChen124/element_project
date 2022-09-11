@@ -1,12 +1,18 @@
 import babel from "rollup-plugin-babel";
+// CommonJS
 import commonjs from "rollup-plugin-commonjs";
+// 预处理器
 import postcss from "rollup-plugin-postcss";
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
+// 识别.vue文件
 import PluginVue from "rollup-plugin-vue";
+// 压缩使用
 import { terser } from "rollup-plugin-terser";
 // 热更新
+// 提供web服务器
 import serve from 'rollup-plugin-serve';
+// 监听包
 import livereload from 'rollup-plugin-livereload';
 
 export default {
@@ -24,6 +30,7 @@ export default {
       file: "./dist/my-lib-global.js",
       format: "iife",
       name: 'myLib',
+      // Vue3里用的是Vue不是vue
       globals: {
         "vue": "Vue"
       }
@@ -47,6 +54,7 @@ export default {
       plugins: [autoprefixer(), cssnano()],
       extract: `theme-chalk/index.css`,
     }),
+    // 将文件压缩
     // terser(),
   ],
 };
