@@ -1,7 +1,9 @@
 import Button from "./components/Button/index.js";
-import select from "./components/select/index.js";
+import Icon from "./components/Icon/index.js"
+import Select from "./components/Select/index.js";
 
 export {
   Button,
-  select
+  Icon,
+  Select
 }

@@ -7,10 +7,31 @@
   <title>Document</title>
   <link href="dist/theme-chalk/index.css" rel="stylesheet" type="text/css" />
   <script src="https://unpkg.com/vue@3"></script>
+  <style>
+    .button{
+      margin:10px;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
-    <my-button type="primary" disable round>保存</my-button>
+    <div class="button">
+      <my-button  text @click="test" >保存</my-button>
+      <my-button type="primary" text>保存</my-button>
+      <my-button type="success" text>保存</my-button>
+      <my-button type="warning" text>保存</my-button>
+      <my-button type="danger" text>保存</my-button>
+      <my-button type="info" text>保存</my-button>
+    </div>
+    <div>
+      <my-button >保存</my-button>
+      <my-button type="primary" icon="success">保存</my-button>
+      <my-button type="success" >保存</my-button>
+      <my-button type="warning" >保存</my-button>
+      <my-button type="danger" >保存</my-button>
+      <my-button type="info" >保存</my-button>
+    </div>
+    <my-select :options="options"></my-select>
   </div>
 </body>
 <script src="dist/my-lib-global.js"></script>
@@ -21,13 +42,42 @@
 
 const app = createApp({
   components: {
-    MyButton: myLib.Button
+    MyButton: myLib.Button,
+    MyIcon: myLib.Icon,
+    MySelect: myLib.Select
   },
   data() {
     return {
+      options:[
+        {
+          label:"China",
+          value:"Chinese"
+        },
+        {
+          label:"America",
+          value:"American"
+        },
+        {
+          label:"Thailand",
+          value: "Thai"
+        },
+        {
+          label:"Russia",
+          value:"Russian"
+        },
+        {
+          label:"Korea",
+          value:"Korean"
+        }
+      ],
       message: 'Hello Vue!'
     }
-  }
+  },
+  methods: {
+    test(){
+      alert('11')
+    }
+  },
 }).mount('#app')
 
 

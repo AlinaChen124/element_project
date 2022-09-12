@@ -1,0 +1,34 @@
+@use "../../asset/style/style.scss" as *;
+.y-select {
+  min-width: 250px;
+  display: inline-block;
+  height: 40px;
+  position: relative;
+  input{
+    border:1px solid $border;
+    padding: 8px 10px;
+    outline:none;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: $shadow;
+  }
+  .y-option-box{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    top:42px;
+    border: 1px solid $border;
+    li{
+      list-style: none;
+      line-height: 40px;
+      padding: 0 10px;
+      font-size: 14px;
+      box-sizing: border-box;
+      cursor: pointer;
+      &:hover{
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
