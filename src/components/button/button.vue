@@ -3,16 +3,24 @@
     <button  
       class="y-button"
       :disabled = "disabled"
+      :text = "text"
       :class="styleClass"
       @click="handleClick">
+      <span class="icon" v-if="icon">
+        <Icon :name="icon"></Icon>
+      </span>
       <slot></slot>
     </button>
 </template>
 
 <script>
 import { defineComponent,computed } from 'vue';
+import Icon from '../Icon/icon.vue'
 export default defineComponent({
   name: 'Button',
+  components:{
+    Icon
+  },
   props:{
     type:{
       type: String,
@@ -29,22 +37,27 @@ export default defineComponent({
       type:Boolean,
       default:false
     },
+    text:{
+      type:Boolean,
+      default:false
+    },
     icon:{
       type:String,
       default:""
     }
   },
-  setup(props){
+  setup(props,context){
     const styleClass = computed(()=>{
       return {
         [`y-button--${props.type}`]: props.type,
         ["is-round"]: props.round,
-        "is-disabled": props.disabled
+        "is-disabled": props.disabled,
+        "is-text":props.text
       };
     })
     function handleClick(){
-      alert("11");
-
+      // alert("11");
+      context.emit('click')
     }
     return {
       handleClick,
@@ -56,6 +69,8 @@ export default defineComponent({
 
   <style scoped lang="scss">
     @import "./styles.scss";
+    
+    
   </style>
 
   

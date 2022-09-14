@@ -1,7 +1,7 @@
-import select from "./select.vue";
+import Select from "./select.vue";
 
-select.install = function (Vue) {
-  Vue.component("MySelect", select);
+Select.install = function (Vue) {
+  Vue.component(Select.name, Select);
 };
 
-export default select;
+export default Select;
