@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { defineComponent,computed } from 'vue';
+import { defineComponent,computed,onMounted } from 'vue';
 import Icon from '../Icon/icon.vue'
 export default defineComponent({
   name: 'Button',
@@ -59,6 +59,9 @@ export default defineComponent({
       // alert("11");
       context.emit('click')
     }
+    onMounted(() => {
+      console.log(context.slots.default);
+    })
     return {
       handleClick,
       styleClass

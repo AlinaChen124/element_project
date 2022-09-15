@@ -6,7 +6,7 @@
 <script>
 import { defineComponent,computed,getCurrentInstance,onMounted } from 'vue'
 export default defineComponent({
-  name:"row",
+  name:"MyRow",
   props:{
     gutter:{//分栏间隔
       type:[Number,String],

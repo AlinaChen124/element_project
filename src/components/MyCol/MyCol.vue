@@ -6,7 +6,7 @@
 <script>
 import { defineComponent,computed } from 'vue';
 export default defineComponent({
-  name:"col",
+  name:"MyCol",
   props:{
     span:{//栏位数
       type: [Number, String], 

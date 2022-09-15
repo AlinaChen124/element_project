@@ -11,42 +11,65 @@
     .button{
       margin:10px;
     }
+    .row-demo{
+      height: 20px;
+      width: 100%;
+      margin: 2px;
+      border-radius: 5px;
+    }
+    .bg-blue-5{
+      background-color: #d9ecff;
+    }
   </style>
 </head>
 <body>
   <div id="app">
-    <div class="button">
-      <my-button  text @click="test" >保存</my-button>
-      <my-button type="primary" text>保存</my-button>
-      <my-button type="success" text>保存</my-button>
-      <my-button type="warning" text>保存</my-button>
-      <my-button type="danger" text>保存</my-button>
-      <my-button type="info" text>保存</my-button>
+    <div >
+      <my-container>
+        <my-header>Header</my-header>
+        <my-container>
+          <my-aside width="200px">Aside</my-aside>
+          <my-container>
+            <my-main>
+              <div class="button">
+                <my-button  text @click="test" >保存</my-button>
+                <my-button type="primary" text>保存</my-button>
+                <my-button type="success" text>保存</my-button>
+                <my-button type="warning" text>保存</my-button>
+                <my-button type="danger" text>保存</my-button>
+                <my-button type="info" text>保存</my-button>
+              </div>
+              <div class="button">
+                <my-button >保存</my-button>
+                <my-button type="primary" icon="success">保存</my-button>
+                <my-button type="success" >保存</my-button>
+                <my-button type="warning" >保存</my-button>
+                <my-button type="danger" >保存</my-button>
+                <my-button type="info" >保存</my-button>
+              </div>
+              <my-select :options="options"></my-select>
+              <bp-row :gutter="1">
+                <bp-col :span="8" title="span=8"><div class="row-demo bg-blue-5">shishi</div></bp-col>
+                <bp-col :span="16" title="span=16"><div class="row-demo bg-blue-5">shishi</div></bp-col>
+            </bp-row>
+            <bp-row :gutter="1">
+                <bp-col :span="3" title="span=3"><div class="row-demo bg-blue-5">ss</div></bp-col>
+                <bp-col :span="10" title="span=10"><div class="row-demo bg-blue-5">ss</div></bp-col>
+                <bp-col :span="11" title="span=11"><div class="row-demo bg-blue-5"></div></bp-col>
+            </bp-row>
+            <bp-row :gutter="1">
+                <bp-col :span="4" title="span=4"><div class="row-demo bg-blue-5"></div></bp-col>
+                <bp-col :span="8" title="span=8"><div class="row-demo bg-blue-5"></div></bp-col>
+                <bp-col :span="3" title="span=3"><div class="row-demo bg-blue-5"></div></bp-col>
+                <bp-col :span="9" title="span=9"><div class="row-demo bg-blue-5"></div></bp-col>
+            </bp-row>
+            </my-main>
+            <my-footer>Footer</my-footer>
+          </my-container>
+        </my-container>
+      </my-container>
     </div>
-    <div class="button">
-      <my-button >保存</my-button>
-      <my-button type="primary" icon="success">保存</my-button>
-      <my-button type="success" >保存</my-button>
-      <my-button type="warning" >保存</my-button>
-      <my-button type="danger" >保存</my-button>
-      <my-button type="info" >保存</my-button>
-    </div>
-    <my-select :options="options"></my-select>
-    <bp-row :gutter="10">
-      <bp-col :span="8" title="span=8"><div class="row-demo bg-blue-5"></div></bp-col>
-      <bp-col :span="16" title="span=16"><div class="row-demo bg-blue-5"></div></bp-col>
-  </bp-row>
-  <bp-row :gutter="10">
-      <bp-col :span="3" title="span=3"><div class="row-demo bg-blue-5"></div></bp-col>
-      <bp-col :span="10" title="span=10"><div class="row-demo bg-blue-5"></div></bp-col>
-      <bp-col :span="11" title="span=11"><div class="row-demo bg-blue-5"></div></bp-col>
-  </bp-row>
-  <bp-row :gutter="10">
-      <bp-col :span="4" title="span=4"><div class="row-demo bg-blue-5"></div></bp-col>
-      <bp-col :span="8" title="span=8"><div class="row-demo bg-blue-5"></div></bp-col>
-      <bp-col :span="3" title="span=3"><div class="row-demo bg-blue-5"></div></bp-col>
-      <bp-col :span="9" title="span=9"><div class="row-demo bg-blue-5"></div></bp-col>
-  </bp-row>
+    
   </div>
 </body>
 <script src="dist/my-lib-global.js"></script>
@@ -60,8 +83,13 @@ const app = createApp({
     MyButton: myLib.Button,
     MyIcon: myLib.Icon,
     MySelect: myLib.Select,
-    BpRow: myLib.Row,
-    BpCol: myLib.Col
+    BpRow: myLib.MyRow,
+    BpCol: myLib.MyCol,
+    MyAside:myLib.MyAside,
+    MyContainer:myLib.MyContainer,
+    MyFooter:myLib.MyFooter,
+    MyHeader:myLib.MyHeader,
+    MyMain:myLib.MyMain
   },
   data() {
     return {
