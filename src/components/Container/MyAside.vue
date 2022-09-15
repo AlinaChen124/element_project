@@ -19,7 +19,6 @@ export default defineComponent({
 .my-aside{
   overflow: auto;
   box-sizing: border-box;
-  // 不缩小
   flex-shrink: 0;
 }
 </style>

@@ -4,7 +4,7 @@
   </section>
 </template>
 <script>
-import { defineComponent,computed } from 'vue'
+import { defineComponent,computed,onMounted,slots } from 'vue'
 export default defineComponent({
   name:"MyContainer",
   props:{
@@ -12,7 +12,7 @@ export default defineComponent({
       type:String,
     }
   },
-  setup(props,{ slots }){
+  setup(props){
     const isVertical = computed(()=>{
       if(props.direction==='vertical'){
         return true
@@ -41,7 +41,6 @@ export default defineComponent({
 .container{
   display: flex;
   flex-direction: row;
-  // flex-grow:1,flex-shrink:1;
   flex: 1;
   flex-basis: auto;
   box-sizing: border-box;
