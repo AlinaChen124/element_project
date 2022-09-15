@@ -56,6 +56,5 @@ export default {
     }),
     // 将文件压缩
     // terser()
-    terser(),
   ],
 };

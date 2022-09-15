@@ -4,7 +4,8 @@
   </section>
 </template>
 <script>
-import { defineComponent,computed,onMounted,slots } from 'vue'
+import { defineComponent,computed,onMounted} from 'vue';
+
 export default defineComponent({
   name:"MyContainer",
   props:{
@@ -12,8 +13,8 @@ export default defineComponent({
       type:String,
     }
   },
-  setup(props){
-    const isVertical = computed(()=>{
+  setup(props, {slots}){
+    const isVertical = computed(() => {
       if(props.direction==='vertical'){
         return true
       }else if(props.direction === 'horizontal'){
@@ -21,11 +22,11 @@ export default defineComponent({
       }
       // 当 <my-container> 容器的子元素中包含 <my-header> 或 <my-footer> 时，全部子元素会垂直上下排列，否则会水平左右排列。
         // 需要先获得插槽中的元素
-        return slots&&slots.default?
-        slots.default.some(vnode => {
+        return slots && slots.default ?
+        slots.default().some(vnode => {
           const tag = vnode.componentOptions &&vnode.componentOptions.tag
           return tag === 'my-header' || tag === 'my-footer'
-        }):false
+        }): false
     })
     onMounted(() => {
       console.log(slots)
