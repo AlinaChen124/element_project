@@ -24,12 +24,12 @@ export default defineComponent({
         // 需要先获得插槽中的元素
         return slots && slots.default ?
         slots.default().some(vnode => {
-          const tag = vnode.componentOptions &&vnode.componentOptions.tag
-          return tag === 'my-header' || tag === 'my-footer'
+          const tag = vnode.type.name
+          return tag === 'MyHeader' || tag === 'MyFooter'
         }): false
     })
     onMounted(() => {
-      console.log(slots)
+      console.log(slots.default())
     })
     return {
       isVertical

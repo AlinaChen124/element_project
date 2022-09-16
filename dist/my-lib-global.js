@@ -491,12 +491,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
 
 
         return slots && slots.default ? slots.default().some(function (vnode) {
-          var tag = vnode.componentOptions && vnode.componentOptions.tag;
-          return tag === 'my-header' || tag === 'my-footer';
+          var tag = vnode.type.name;
+          return tag === 'MyHeader' || tag === 'MyFooter';
         }) : false;
       });
       vue.onMounted(function () {
-        console.log(slots);
+        console.log(slots.default());
       });
       return {
         isVertical: isVertical
