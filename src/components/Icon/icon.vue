@@ -1,10 +1,10 @@
 <template>
   <svg class="icon" aria-hidden="true">
     <use :xlink:href="iconName"></use>
-</svg>
+  </svg>
 </template>
 <script>
-  import '../../asset/js/iconfont'
+import '../../asset/js/iconfont'
 import { defineComponent,computed } from 'vue';
 export default defineComponent({
   name:"Icon",

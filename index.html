@@ -11,6 +11,13 @@
     .button{
       margin:10px;
     }
+    .select{
+      position: relative;
+      padding: 10px;
+    }
+    .input{
+      padding: 10px;
+    }
     .row-demo{
       height: 20px;
       width: 100%;
@@ -20,15 +27,24 @@
     .bg-blue-5{
       background-color: #d9ecff;
     }
+    .header{
+      background-color: #c0d7ef;
+    }
+    .aside{
+      background-color: antiquewhite;
+    }
+    .footer{
+      background-color: aqua;
+    }
   </style>
 </head>
 <body>
   <div id="app">
     <div >
       <my-container>
-        <my-header>Header</my-header>
+        <my-header class="header">Header</my-header>
         <my-container>
-          <my-aside width="200px">Aside</my-aside>
+          <my-aside width="200px" class="aside">Aside</my-aside>
           <my-container>
             <my-main>
               <div class="button">
@@ -47,7 +63,10 @@
                 <my-button type="danger" >保存</my-button>
                 <my-button type="info" >保存</my-button>
               </div>
-              <my-select :options="options"></my-select>
+              <div class="select">
+                <my-select :options="selOptions" v-model="selVal_arr"  @change="selchange" multiple></my-select>
+              </div>
+              
               <bp-row :gutter="1">
                 <bp-col :span="8" title="span=8"><div class="row-demo bg-blue-5">shishi</div></bp-col>
                 <bp-col :span="16" title="span=16"><div class="row-demo bg-blue-5">shishi</div></bp-col>
@@ -63,8 +82,27 @@
                 <bp-col :span="3" title="span=3"><div class="row-demo bg-blue-5"></div></bp-col>
                 <bp-col :span="9" title="span=9"><div class="row-demo bg-blue-5"></div></bp-col>
             </bp-row>
+            <div class="input">
+
+              <my-input v-model="val" placeholder="test" disabled righticon="calendar-o"></my-input>
+            </div>
+            <div class="input">
+              <my-input v-model="val" placeholder="test" type="password"></my-input>
+            </div>
+            <div class="input">
+              <my-input placeholder="test" focuscolor="red" clearable v-model="something"></my-input>
+            </div>
+
+            <div class="input">
+              <my-input placeholder="test" focuscolor="red" righticon="calendar-o" v-model="something"></my-input>
+            </div>
+
+            <div class="input">
+              <my-input placeholder="test" focuscolor="brown" v-model="something" size="mini" lefticon="warning-o"></my-input>
+            </div>
+            <p>{{val}}</p>
             </my-main>
-            <my-footer>Footer</my-footer>
+            <my-footer class="footer">Footer</my-footer>
           </my-container>
         </my-container>
       </my-container>
@@ -89,38 +127,35 @@ const app = createApp({
     MyContainer:myLib.MyContainer,
     MyFooter:myLib.MyFooter,
     MyHeader:myLib.MyHeader,
-    MyMain:myLib.MyMain
+    MyMain:myLib.MyMain,
+    MyInput:myLib.MyInput,
   },
   data() {
     return {
-      options:[
-        {
-          label:"China",
-          value:"Chinese"
-        },
-        {
-          label:"America",
-          value:"American"
-        },
-        {
-          label:"Thailand",
-          value: "Thai"
-        },
-        {
-          label:"Russia",
-          value:"Russian"
-        },
-        {
-          label:"Korea",
-          value:"Korean"
-        }
+      selOptions: [
+          { label: "中国", value: "zhongguo" },
+          { label: "俄罗斯", value: "eluosi", disabled: true },
+          { label: "美国", value: "meiguo" },
+          { label: "澳大利亚", value: "aodaliya", disabled: true },
+          { label: "巴基斯坦", value: "bajisitan" },
+          { label: "泰国", value: "Thailand" },
+          { label: "韩国", value: "Korea" },
+          { label: "日本", value: "Japan" },
+          { label: "加拿大", value: "Canada" },
       ],
-      message: 'Hello Vue!'
+      message: 'Hello Vue!',
+      selVal:'',
+      selVal_arr:[],
+      val:'',
+      something:'',
     }
   },
   methods: {
     test(){
       alert('11')
+    },
+    selchange(item,index){
+      console.log(item, index);
     }
   },
 }).mount('#app')

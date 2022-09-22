@@ -22,14 +22,12 @@ export default defineComponent({
       }
       // 当 <my-container> 容器的子元素中包含 <my-header> 或 <my-footer> 时，全部子元素会垂直上下排列，否则会水平左右排列。
         // 需要先获得插槽中的元素
+        // slots从setup中解构出来的default是一个函数
         return slots && slots.default ?
         slots.default().some(vnode => {
           const tag = vnode.type.name
           return tag === 'MyHeader' || tag === 'MyFooter'
         }): false
-    })
-    onMounted(() => {
-      console.log(slots.default())
     })
     return {
       isVertical

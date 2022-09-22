@@ -19,6 +19,9 @@ export default {
   input: "./src/index.js",
   output: [
     { // es6模块
+      globals:{
+        vue:'Vue'
+      },
       file: "./dist/my-lib-es.js",
       format: "es",
     },
@@ -36,6 +39,7 @@ export default {
       }
     }
   ],
+  external:['vue'],
   plugins: [
     serve({
       contentBase: '',  //服务器启动的文件夹，默认是项目根目录，需要在该文件下创建index.html
