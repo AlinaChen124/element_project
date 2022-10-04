@@ -228,6 +228,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     props: {
       placeholder: String,
       modelValue: String | Array,
+      customClass: String,
       disabled: Boolean,
       multiple: Boolean,
       searchable: Boolean,
@@ -246,6 +247,18 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       valueFiled: {
         type: String,
         default: "value"
+      },
+      size: {
+        type: String,
+        default: "default"
+      },
+      width: {
+        type: String,
+        default: "260px"
+      },
+      height: {
+        type: String,
+        default: ""
       }
     },
     setup: function setup(props, context) {
@@ -263,6 +276,36 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
             }
           });
         }
+      });
+      /* 1.增加选择框width和height属性的大小限制，高度最小是25px，width属性最小是100px
+      2.动态计算下拉图标的行高 */
+
+      var fixIcon = vue.reactive({}); // icon class
+
+      var iconClass = vue.computed(function () {
+        return ["select-icon"];
+      }); //根据自定义的组件尺寸适配组件里面的下拉框相对位置以及图标居中
+
+      var customStyle = vue.computed(function () {
+        var styles = {};
+
+        if (props.height) {
+          var height = parseInt(props.height) < 25 ? "25px" : props.height;
+          styles.height = height;
+          fixIcon.lineHeight = height;
+          fixIcon.top = 0;
+          fixIcon.height = "100%";
+        }
+
+        return styles;
+      }); // select class
+
+      var selectClass = vue.computed(function () {
+        return ["select-".concat(props.size), props.disabled ? "select-".concat(props.size, "-disabled") : ''];
+      }); // select input class
+
+      var selectInputClass = vue.computed(function () {
+        return ["select-input-box", "select-input-".concat(props.size), props.disabled ? "select-input-".concat(props.size, "-disabled") : ""];
       });
 
       var selectOpen = function selectOpen() {
@@ -347,12 +390,17 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
         activeIndex: activeIndex,
         input: input,
         change: change,
-        rotate: rotate
+        rotate: rotate,
+        iconClass: iconClass,
+        fixIcon: fixIcon,
+        customStyle: customStyle,
+        selectClass: selectClass,
+        selectInputClass: selectInputClass
       };
     }
   });
 
-  var _hoisted_1$4 = ["value", "placeholder"];
+  var _hoisted_1$4 = ["disabled", "value", "placeholder"];
   var _hoisted_2$2 = {
     key: 0,
     class: "select-option-box"
@@ -365,7 +413,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     var _component_Icon = vue.resolveComponent("Icon");
 
     return vue.openBlock(), vue.createElementBlock("div", {
-      class: "y-select",
+      class: vue.normalizeClass([_ctx.selectClass, _ctx.customClass]),
+      style: vue.normalizeStyle([_ctx.customClass ? {} : {
+        width: parseInt(_ctx.width) < 100 ? '100px' : _ctx.width
+      }])
+    }, [vue.createElementVNode("div", {
+      class: vue.normalizeClass(_ctx.selectInputClass),
       ref: "selectRef",
       onClick: _cache[1] || (_cache[1] = vue.withModifiers(function () {
         return _ctx.selectOpen && _ctx.selectOpen.apply(_ctx, arguments);
@@ -373,22 +426,27 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }, [vue.createElementVNode("input", {
       type: "text",
       readonly: "",
+      style: vue.normalizeStyle([_ctx.customClass ? {} : _ctx.customStyle]),
+      class: vue.normalizeClass([_ctx.selValue == '' ? 'select-input' : 'select-input-value']),
+      disabled: _ctx.disabled,
       value: _ctx.selValue,
       onInput: _cache[0] || (_cache[0] = function () {
         return _ctx.input && _ctx.input.apply(_ctx, arguments);
       }),
       placeholder: _ctx.selValue == '' ? _ctx.placeholder : _ctx.selValue
-    }, null, 40
-    /* PROPS, HYDRATE_EVENTS */
+    }, null, 46
+    /* CLASS, STYLE, PROPS, HYDRATE_EVENTS */
     , _hoisted_1$4), vue.createVNode(_component_Icon, {
       name: "arrow-down",
-      class: "right-icon",
-      style: vue.normalizeStyle({
+      style: vue.normalizeStyle([{
         transform: _ctx.rotate
-      })
+      }, _ctx.fixIcon]),
+      class: vue.normalizeClass(_ctx.iconClass)
     }, null, 8
     /* PROPS */
-    , ["style"]), vue.createVNode(vue.Transition, {
+    , ["style", "class"])], 2
+    /* CLASS */
+    ), vue.createVNode(vue.Transition, {
       name: "slide-fade"
     }, {
       default: vue.withCtx(function () {
@@ -418,8 +476,8 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       _: 1
       /* STABLE */
 
-    })], 512
-    /* NEED_PATCH */
+    })], 6
+    /* CLASS, STYLE */
     );
   }
 

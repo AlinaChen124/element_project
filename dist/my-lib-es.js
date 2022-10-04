@@ -2,7 +2,7 @@
 (function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 import 'core-js/modules/es.function.name.js';
 import 'core-js/modules/es.array.includes.js';
-import { defineComponent, computed, openBlock, createElementBlock, createElementVNode, onMounted, resolveComponent, normalizeClass, createVNode, createCommentVNode, renderSlot, ref, onUnmounted, watch, withModifiers, normalizeStyle, Transition, withCtx, Fragment, renderList, createTextVNode, toDisplayString, createBlock, getCurrentInstance, useSlots, reactive, nextTick, onBeforeUnmount, withDirectives, vShow, inject, provide } from 'vue';
+import { defineComponent, computed, openBlock, createElementBlock, createElementVNode, onMounted, resolveComponent, normalizeClass, createVNode, createCommentVNode, renderSlot, ref, onUnmounted, reactive, watch, normalizeStyle, withModifiers, Transition, withCtx, Fragment, renderList, createTextVNode, toDisplayString, createBlock, getCurrentInstance, useSlots, nextTick, onBeforeUnmount, withDirectives, vShow, inject, provide } from 'vue';
 import 'core-js/modules/es.array.filter.js';
 import 'core-js/modules/es.object.to-string.js';
 import 'core-js/modules/web.dom-collections.for-each.js';
@@ -237,6 +237,7 @@ var script$b = defineComponent({
   props: {
     placeholder: String,
     modelValue: String | Array,
+    customClass: String,
     disabled: Boolean,
     multiple: Boolean,
     searchable: Boolean,
@@ -255,6 +256,18 @@ var script$b = defineComponent({
     valueFiled: {
       type: String,
       default: "value"
+    },
+    size: {
+      type: String,
+      default: "default"
+    },
+    width: {
+      type: String,
+      default: "260px"
+    },
+    height: {
+      type: String,
+      default: ""
     }
   },
   setup: function setup(props, context) {
@@ -272,6 +285,36 @@ var script$b = defineComponent({
           }
         });
       }
+    });
+    /* 1.增加选择框width和height属性的大小限制，高度最小是25px，width属性最小是100px
+    2.动态计算下拉图标的行高 */
+
+    var fixIcon = reactive({}); // icon class
+
+    var iconClass = computed(function () {
+      return ["select-icon"];
+    }); //根据自定义的组件尺寸适配组件里面的下拉框相对位置以及图标居中
+
+    var customStyle = computed(function () {
+      var styles = {};
+
+      if (props.height) {
+        var height = parseInt(props.height) < 25 ? "25px" : props.height;
+        styles.height = height;
+        fixIcon.lineHeight = height;
+        fixIcon.top = 0;
+        fixIcon.height = "100%";
+      }
+
+      return styles;
+    }); // select class
+
+    var selectClass = computed(function () {
+      return ["select-".concat(props.size), props.disabled ? "select-".concat(props.size, "-disabled") : ''];
+    }); // select input class
+
+    var selectInputClass = computed(function () {
+      return ["select-input-box", "select-input-".concat(props.size), props.disabled ? "select-input-".concat(props.size, "-disabled") : ""];
     });
 
     var selectOpen = function selectOpen() {
@@ -356,12 +399,17 @@ var script$b = defineComponent({
       activeIndex: activeIndex,
       input: input,
       change: change,
-      rotate: rotate
+      rotate: rotate,
+      iconClass: iconClass,
+      fixIcon: fixIcon,
+      customStyle: customStyle,
+      selectClass: selectClass,
+      selectInputClass: selectInputClass
     };
   }
 });
 
-var _hoisted_1$4 = ["value", "placeholder"];
+var _hoisted_1$4 = ["disabled", "value", "placeholder"];
 var _hoisted_2$2 = {
   key: 0,
   class: "select-option-box"
@@ -374,7 +422,12 @@ function render$b(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Icon = resolveComponent("Icon");
 
   return openBlock(), createElementBlock("div", {
-    class: "y-select",
+    class: normalizeClass([_ctx.selectClass, _ctx.customClass]),
+    style: normalizeStyle([_ctx.customClass ? {} : {
+      width: parseInt(_ctx.width) < 100 ? '100px' : _ctx.width
+    }])
+  }, [createElementVNode("div", {
+    class: normalizeClass(_ctx.selectInputClass),
     ref: "selectRef",
     onClick: _cache[1] || (_cache[1] = withModifiers(function () {
       return _ctx.selectOpen && _ctx.selectOpen.apply(_ctx, arguments);
@@ -382,22 +435,27 @@ function render$b(_ctx, _cache, $props, $setup, $data, $options) {
   }, [createElementVNode("input", {
     type: "text",
     readonly: "",
+    style: normalizeStyle([_ctx.customClass ? {} : _ctx.customStyle]),
+    class: normalizeClass([_ctx.selValue == '' ? 'select-input' : 'select-input-value']),
+    disabled: _ctx.disabled,
     value: _ctx.selValue,
     onInput: _cache[0] || (_cache[0] = function () {
       return _ctx.input && _ctx.input.apply(_ctx, arguments);
     }),
     placeholder: _ctx.selValue == '' ? _ctx.placeholder : _ctx.selValue
-  }, null, 40
-  /* PROPS, HYDRATE_EVENTS */
+  }, null, 46
+  /* CLASS, STYLE, PROPS, HYDRATE_EVENTS */
   , _hoisted_1$4), createVNode(_component_Icon, {
     name: "arrow-down",
-    class: "right-icon",
-    style: normalizeStyle({
+    style: normalizeStyle([{
       transform: _ctx.rotate
-    })
+    }, _ctx.fixIcon]),
+    class: normalizeClass(_ctx.iconClass)
   }, null, 8
   /* PROPS */
-  , ["style"]), createVNode(Transition, {
+  , ["style", "class"])], 2
+  /* CLASS */
+  ), createVNode(Transition, {
     name: "slide-fade"
   }, {
     default: withCtx(function () {
@@ -427,8 +485,8 @@ function render$b(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })], 512
-  /* NEED_PATCH */
+  })], 6
+  /* CLASS, STYLE */
   );
 }
 

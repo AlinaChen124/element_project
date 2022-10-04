@@ -65,7 +65,8 @@
                 <my-button type="info" >保存</my-button>
               </div>
               <div class="select">
-                <my-select :options="selOptions" v-model="selVal_arr"  @change="selchange" multiple></my-select>
+                <!-- <my-select :options="selOptions" v-model="selVal_arr"  @change="selchange" multiple></my-select> -->
+                <my-select :options="selOptions" v-model="selVal_arr"  @change="selchange" size="small"></my-select>
               </div>
               <div class="select">
                 <!-- <my-select :options="selOptions" v-model="selVal"  @change="selchange"></my-select> -->
@@ -102,14 +103,6 @@
             <div class="input">
               <my-input placeholder="test" clearable v-model="something">
                 <template #append><my-button >保存</my-button></template>
-              </my-input>
-            </div>
-            <div class="input">
-              <my-input placeholder="test" clearable v-model="something">
-                <template #append>
-                <my-select :options="selOptions" v-model="selVal_arr"  @change="selchange" multiple></my-select>
-
-                </template>
               </my-input>
             </div>
             <div class="input">
