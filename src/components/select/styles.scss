@@ -1,6 +1,6 @@
 @use "../../asset/style/style.scss" as *;
 .y-select {
-  min-width: 250px;
+  width: 250px;
   display: inline-block;
   height: 100%;
   position: relative;
@@ -113,6 +113,17 @@
         }
         .icon{
           float: right;
+          top:15px;
+        }
+      }
+      li.select-active{
+        color: #0e80eb;
+      }
+      li.select-disabled{
+        color: #9d9d9d;
+        cursor: no-drop;
+        &:hover {
+          background-color: #fff;
         }
       }
     }

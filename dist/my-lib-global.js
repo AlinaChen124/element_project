@@ -69,7 +69,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   }(window);
 
-  var script$a = vue.defineComponent({
+  var script$d = vue.defineComponent({
     name: "Icon",
     props: {
       name: {
@@ -87,26 +87,26 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$4 = {
+  var _hoisted_1$6 = {
     class: "icon",
     "aria-hidden": "true"
   };
-  var _hoisted_2$2 = ["xlink:href"];
-  function render$a(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$4, [vue.createElementVNode("use", {
+  var _hoisted_2$4 = ["xlink:href"];
+  function render$d(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$6, [vue.createElementVNode("use", {
       "xlink:href": _ctx.iconName
     }, null, 8
     /* PROPS */
-    , _hoisted_2$2)]);
+    , _hoisted_2$4)]);
   }
 
-  script$a.render = render$a;
-  script$a.__file = "src/components/Icon/icon.vue";
+  script$d.render = render$d;
+  script$d.__file = "src/components/Icon/icon.vue";
 
-  var script$9 = vue.defineComponent({
+  var script$c = vue.defineComponent({
     name: 'Button',
     components: {
-      Icon: script$a
+      Icon: script$d
     },
     props: {
       type: {
@@ -156,12 +156,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$3 = ["disabled", "text"];
-  var _hoisted_2$1 = {
+  var _hoisted_1$5 = ["disabled", "text"];
+  var _hoisted_2$3 = {
     key: 0,
     class: "icon"
   };
-  function render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$c(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
     return vue.openBlock(), vue.createElementBlock("button", {
@@ -171,25 +171,25 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       onClick: _cache[0] || (_cache[0] = function () {
         return _ctx.handleClick && _ctx.handleClick.apply(_ctx, arguments);
       })
-    }, [_ctx.icon ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_2$1, [vue.createVNode(_component_Icon, {
+    }, [_ctx.icon ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_2$3, [vue.createVNode(_component_Icon, {
       name: _ctx.icon
     }, null, 8
     /* PROPS */
     , ["name"])])) : vue.createCommentVNode("v-if", true), vue.renderSlot(_ctx.$slots, "default")], 10
     /* CLASS, PROPS */
-    , _hoisted_1$3);
+    , _hoisted_1$5);
   }
 
-  script$9.render = render$9;
-  script$9.__scopeId = "data-v-4439b54f";
-  script$9.__file = "src/components/Button/Button.vue";
+  script$c.render = render$c;
+  script$c.__scopeId = "data-v-4439b54f";
+  script$c.__file = "src/components/Button/Button.vue";
 
-  script$9.install = function (Vue) {
-    Vue.component(script$9.name, script$9);
+  script$c.install = function (Vue) {
+    Vue.component(script$c.name, script$c);
   };
 
-  script$a.install = function (Vue) {
-    Vue.component(script$a.name, script$a);
+  script$d.install = function (Vue) {
+    Vue.component(script$d.name, script$d);
   };
 
   var useClickOutside = function useClickOutside(elementRef) {
@@ -219,11 +219,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   var selectRef = vue.ref(null);
   var rotate = vue.ref("rotate(0deg)");
   var activeIndex = vue.ref(-1);
-  var script$8 = vue.defineComponent({
+  var script$b = vue.defineComponent({
     name: "Select",
     emits: ["update:modelValue"],
     components: {
-      Icon: script$a
+      Icon: script$d
     },
     props: {
       placeholder: String,
@@ -352,8 +352,8 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$2 = ["value", "placeholder"];
-  var _hoisted_2 = {
+  var _hoisted_1$4 = ["value", "placeholder"];
+  var _hoisted_2$2 = {
     key: 0,
     class: "select-option-box"
   };
@@ -361,7 +361,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     class: "select-option-find"
   };
   var _hoisted_4 = ["onClick"];
-  function render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$b(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
     return vue.openBlock(), vue.createElementBlock("div", {
@@ -380,7 +380,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       placeholder: _ctx.selValue == '' ? _ctx.placeholder : _ctx.selValue
     }, null, 40
     /* PROPS, HYDRATE_EVENTS */
-    , _hoisted_1$2), vue.createVNode(_component_Icon, {
+    , _hoisted_1$4), vue.createVNode(_component_Icon, {
       name: "arrow-down",
       class: "right-icon",
       style: vue.normalizeStyle({
@@ -392,7 +392,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       name: "slide-fade"
     }, {
       default: vue.withCtx(function () {
-        return [_ctx.optionShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2, [vue.createElementVNode("div", _hoisted_3, [vue.createElementVNode("ul", null, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.optionsData, function (item, index) {
+        return [_ctx.optionShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$2, [vue.createElementVNode("div", _hoisted_3, [vue.createElementVNode("ul", null, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.optionsData, function (item, index) {
           return vue.openBlock(), vue.createElementBlock("li", {
             class: vue.normalizeClass(["select-option-li", {
               'select-active': _ctx.activeIndex == index || _ctx.selValue == item[_ctx.labelFiled] || item.selected,
@@ -423,15 +423,14 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$8.render = render$8;
-  script$8.__scopeId = "data-v-e6ab7c22";
-  script$8.__file = "src/components/Select/select.vue";
+  script$b.render = render$b;
+  script$b.__file = "src/components/Select/select.vue";
 
-  script$8.install = function (Vue) {
-    Vue.component(script$8.name, script$8);
+  script$b.install = function (Vue) {
+    Vue.component(script$b.name, script$b);
   };
 
-  var script$7 = vue.defineComponent({
+  var script$a = vue.defineComponent({
     name: "MyRow",
     props: {
       gutter: {
@@ -511,7 +510,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$a(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("div", {
       class: vue.normalizeClass(_ctx.className),
       ref: "row"
@@ -520,15 +519,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$7.render = render$7;
-  script$7.__scopeId = "data-v-2a2adb2d";
-  script$7.__file = "src/components/MyRow/MyRow.vue";
+  script$a.render = render$a;
+  script$a.__scopeId = "data-v-2a2adb2d";
+  script$a.__file = "src/components/MyRow/MyRow.vue";
 
-  script$7.install = function (Vue) {
-    Vue.component(script$7.name, script$7);
+  script$a.install = function (Vue) {
+    Vue.component(script$a.name, script$a);
   };
 
-  var script$6 = vue.defineComponent({
+  var script$9 = vue.defineComponent({
     name: "MyCol",
     props: {
       span: {
@@ -558,7 +557,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$9(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("div", {
       class: vue.normalizeClass(_ctx.colClassName)
     }, [vue.renderSlot(_ctx.$slots, "default")], 2
@@ -566,15 +565,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$6.render = render$6;
-  script$6.__scopeId = "data-v-9edd600e";
-  script$6.__file = "src/components/MyCol/MyCol.vue";
+  script$9.render = render$9;
+  script$9.__scopeId = "data-v-9edd600e";
+  script$9.__file = "src/components/MyCol/MyCol.vue";
 
-  script$6.install = function (Vue) {
-    Vue.component(script$6.name, script$6);
+  script$9.install = function (Vue) {
+    Vue.component(script$9.name, script$9);
   };
 
-  var script$5 = vue.defineComponent({
+  var script$8 = vue.defineComponent({
     name: "MyAside",
     props: {
       width: {
@@ -584,7 +583,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$8(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("aside", {
       class: "my-aside",
       style: vue.normalizeStyle({
@@ -595,11 +594,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$5.render = render$5;
-  script$5.__scopeId = "data-v-d5507784";
-  script$5.__file = "src/components/Container/MyAside.vue";
+  script$8.render = render$8;
+  script$8.__scopeId = "data-v-d5507784";
+  script$8.__file = "src/components/Container/MyAside.vue";
 
-  var script$4 = vue.defineComponent({
+  var script$7 = vue.defineComponent({
     name: "MyContainer",
     props: {
       direction: {
@@ -629,7 +628,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$7(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("section", {
       class: vue.normalizeClass(["container", {
         'is-vertical': _ctx.isVertical
@@ -639,11 +638,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$4.render = render$4;
-  script$4.__scopeId = "data-v-aea0cff2";
-  script$4.__file = "src/components/Container/MyContainer.vue";
+  script$7.render = render$7;
+  script$7.__scopeId = "data-v-aea0cff2";
+  script$7.__file = "src/components/Container/MyContainer.vue";
 
-  var script$3 = vue.defineComponent({
+  var script$6 = vue.defineComponent({
     name: "MyFooter",
     props: {
       height: {
@@ -653,7 +652,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$6(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("footer", {
       class: "my-footer",
       style: vue.normalizeStyle({
@@ -664,11 +663,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$3.render = render$3;
-  script$3.__scopeId = "data-v-4b468805";
-  script$3.__file = "src/components/Container/MyFooter.vue";
+  script$6.render = render$6;
+  script$6.__scopeId = "data-v-4b468805";
+  script$6.__file = "src/components/Container/MyFooter.vue";
 
-  var script$2 = vue.defineComponent({
+  var script$5 = vue.defineComponent({
     name: "MyHeader",
     props: {
       height: {
@@ -678,7 +677,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$5(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("header", {
       class: "my-header",
       style: vue.normalizeStyle({
@@ -689,24 +688,36 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$2.render = render$2;
-  script$2.__scopeId = "data-v-6c78ebf7";
-  script$2.__file = "src/components/Container/MyHeader.vue";
+  script$5.render = render$5;
+  script$5.__scopeId = "data-v-6c78ebf7";
+  script$5.__file = "src/components/Container/MyHeader.vue";
 
-  var script$1 = vue.defineComponent({
+  var script$4 = vue.defineComponent({
     name: "MyMain"
   });
 
-  var _hoisted_1$1 = {
+  var _hoisted_1$3 = {
     class: "my-main"
   };
-  function render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("main", _hoisted_1$1, [vue.renderSlot(_ctx.$slots, "default")]);
+  function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("main", _hoisted_1$3, [vue.renderSlot(_ctx.$slots, "default")]);
   }
 
-  script$1.render = render$1;
-  script$1.__scopeId = "data-v-75f6c5a3";
-  script$1.__file = "src/components/Container/MyMain.vue";
+  script$4.render = render$4;
+  script$4.__scopeId = "data-v-75f6c5a3";
+  script$4.__file = "src/components/Container/MyMain.vue";
+
+  script$8.install = function (Vue) {
+    Vue.component(script$8.name, script$8);
+  };
+
+  script$7.install = function (Vue) {
+    Vue.component(script$7.name, script$7);
+  };
+
+  script$6.install = function (Vue) {
+    Vue.component(script$6.name, script$6);
+  };
 
   script$5.install = function (Vue) {
     Vue.component(script$5.name, script$5);
@@ -716,23 +727,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     Vue.component(script$4.name, script$4);
   };
 
-  script$3.install = function (Vue) {
-    Vue.component(script$3.name, script$3);
-  };
-
-  script$2.install = function (Vue) {
-    Vue.component(script$2.name, script$2);
-  };
-
-  script$1.install = function (Vue) {
-    Vue.component(script$1.name, script$1);
-  };
-
-  var script = vue.defineComponent(_defineProperty({
+  var script$3 = vue.defineComponent(_defineProperty({
     emits: ["update:modelValue", "focus", "clear", "blur", "input"],
     name: "MyInput",
     components: {
-      Icon: script$a
+      Icon: script$d
     },
     props: {
       modelValue: String | Number,
@@ -765,9 +764,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     setup: function setup(props, context) {
       var inputType = vue.ref(props.type);
       var isStyle = vue.ref({});
+      var slot = vue.useSlots();
 
       var input = function input(e) {
         context.emit("update:modelValue", e.target.value);
+        context.emit("input", e.target.value);
+      };
+
+      var change = function change(e) {
+        context.emit("change", e);
       };
 
       var isClass = vue.computed(function () {
@@ -780,19 +785,21 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       };
 
       var focusStyle = {
-        "width": "100%",
-        "border-radius": "4px",
+        "width": !!slot.append ? "auto" : "100%",
+        "float": !!slot.append ? "left" : "auto",
+        "border-radius": !!slot.append ? "4px 0 0 4px" : "4px",
         "border": "1px solid #dcdfe6f6"
       };
       isStyle.value = focusStyle;
 
       var focus = function focus(e) {
         // console.log('focus');
-        console.log(props.focuscolor);
+        // console.log(props.focuscolor);
         focusStyle["border"] = "1px solid ".concat(props.focuscolor);
         isStyle.value = {
-          "width": "100%",
-          "border-radius": "4px",
+          "width": !!slot.append ? "auto" : "100%",
+          "float": !!slot.append ? "left" : "auto",
+          "border-radius": !!slot.append ? "4px 0 0 4px" : "4px",
           "border": "1px solid ".concat(props.focuscolor)
         };
         context.emit("focus", e);
@@ -800,9 +807,9 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
 
       var blur = function blur(e) {
         isStyle.value = {
-          "width": "100%",
-          "border-radius": "4px",
-          "border": "1px solid #dcdfe6f6"
+          "width": !!slot.append ? "auto" : "100%",
+          "float": !!slot.append ? "left" : "auto",
+          "border-radius": !!slot.append ? "4px 0 0 4px" : "4px"
         };
       };
 
@@ -815,18 +822,19 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
         isStyle: isStyle,
         focus: focus,
         blur: blur,
-        clear: clear
+        clear: clear,
+        change: change
       };
     }
   }, "components", {
-    Icon: script$a
+    Icon: script$d
   }));
 
-  var _hoisted_1 = ["type", "value", "disabled", "placeholder", "readonly", "form"];
-  function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _hoisted_1$2 = ["type", "value", "disabled", "placeholder", "readonly", "form"];
+  function render$3(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
-    return vue.openBlock(), vue.createElementBlock("div", null, [vue.createElementVNode("div", {
+    return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [vue.createElementVNode("div", {
       class: vue.normalizeClass(_ctx.isClass),
       style: vue.normalizeStyle(_ctx.isStyle)
     }, [!_ctx.showPassword && _ctx.lefticon != '' ? (vue.openBlock(), vue.createBlock(_component_Icon, {
@@ -841,19 +849,22 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       onInput: _cache[0] || (_cache[0] = function () {
         return _ctx.input && _ctx.input.apply(_ctx, arguments);
       }),
+      onChange: _cache[1] || (_cache[1] = function () {
+        return _ctx.change && _ctx.change.apply(_ctx, arguments);
+      }),
       disabled: _ctx.disabled,
       placeholder: _ctx.placeholder,
-      onFocus: _cache[1] || (_cache[1] = function () {
+      onFocus: _cache[2] || (_cache[2] = function () {
         return _ctx.focus && _ctx.focus.apply(_ctx, arguments);
       }),
-      onBlur: _cache[2] || (_cache[2] = function () {
+      onBlur: _cache[3] || (_cache[3] = function () {
         return _ctx.blur && _ctx.blur.apply(_ctx, arguments);
       }),
       readonly: _ctx.readonly,
       form: _ctx.form
     }, null, 40
     /* PROPS, HYDRATE_EVENTS */
-    , _hoisted_1), vue.createVNode(vue.Transition, {
+    , _hoisted_1$2), vue.createVNode(vue.Transition, {
       name: "slide-fade"
     }, {
       default: vue.withCtx(function () {
@@ -877,35 +888,690 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     /* PROPS */
     , ["name"])) : vue.createCommentVNode("v-if", true)], 6
     /* CLASS, STYLE */
-    )]);
+    ), _ctx.$slots.append ? (vue.openBlock(), vue.createElementBlock("div", {
+      key: 0,
+      class: vue.normalizeClass("append-".concat(_ctx.size))
+    }, [vue.renderSlot(_ctx.$slots, "append")], 2
+    /* CLASS */
+    )) : vue.createCommentVNode("v-if", true)], 64
+    /* STABLE_FRAGMENT */
+    );
+  }
+
+  script$3.render = render$3;
+  script$3.__file = "src/components/MyInput/MyInput.vue";
+
+  script$3.install = function (Vue) {
+    Vue.component(script$3.name, script$3);
+  };
+
+  var script$2 = vue.defineComponent({
+    name: "MenuItem",
+    emits: ['click', 'select'],
+    props: {
+      items: {
+        type: Array
+      },
+      itemUl: {
+        type: Object
+      },
+      layer: {
+        type: Number,
+        default: 0
+      }
+    },
+    setup: function setup(props, context) {
+      // 处理所有展开的项
+      var visibleList = vue.inject('MenuVisibleList', []);
+      var menuVisibleListChange = vue.inject('MenuVisibleListChange'); // 当前选中的项
+
+      var selectedKey = vue.inject('MenuSelectKey');
+      var selectedKeyChange = vue.inject('MenuSelectKeyChange');
+      var menuProps = vue.inject('MenuProps', {});
+
+      var mouseenter = function mouseenter(item) {
+        if (item.children && item.children.length > 0) {
+          onMouseEvent(item, true);
+        }
+      };
+
+      var mouseleave = function mouseleave(item) {
+        if (item.children && (item === null || item === void 0 ? void 0 : item.children.length) > 0) {
+          onMouseEvent(item, false);
+        }
+      };
+
+      var onMouseEvent = function onMouseEvent(item, add) {
+        if (menuProps.trigger === 'hover' && menuProps.mode === 'horizontal' || menuProps.mode === 'vertical' && menuProps.collapse) {
+          pushOrSplice(item, add);
+        }
+      };
+
+      var click = function click(item, event) {
+        if (item.disabled) {
+          return;
+        }
+
+        if (menuProps.trigger === 'click' || menuProps.mode === 'vertical') {
+          pushOrSplice(item, !visibleList.value.includes(item.key));
+        } // 如果没有子级，设置当前选中项
+
+
+        if (!item.children) {
+          selectedKeyChange && selectedKeyChange(item.key);
+          emits('select', item); // menuProps.router && router.push(item.key)
+        }
+
+        context.emit('click', item);
+        event.stopPropagation();
+      };
+
+      var pushOrSplice = function pushOrSplice(item, add) {
+        if (item.disabled) {
+          return;
+        }
+
+        if (add) {
+          // 有子级时才处理
+          if (item.children && !visibleList.value.includes(item.key)) {
+            menuVisibleListChange && menuVisibleListChange(item.key, add);
+          }
+        } else {
+          menuVisibleListChange && menuVisibleListChange(item.key, add);
+        }
+      };
+
+      var getUlHeight = function getUlHeight(item) {
+        if (item && item.children) {
+          return item.children.length * menuProps.liHeight + (item.childHeight || 0);
+        }
+
+        return null;
+      };
+
+      var select = function select(item) {
+        x;
+        context.emit('select', item);
+      };
+
+      var clickEmit = function clickEmit(item) {
+        context.emit('click', item);
+      }; // 高度展开动画
+
+
+      var beforeEvent = function beforeEvent(node) {
+        var height = node.getAttribute('data-height');
+
+        if (height) {
+          node.style.height = height + 'px';
+          node.style.overflow = 'hidden';
+        }
+      };
+
+      var afterEvent = function afterEvent(node) {
+        node.style.height = '';
+        node.style.overflow = '';
+      };
+
+      return {
+        visibleList: visibleList,
+        menuVisibleListChange: menuVisibleListChange,
+        selectedKey: selectedKey,
+        selectedKeyChange: selectedKeyChange,
+        menuProps: menuProps,
+        mouseenter: mouseenter,
+        mouseleave: mouseleave,
+        getUlHeight: getUlHeight,
+        click: click,
+        select: select,
+        clickEmit: clickEmit,
+        beforeEvent: beforeEvent,
+        afterEvent: afterEvent
+      };
+    }
+  });
+
+  var _hoisted_1$1 = ["onMouseenter", "onMouseleave", "onClick"];
+  var _hoisted_2$1 = {
+    class: "name"
+  };
+  function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+    var _component_menu_item = vue.resolveComponent("menu-item", true);
+
+    return vue.openBlock(), vue.createBlock(vue.Transition, {
+      name: "menu",
+      onBeforeEnter: _ctx.beforeEvent,
+      onAfterEnter: _ctx.afterEvent,
+      onAfterLeave: _ctx.afterEvent,
+      onBeforeLeave: _ctx.beforeEvent
+    }, {
+      default: vue.withCtx(function () {
+        return [vue.createElementVNode("ul", null, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.items, function (item) {
+          return vue.openBlock(), vue.createElementBlock("li", {
+            key: item.key,
+            onMouseenter: function onMouseenter($event) {
+              return _ctx.mouseenter(item);
+            },
+            onMouseleave: function onMouseleave($event) {
+              return _ctx.mouseleave(item);
+            },
+            onClick: function onClick($event) {
+              return _ctx.click(item, $event);
+            }
+          }, [vue.createElementVNode("span", _hoisted_2$1, vue.toDisplayString(item.label), 1
+          /* TEXT */
+          ), item.children ? (vue.openBlock(), vue.createBlock(_component_menu_item, {
+            key: 0,
+            items: item.children,
+            itemUl: item,
+            layer: _ctx.layer + 1,
+            onClick: _ctx.clickEmit,
+            onSelect: _ctx.select
+          }, null, 8
+          /* PROPS */
+          , ["items", "itemUl", "layer", "onClick", "onSelect"])) : vue.createCommentVNode("v-if", true)], 40
+          /* PROPS, HYDRATE_EVENTS */
+          , _hoisted_1$1);
+        }), 128
+        /* KEYED_FRAGMENT */
+        ))])];
+      }),
+      _: 1
+      /* STABLE */
+
+    }, 8
+    /* PROPS */
+    , ["onBeforeEnter", "onAfterEnter", "onAfterLeave", "onBeforeLeave"]);
+  }
+
+  script$2.render = render$2;
+  script$2.__file = "src/components/Menu/MenuItem.vue";
+
+  var script$1 = vue.defineComponent({
+    name: "myMenu",
+    emits: ['click', 'select'],
+    components: {
+      MenuItem: script$2
+    },
+    props: {
+      // 显示模式：横向、竖向
+      mode: {
+        type: String,
+        default: 'vertical',
+        validator: function validator(value) {
+          return ['horizontal', 'vertical'].includes(value);
+        }
+      },
+      items: {
+        type: Array
+      },
+      classname: {
+        type: String,
+        default: ''
+      },
+      // 是否开启折叠
+      collapse: {
+        type: Boolean,
+        default: false
+      },
+      // 子菜单展开的触发方式(hover只在 mode 为 horizontal 时有效)
+      trigger: {
+        type: String,
+        default: 'hover',
+        validator: function validator(value) {
+          return ['hover', 'click'].includes(value);
+        }
+      },
+      theme: {
+        type: String,
+        default: 'light',
+        validator: function validator(value) {
+          return ['light', 'dark'].includes(value);
+        }
+      },
+      // 子菜单项高，仅在mode为vertical时，用于计算高度平滑动画效果
+      liheight: {
+        type: Number,
+        default: 40
+      },
+      openkeys: {
+        type: Array,
+        default: function _default() {
+          return [];
+        }
+      },
+      selectedKey: {
+        type: String,
+        default: ''
+      },
+      router: {
+        type: Boolean
+      }
+    },
+    setup: function setup(props, context) {
+      vue.provide('MenuProps', props); // 展开的项集合
+
+      var visibleList = vue.ref(props.openkeys);
+      vue.provide('MenuVisibleList', visibleList); //非响应式的，需要一个对应的方法
+
+      vue.provide('MenuVisibleListChange', function (key, add) {
+        if (add) {
+          visibleList.value.push(key);
+        } else {
+          var index = visibleList.value.indexOf(key);
+          visibleList.value.splice(index, 1);
+        }
+      }); // 当前选中项
+
+      var selectKey = vue.ref(props.selectedKey);
+      vue.provide('MenuSelectKey', selectKey);
+      vue.provide('MenuSelectKeyChange', function (val) {
+        selectKey.value = val;
+      }); // 收起全部
+
+      var slideUp = function slideUp() {
+        visibleList.value = [];
+        selectKey.value = '';
+      };
+
+      var click = function click(item) {
+        context.emit('click', item);
+      };
+
+      var select = function select(item) {
+        context.emit('select', item);
+      };
+
+      vue.onMounted(function () {
+        if (props.trigger === 'click' && props.mode === 'horizontal') {
+          document.addEventListener('click', slideUp, false);
+        }
+      });
+      vue.onBeforeUnmount(function () {
+        if (props.trigger === 'click' && props.mode === 'horizontal') {
+          document.removeEventListener('click', slideUp, false);
+        }
+      });
+      return {
+        visibleList: visibleList,
+        selectKey: selectKey,
+        click: click,
+        select: select
+      };
+    }
+  });
+
+  function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+    var _component_menu_item = vue.resolveComponent("menu-item");
+
+    return vue.openBlock(), vue.createElementBlock("div", null, [vue.createVNode(_component_menu_item, {
+      items: _ctx.items,
+      onClick: _ctx.click,
+      onSelect: _ctx.select
+    }, null, 8
+    /* PROPS */
+    , ["items", "onClick", "onSelect"])]);
+  }
+
+  script$1.render = render$1;
+  script$1.__file = "src/components/Menu/MyMenu.vue";
+
+  script$1.install = function (Vue) {
+    Vue.component(script$1.name, script$1);
+  };
+
+  script$2.install = function (Vue) {
+    Vue.component(script$2.name, script$2);
+  };
+
+  var getOffset = function getOffset(el) {
+    //用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置
+    // 该函数返回一个Object对象，该对象有6个属性：top,lef,right,bottom,width,height 
+    var componentRect = el.getBoundingClientRect(); // document.documentElement返回文档对象的根元素<html>
+    // window.pageYOffset返回页面相对于浏览器左上角的位置上(scrollY)
+    // document.documentElement.clientTop返回html边框高度
+
+    var top = componentRect.top + (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
+    var left = componentRect.left + (window.pageXOffset || document.documentElement.scrollLeft) - (document.documentElement.clientLeft || 0);
+    var width = el.offsetWidth;
+    var height = el.offsetHeight;
+    return {
+      left: left,
+      top: top,
+      width: width,
+      height: height
+    };
+  };
+  var getWindow = function getWindow() {
+    var width = document.documentElement.clientWidth || document.body.clientWidth;
+    var height = document.documentElement.clientHeight || document.body.clientHeight;
+    return {
+      width: width,
+      height: height
+    };
+  };
+
+  var script = vue.defineComponent({
+    name: "ToolTip",
+    emits: ['click'],
+    components: {
+      Icon: script$d
+    },
+    props: {
+      content: {
+        type: String
+      },
+      direction: {
+        type: String,
+        default: 'top-left'
+      },
+      maxWidth: {
+        type: Number,
+        default: 500
+      },
+      delay: {
+        type: Number,
+        default: 0
+      },
+      always: {
+        type: Boolean
+      },
+      appendtobody: {
+        type: Boolean,
+        default: true
+      },
+      x: {
+        type: Number,
+        default: 0
+      },
+      y: {
+        type: Number,
+        default: 0
+      },
+      classname: {
+        type: String
+      },
+      trigger: {
+        type: String,
+        default: 'hover' | 'click'
+      },
+      style: {
+        type: Object
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      }
+    },
+    setup: function setup(props, _ref) {
+      var emit = _ref.emit;
+      var tooltipEl = vue.ref();
+      var state = vue.reactive({
+        clearTime: 0,
+        visible: false,
+        tooltipStyle: {}
+      });
+      var el = vue.ref(null);
+      var hasAppendToBody = vue.ref(false); // 监听对象中的某个属性要用函数的方式
+
+      vue.watch(function () {
+        return props.disabled;
+      }, function (val) {
+        vue.nextTick(function () {
+          if (!val && props.appendtobody && tooltipEl.value && !hasAppendToBody.value) {
+            document.body.appendChild(tooltipEl.value);
+            hasAppendToBody.value = true;
+          }
+        });
+      });
+      vue.onMounted(function () {
+        vue.nextTick(function () {
+          if (props.always) {
+            state.visible = true;
+            setPosition();
+          }
+
+          if (props.trigger == 'click') {
+            document.addEventListener('click', mouseClick, false);
+          } else {
+            el.value.addEventListener('mouseenter', mouseEnter, false);
+            el.value.addEventListener('mouseleave', mouseLeave, false);
+          }
+
+          if (props.appendtobody && tooltipEl.value) {
+            document.body.appendChild(tooltipEl.value);
+            hasAppendToBody.value = true;
+          }
+        });
+      });
+      vue.onBeforeUnmount(function () {
+        if (props.trigger === 'click') {
+          document.removeEventListener('click', mouseClick, false);
+        } else {
+          el.value.removeEventListener('mouseenter', mouseEnter, false);
+          el.value.removeEventListener('mouseleave', mouseLeave, false);
+        }
+
+        if (props.appendToBody && tooltipEl.value) {
+          document.body.removeChild(tooltipEl.value);
+        }
+      });
+
+      var getIf = function getIf(slot) {
+        if (props.disabled) {
+          return;
+        }
+
+        return props.content || slot.content;
+      };
+
+      var translate = function translate(px) {
+        // 通过transform平移标签时，如平移的单位为非偶数，会出现字体模糊，这里强制取偶
+        if (px % 2 == 0) {
+          return px;
+        } else {
+          return px + 1;
+        }
+      }; // 设置点击的回调函数
+
+
+      var mouseClick = function mouseClick(e) {
+        if (!props.always) {
+          if (e && el.value.contains(e.target)) {
+            state.visible = true;
+            setPosition();
+          } else {
+            state.visible = false;
+          }
+        }
+
+        emit('click', state.visible);
+      }; // 设置mouseenter的回调函数
+
+
+      var mouseEnter = function mouseEnter(e) {
+        if (props.disabled) return;
+
+        if (!props.always) {
+          setPosition();
+          window.clearTimeout(state.clearTime);
+          state.visible = true; // 提示内容上添加事件
+
+          if (props.delay && tooltipEl.value) {
+            tooltipEl.value.addEventListener('mouseenter', toolTipEnter, false);
+            tooltipEl.value.addEventListener('mouseleave', toolTipLeave, false);
+          }
+        }
+      };
+
+      var mouseLeave = function mouseLeave(e) {
+        state.clearTime = window.setTimeout(function () {
+          state.visible = false;
+        }, props.delay);
+      }; // 设置tooltip内部的鼠标事件
+
+
+      var toolTipEnter = function toolTipEnter(e) {
+        window.clearTimeout(state.clearTime);
+      };
+
+      var toolTipLeave = function toolTipLeave(e) {
+        mouseLeave(); // 同时移除事件
+
+        tooltipEl.value.removeEventListener('mouseenter', toolTipEnter, false);
+        tooltipEl.value.removeEventListener('mouseleave', toolTipLeave, false);
+      }; // 设置tooltip的位置
+
+
+      var setPosition = function setPosition() {
+        var offset = getOffset(el.value);
+        var windowWidth = getWindow().width;
+        var space = props.y + 8; //当前标签与提示语之间的距离
+
+        var style = {
+          maxWidth: props.maxWidth + 'px'
+        };
+
+        if (props.appendtobody) {
+          var windowHeight = getWindow().height;
+          var bottom = windowHeight - offset.top + space + 'px';
+
+          switch (props.direction) {
+            case 'top-left':
+              style.left = offset.left + props.x + 'px';
+              style.bottom = bottom;
+              break;
+
+            case 'top':
+              // 先让提示左边和当前标签中间对齐（偏移位置+标签宽的一半），再向左移50%
+              style.left = translate(offset.left + offset.width / 2 + props.x) + 'px';
+              style.transform = 'translateX(-50%)';
+              style.bottom = bottom;
+              break;
+
+            case 'top-right':
+              style.right = windowWidth - (offset.left + offset.width + props.x) + 'px';
+              style.bottom = bottom;
+              break;
+
+            case 'left':
+              // top先让提示语顶部跟标签中间对齐，再上移50%
+              style.top = translate(offset.top + offset.height / 2) + 'px';
+              style.transform = 'translateY(-50%)';
+              style.right = windowWidth - (offset.left - 8 + props.x) + 'px';
+              break;
+
+            case 'right':
+              // top先让提示语顶部跟标签中间对齐，再上移50%
+              style.top = translate(offset.top + offset.height / 2) + 'px';
+              style.transform = 'translateY(-50%)';
+              style.left = offset.left + offset.width + 8 + props.x + 'px';
+              break;
+
+            case 'bottom-left':
+              style.left = offset.left + props.x + 'px';
+              style.top = offset.top + offset.height + space + 'px';
+              break;
+
+            case 'bottom':
+              style.left = translate(offset.left + offset.width / 2 + props.x) + 'px';
+              style.transform = 'translateX(-50%)';
+              style.top = offset.top + offset.height + space + 'px';
+              break;
+
+            case 'bottom-right':
+              style.right = windowWidth - (offset.left + offset.width + props.x) + 'px';
+              style.top = offset.top + offset.height + space + 'px';
+              break;
+          }
+        }
+
+        state.tooltipStyle = Object.assign({}, props.style, style);
+      };
+
+      return {
+        tooltipEl: tooltipEl,
+        state: state,
+        el: el,
+        getIf: getIf,
+        mouseClick: mouseClick,
+        mouseEnter: mouseEnter,
+        mouseLeave: mouseLeave,
+        toolTipEnter: toolTipEnter,
+        toolTipLeave: toolTipLeave
+      };
+    }
+  });
+
+  var _hoisted_1 = /*#__PURE__*/vue.createElementVNode("i", {
+    class: "arrow"
+  }, null, -1
+  /* HOISTED */
+  );
+
+  var _hoisted_2 = ["innerHTML"];
+  function render(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("span", {
+      ref: "el",
+      class: vue.normalizeClass(_ctx.tooltip - _ctx.box)
+    }, [vue.renderSlot(_ctx.$slots, "default"), vue.createVNode(vue.Transition, {
+      name: "tooltip-fade"
+    }, {
+      default: vue.withCtx(function () {
+        return [_ctx.getIf(_ctx.$slots) ? vue.withDirectives((vue.openBlock(), vue.createElementBlock("div", {
+          key: 0,
+          ref: "tooltipEl",
+          class: vue.normalizeClass(['tooltip', _ctx.direction, _ctx.className]),
+          style: vue.normalizeStyle(_ctx.state.tooltipStyle),
+          onClick: _cache[0] || (_cache[0] = vue.withModifiers(function () {}, ["stop"]))
+        }, [_hoisted_1, _ctx.content ? (vue.openBlock(), vue.createElementBlock("span", {
+          key: 0,
+          innerHTML: _ctx.content
+        }, null, 8
+        /* PROPS */
+        , _hoisted_2)) : vue.renderSlot(_ctx.$slots, "content", {
+          key: 1
+        })], 6
+        /* CLASS, STYLE */
+        )), [[vue.vShow, _ctx.state.visible]]) : vue.createCommentVNode("v-if", true)];
+      }),
+      _: 3
+      /* FORWARDED */
+
+    })], 2
+    /* CLASS */
+    );
   }
 
   script.render = render;
-  script.__file = "src/components/MyInput/MyInput.vue";
+  script.__file = "src/components/Tooltip/ToolTip.vue";
 
   script.install = function (Vue) {
     Vue.component(script.name, script);
   };
 
   var install = function install(app) {
-    app.use(script$9);
+    app.use(script$c);
   };
 
   var UI = {
     install: install
   }; // 支持按需导入
 
-  exports.Button = script$9;
-  exports.Icon = script$a;
-  exports.MyAside = script$5;
-  exports.MyCol = script$6;
-  exports.MyContainer = script$4;
-  exports.MyFooter = script$3;
-  exports.MyHeader = script$2;
-  exports.MyInput = script;
-  exports.MyMain = script$1;
-  exports.MyRow = script$7;
-  exports.Select = script$8;
+  exports.Button = script$c;
+  exports.Icon = script$d;
+  exports.MenuItem = script$2;
+  exports.MyAside = script$8;
+  exports.MyCol = script$9;
+  exports.MyContainer = script$7;
+  exports.MyFooter = script$6;
+  exports.MyHeader = script$5;
+  exports.MyInput = script$3;
+  exports.MyMain = script$4;
+  exports.MyMenu = script$1;
+  exports.MyRow = script$a;
+  exports.Select = script$b;
+  exports.ToolTip = script;
   exports["default"] = UI;
 
   Object.defineProperty(exports, '__esModule', { value: true });

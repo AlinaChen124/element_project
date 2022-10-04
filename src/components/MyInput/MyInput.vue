@@ -1,5 +1,5 @@
 <template>
-  <div  >
+  
     <div :class="isClass" :style="isStyle">
       <Icon :name="lefticon"
       :class="['left-icon']" 
@@ -8,6 +8,7 @@
       <input :type="inputType" 
       :value="modelValue" 
       @input="input" 
+      @change="change"
       :disabled="disabled" 
       :placeholder="placeholder"
       @focus="focus"
@@ -23,11 +24,14 @@
       v-if="!showPassword&&rigthIcon!=''"
       ></Icon>
     </div>
-  </div>
+    <div v-if="$slots.append" :class="`append-${size}`">
+      <slot name="append"></slot>
+    </div>
+  
 </template>
 <script>
 
-import { defineComponent ,computed, ref,onMounted} from 'vue'
+import { defineComponent ,computed, ref,onMounted,useSlots} from 'vue'
 import Icon from '../Icon/icon.vue'
 export default defineComponent({
     emits: ["update:modelValue", "focus","clear","blur","input"],
@@ -66,9 +70,14 @@ export default defineComponent({
     setup(props, context) {
         const inputType = ref(props.type);
         const isStyle = ref({});
+        const slot = useSlots();
         const input = (e) => {
             context.emit("update:modelValue", e.target.value);
+            context.emit("input",e.target.value)
         };
+        const change = (e)=>{
+          context.emit("change",e)
+        }
         const isClass = computed(() => {
             return [
               props.lefticon!=''?`input-left-icon-${props.size}`:!props.clearable?props.righticon!=''?`input-right-icon-${props.size}`:'':'',
@@ -81,32 +90,35 @@ export default defineComponent({
           context.emit('clear')
         }
         let focusStyle = {
-            "width": "100%",
-            "border-radius": "4px",
+            "width": !!slot.append?"auto":"100%",
+            "float": !!slot.append?"left":"auto",
+            "border-radius":!!slot.append?"4px 0 0 4px": "4px",
             "border": "1px solid #dcdfe6f6"
         };
         isStyle.value = focusStyle;
         const focus = (e) => {
             // console.log('focus');
-            console.log(props.focuscolor);
+            // console.log(props.focuscolor);
             focusStyle["border"] = `1px solid ${props.focuscolor}`;
             isStyle.value = {
-                "width": "100%",
-                "border-radius": "4px",
+                "width": !!slot.append?"auto":"100%",
+                "float": !!slot.append?"left":"auto",
+                "border-radius":!!slot.append?"4px 0 0 4px": "4px",
                 "border": `1px solid ${props.focuscolor}`
             };
             context.emit("focus", e);
         };
         const blur = (e) => {
             isStyle.value = {
-                "width": "100%",
-                "border-radius": "4px",
-                "border": "1px solid #dcdfe6f6"
+              "width": !!slot.append?"auto":"100%",
+              "float": !!slot.append?"left":"auto",
+              "border-radius":!!slot.append?"4px 0 0 4px": "4px",
             };
         };
         onMounted(() => {
             // console.log(props.focuscolor);
         });
+
         return {
             input,
             isClass,
@@ -114,12 +126,14 @@ export default defineComponent({
             isStyle,
             focus,
             blur,
-            clear
+            clear,
+            change
         };
     },
     components: { Icon }
 })
 </script>
 <style lang="scss">
-@import './styles.scss'
+@import './styles.scss';
+
 </style>

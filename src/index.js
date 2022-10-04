@@ -5,6 +5,8 @@ import MyRow from "./components/MyRow/index.js"
 import MyCol from "./components/MyCol/index.js"
 import {MyAside,MyContainer,MyFooter,MyHeader,MyMain} from "./components/Container/index.js"
 import MyInput from "./components/MyInput/index.js";
+import { MyMenu,MenuItem } from "./components/Menu/index.js";
+import ToolTip from "./components/Tooltip/index.js";
 const install = (app)=>{
   app.use(Button)
 }
@@ -23,7 +25,10 @@ export {
   MyFooter,
   MyHeader,
   MyMain,
-  MyInput
+  MyInput,
+  MyMenu,
+  MenuItem,
+  ToolTip
 }
 // 支持全局导入
 export default UI 

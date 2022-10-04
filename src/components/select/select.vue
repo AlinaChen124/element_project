@@ -164,6 +164,6 @@ const selectRef = ref(null)
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import "./styles.scss"
 </style>

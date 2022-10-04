@@ -44,7 +44,7 @@
       <my-container>
         <my-header class="header">Header</my-header>
         <my-container>
-          <my-aside width="200px" class="aside">Aside</my-aside>
+          <my-aside width="200px" class="aside"><my-menu :items=items mode="horizontal" trigger='click' /></my-aside>
           <my-container>
             <my-main>
               <div class="button">
@@ -66,7 +66,9 @@
               <div class="select">
                 <my-select :options="selOptions" v-model="selVal_arr"  @change="selchange" multiple></my-select>
               </div>
-              
+              <div class="select">
+                <!-- <my-select :options="selOptions" v-model="selVal"  @change="selchange"></my-select> -->
+              </div>
               <bp-row :gutter="1">
                 <bp-col :span="8" title="span=8"><div class="row-demo bg-blue-5">shishi</div></bp-col>
                 <bp-col :span="16" title="span=16"><div class="row-demo bg-blue-5">shishi</div></bp-col>
@@ -96,10 +98,25 @@
             <div class="input">
               <my-input placeholder="test" focuscolor="red" righticon="calendar-o" v-model="something"></my-input>
             </div>
-
             <div class="input">
-              <my-input placeholder="test" focuscolor="brown" v-model="something" size="mini" lefticon="warning-o"></my-input>
+              <my-input placeholder="test" clearable v-model="something">
+                <template #append><my-button >保存</my-button></template>
+              </my-input>
             </div>
+            <div class="input">
+              <my-input placeholder="test" clearable v-model="something">
+                <template #append>
+                <my-select :options="selOptions" v-model="selVal_arr"  @change="selchange" multiple></my-select>
+
+                </template>
+              </my-input>
+            </div>
+            <div class="input">
+              <my-input  placeholder="test" focuscolor="brown" v-model="something" size="mini" lefticon="warning-o"></my-input>
+            </div>
+            <tool-tip content="这是提示内容" direction="bottom-left" delay="5000">内容 </tool-tip>
+            <tool-tip content="这是提示内容" direction="bottom" trigger="click" >内容 </tool-tip>
+            <tool-tip content="这是提示内容" direction="bottom-right">内容 </tool-tip>
             <p>{{val}}</p>
             </my-main>
             <my-footer class="footer">Footer</my-footer>
@@ -129,6 +146,8 @@ const app = createApp({
     MyHeader:myLib.MyHeader,
     MyMain:myLib.MyMain,
     MyInput:myLib.MyInput,
+    MyMenu:myLib.MyMenu,
+    ToolTip:myLib.ToolTip
   },
   data() {
     return {
@@ -148,6 +167,58 @@ const app = createApp({
       selVal_arr:[],
       val:'',
       something:'',
+      items:[
+        {
+          label: '用户管理',
+          key: 'user',
+          icon: 'user',
+          children: [
+            {
+              label: '用户列表',
+              key: 'aa'
+            },
+            {
+              label: '添加用户',
+              key: 'ab'
+            }
+          ]
+        },
+        {
+          label: 'Navigator Two',
+          key: 'b',
+          icon: 'search',
+          children: [
+            {
+              label: 'item one',
+              key: 'b1',
+              children: [
+                {
+                  label: 'item two',
+                  key: 'b2',
+                },
+                {
+                  label: 'item three',
+                  key: 'b3',
+                }
+              ]
+            },
+            {
+              label: 'item one',
+              key: 'b4',
+            },
+            {
+              label: 'item one',
+              key: 'b5',
+            }
+          ]
+        },
+        {
+          label: '系统设置',
+          key: 'set',
+          icon: 'date',
+          disabled: true
+        }
+      ]
     }
   },
   methods: {
