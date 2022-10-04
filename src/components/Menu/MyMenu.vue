@@ -1,5 +1,6 @@
 <template>
   <div
+    :class="{'menu':true,[mode]:true,[theme]:true,collapse:collapse&&mode=='vertical'}"
   >
   <menu-item :items="items" @click="click" @select="select"></menu-item>
   </div>
@@ -115,4 +116,7 @@ export default defineComponent({
   }
 })
 </script>
+<style lang="scss">
+  @import './styles.scss';
+  </style>
 

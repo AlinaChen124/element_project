@@ -2,7 +2,7 @@
 (function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 import 'core-js/modules/es.function.name.js';
 import 'core-js/modules/es.array.includes.js';
-import { defineComponent, computed, openBlock, createElementBlock, createElementVNode, onMounted, resolveComponent, normalizeClass, createVNode, createCommentVNode, renderSlot, ref, onUnmounted, watch, withModifiers, normalizeStyle, Transition, withCtx, Fragment, renderList, createTextVNode, toDisplayString, createBlock, getCurrentInstance, useSlots, inject, provide, onBeforeUnmount, reactive, nextTick, withDirectives, vShow } from 'vue';
+import { defineComponent, computed, openBlock, createElementBlock, createElementVNode, onMounted, resolveComponent, normalizeClass, createVNode, createCommentVNode, renderSlot, ref, onUnmounted, watch, withModifiers, normalizeStyle, Transition, withCtx, Fragment, renderList, createTextVNode, toDisplayString, createBlock, getCurrentInstance, useSlots, reactive, nextTick, onBeforeUnmount, withDirectives, vShow, inject, provide } from 'vue';
 import 'core-js/modules/es.array.filter.js';
 import 'core-js/modules/es.object.to-string.js';
 import 'core-js/modules/web.dom-collections.for-each.js';
@@ -366,10 +366,10 @@ var _hoisted_2$2 = {
   key: 0,
   class: "select-option-box"
 };
-var _hoisted_3 = {
+var _hoisted_3$1 = {
   class: "select-option-find"
 };
-var _hoisted_4 = ["onClick"];
+var _hoisted_4$1 = ["onClick"];
 function render$b(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Icon = resolveComponent("Icon");
 
@@ -401,7 +401,7 @@ function render$b(_ctx, _cache, $props, $setup, $data, $options) {
     name: "slide-fade"
   }, {
     default: withCtx(function () {
-      return [_ctx.optionShow ? (openBlock(), createElementBlock("div", _hoisted_2$2, [createElementVNode("div", _hoisted_3, [createElementVNode("ul", null, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.optionsData, function (item, index) {
+      return [_ctx.optionShow ? (openBlock(), createElementBlock("div", _hoisted_2$2, [createElementVNode("div", _hoisted_3$1, [createElementVNode("ul", null, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.optionsData, function (item, index) {
         return openBlock(), createElementBlock("li", {
           class: normalizeClass(["select-option-li", {
             'select-active': _ctx.activeIndex == index || _ctx.selValue == item[_ctx.labelFiled] || item.selected,
@@ -419,7 +419,7 @@ function render$b(_ctx, _cache, $props, $setup, $data, $options) {
           class: "icon"
         })) : createCommentVNode("v-if", true)], 10
         /* CLASS, PROPS */
-        , _hoisted_4);
+        , _hoisted_4$1);
       }), 128
       /* KEYED_FRAGMENT */
       ))])])])) : createCommentVNode("v-if", true)];
@@ -914,325 +914,6 @@ script$3.install = function (Vue) {
   Vue.component(script$3.name, script$3);
 };
 
-var script$2 = defineComponent({
-  name: "MenuItem",
-  emits: ['click', 'select'],
-  props: {
-    items: {
-      type: Array
-    },
-    itemUl: {
-      type: Object
-    },
-    layer: {
-      type: Number,
-      default: 0
-    }
-  },
-  setup: function setup(props, context) {
-    // 处理所有展开的项
-    var visibleList = inject('MenuVisibleList', []);
-    var menuVisibleListChange = inject('MenuVisibleListChange'); // 当前选中的项
-
-    var selectedKey = inject('MenuSelectKey');
-    var selectedKeyChange = inject('MenuSelectKeyChange');
-    var menuProps = inject('MenuProps', {});
-
-    var mouseenter = function mouseenter(item) {
-      if (item.children && item.children.length > 0) {
-        onMouseEvent(item, true);
-      }
-    };
-
-    var mouseleave = function mouseleave(item) {
-      if (item.children && (item === null || item === void 0 ? void 0 : item.children.length) > 0) {
-        onMouseEvent(item, false);
-      }
-    };
-
-    var onMouseEvent = function onMouseEvent(item, add) {
-      if (menuProps.trigger === 'hover' && menuProps.mode === 'horizontal' || menuProps.mode === 'vertical' && menuProps.collapse) {
-        pushOrSplice(item, add);
-      }
-    };
-
-    var click = function click(item, event) {
-      if (item.disabled) {
-        return;
-      }
-
-      if (menuProps.trigger === 'click' || menuProps.mode === 'vertical') {
-        pushOrSplice(item, !visibleList.value.includes(item.key));
-      } // 如果没有子级，设置当前选中项
-
-
-      if (!item.children) {
-        selectedKeyChange && selectedKeyChange(item.key);
-        emits('select', item); // menuProps.router && router.push(item.key)
-      }
-
-      context.emit('click', item);
-      event.stopPropagation();
-    };
-
-    var pushOrSplice = function pushOrSplice(item, add) {
-      if (item.disabled) {
-        return;
-      }
-
-      if (add) {
-        // 有子级时才处理
-        if (item.children && !visibleList.value.includes(item.key)) {
-          menuVisibleListChange && menuVisibleListChange(item.key, add);
-        }
-      } else {
-        menuVisibleListChange && menuVisibleListChange(item.key, add);
-      }
-    };
-
-    var getUlHeight = function getUlHeight(item) {
-      if (item && item.children) {
-        return item.children.length * menuProps.liHeight + (item.childHeight || 0);
-      }
-
-      return null;
-    };
-
-    var select = function select(item) {
-      x;
-      context.emit('select', item);
-    };
-
-    var clickEmit = function clickEmit(item) {
-      context.emit('click', item);
-    }; // 高度展开动画
-
-
-    var beforeEvent = function beforeEvent(node) {
-      var height = node.getAttribute('data-height');
-
-      if (height) {
-        node.style.height = height + 'px';
-        node.style.overflow = 'hidden';
-      }
-    };
-
-    var afterEvent = function afterEvent(node) {
-      node.style.height = '';
-      node.style.overflow = '';
-    };
-
-    return {
-      visibleList: visibleList,
-      menuVisibleListChange: menuVisibleListChange,
-      selectedKey: selectedKey,
-      selectedKeyChange: selectedKeyChange,
-      menuProps: menuProps,
-      mouseenter: mouseenter,
-      mouseleave: mouseleave,
-      getUlHeight: getUlHeight,
-      click: click,
-      select: select,
-      clickEmit: clickEmit,
-      beforeEvent: beforeEvent,
-      afterEvent: afterEvent
-    };
-  }
-});
-
-var _hoisted_1$1 = ["onMouseenter", "onMouseleave", "onClick"];
-var _hoisted_2$1 = {
-  class: "name"
-};
-function render$2(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_menu_item = resolveComponent("menu-item", true);
-
-  return openBlock(), createBlock(Transition, {
-    name: "menu",
-    onBeforeEnter: _ctx.beforeEvent,
-    onAfterEnter: _ctx.afterEvent,
-    onAfterLeave: _ctx.afterEvent,
-    onBeforeLeave: _ctx.beforeEvent
-  }, {
-    default: withCtx(function () {
-      return [createElementVNode("ul", null, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.items, function (item) {
-        return openBlock(), createElementBlock("li", {
-          key: item.key,
-          onMouseenter: function onMouseenter($event) {
-            return _ctx.mouseenter(item);
-          },
-          onMouseleave: function onMouseleave($event) {
-            return _ctx.mouseleave(item);
-          },
-          onClick: function onClick($event) {
-            return _ctx.click(item, $event);
-          }
-        }, [createElementVNode("span", _hoisted_2$1, toDisplayString(item.label), 1
-        /* TEXT */
-        ), item.children ? (openBlock(), createBlock(_component_menu_item, {
-          key: 0,
-          items: item.children,
-          itemUl: item,
-          layer: _ctx.layer + 1,
-          onClick: _ctx.clickEmit,
-          onSelect: _ctx.select
-        }, null, 8
-        /* PROPS */
-        , ["items", "itemUl", "layer", "onClick", "onSelect"])) : createCommentVNode("v-if", true)], 40
-        /* PROPS, HYDRATE_EVENTS */
-        , _hoisted_1$1);
-      }), 128
-      /* KEYED_FRAGMENT */
-      ))])];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["onBeforeEnter", "onAfterEnter", "onAfterLeave", "onBeforeLeave"]);
-}
-
-script$2.render = render$2;
-script$2.__file = "src/components/Menu/MenuItem.vue";
-
-var script$1 = defineComponent({
-  name: "myMenu",
-  emits: ['click', 'select'],
-  components: {
-    MenuItem: script$2
-  },
-  props: {
-    // 显示模式：横向、竖向
-    mode: {
-      type: String,
-      default: 'vertical',
-      validator: function validator(value) {
-        return ['horizontal', 'vertical'].includes(value);
-      }
-    },
-    items: {
-      type: Array
-    },
-    classname: {
-      type: String,
-      default: ''
-    },
-    // 是否开启折叠
-    collapse: {
-      type: Boolean,
-      default: false
-    },
-    // 子菜单展开的触发方式(hover只在 mode 为 horizontal 时有效)
-    trigger: {
-      type: String,
-      default: 'hover',
-      validator: function validator(value) {
-        return ['hover', 'click'].includes(value);
-      }
-    },
-    theme: {
-      type: String,
-      default: 'light',
-      validator: function validator(value) {
-        return ['light', 'dark'].includes(value);
-      }
-    },
-    // 子菜单项高，仅在mode为vertical时，用于计算高度平滑动画效果
-    liheight: {
-      type: Number,
-      default: 40
-    },
-    openkeys: {
-      type: Array,
-      default: function _default() {
-        return [];
-      }
-    },
-    selectedKey: {
-      type: String,
-      default: ''
-    },
-    router: {
-      type: Boolean
-    }
-  },
-  setup: function setup(props, context) {
-    provide('MenuProps', props); // 展开的项集合
-
-    var visibleList = ref(props.openkeys);
-    provide('MenuVisibleList', visibleList); //非响应式的，需要一个对应的方法
-
-    provide('MenuVisibleListChange', function (key, add) {
-      if (add) {
-        visibleList.value.push(key);
-      } else {
-        var index = visibleList.value.indexOf(key);
-        visibleList.value.splice(index, 1);
-      }
-    }); // 当前选中项
-
-    var selectKey = ref(props.selectedKey);
-    provide('MenuSelectKey', selectKey);
-    provide('MenuSelectKeyChange', function (val) {
-      selectKey.value = val;
-    }); // 收起全部
-
-    var slideUp = function slideUp() {
-      visibleList.value = [];
-      selectKey.value = '';
-    };
-
-    var click = function click(item) {
-      context.emit('click', item);
-    };
-
-    var select = function select(item) {
-      context.emit('select', item);
-    };
-
-    onMounted(function () {
-      if (props.trigger === 'click' && props.mode === 'horizontal') {
-        document.addEventListener('click', slideUp, false);
-      }
-    });
-    onBeforeUnmount(function () {
-      if (props.trigger === 'click' && props.mode === 'horizontal') {
-        document.removeEventListener('click', slideUp, false);
-      }
-    });
-    return {
-      visibleList: visibleList,
-      selectKey: selectKey,
-      click: click,
-      select: select
-    };
-  }
-});
-
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_menu_item = resolveComponent("menu-item");
-
-  return openBlock(), createElementBlock("div", null, [createVNode(_component_menu_item, {
-    items: _ctx.items,
-    onClick: _ctx.click,
-    onSelect: _ctx.select
-  }, null, 8
-  /* PROPS */
-  , ["items", "onClick", "onSelect"])]);
-}
-
-script$1.render = render$1;
-script$1.__file = "src/components/Menu/MyMenu.vue";
-
-script$1.install = function (Vue) {
-  Vue.component(script$1.name, script$1);
-};
-
-script$2.install = function (Vue) {
-  Vue.component(script$2.name, script$2);
-};
-
 var getOffset = function getOffset(el) {
   //用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置
   // 该函数返回一个Object对象，该对象有6个属性：top,lef,right,bottom,width,height 
@@ -1260,7 +941,7 @@ var getWindow = function getWindow() {
   };
 };
 
-var script = defineComponent({
+var script$2 = defineComponent({
   name: "ToolTip",
   emits: ['click'],
   components: {
@@ -1512,14 +1193,14 @@ var script = defineComponent({
   }
 });
 
-var _hoisted_1 = /*#__PURE__*/createElementVNode("i", {
+var _hoisted_1$1 = /*#__PURE__*/createElementVNode("i", {
   class: "arrow"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_2 = ["innerHTML"];
-function render(_ctx, _cache, $props, $setup, $data, $options) {
+var _hoisted_2$1 = ["innerHTML"];
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("span", {
     ref: "el",
     class: normalizeClass(_ctx.tooltip - _ctx.box)
@@ -1533,12 +1214,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         class: normalizeClass(['tooltip', _ctx.direction, _ctx.className]),
         style: normalizeStyle(_ctx.state.tooltipStyle),
         onClick: _cache[0] || (_cache[0] = withModifiers(function () {}, ["stop"]))
-      }, [_hoisted_1, _ctx.content ? (openBlock(), createElementBlock("span", {
+      }, [_hoisted_1$1, _ctx.content ? (openBlock(), createElementBlock("span", {
         key: 0,
         innerHTML: _ctx.content
       }, null, 8
       /* PROPS */
-      , _hoisted_2)) : renderSlot(_ctx.$slots, "content", {
+      , _hoisted_2$1)) : renderSlot(_ctx.$slots, "content", {
         key: 1
       })], 6
       /* CLASS, STYLE */
@@ -1552,11 +1233,384 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   );
 }
 
+script$2.render = render$2;
+script$2.__file = "src/components/Tooltip/ToolTip.vue";
+
+var script$1 = defineComponent({
+  name: "MenuItem",
+  emits: ['click', 'select'],
+  components: {
+    ToolTip: script$2,
+    Icon: script$d
+  },
+  props: {
+    items: {
+      type: Array
+    },
+    itemUl: {
+      type: Object
+    },
+    layer: {
+      type: Number,
+      default: 0
+    }
+  },
+  setup: function setup(props, context) {
+    // 处理所有展开的项
+    var visibleList = inject('MenuVisibleList', []);
+    var menuVisibleListChange = inject('MenuVisibleListChange'); // 当前选中的项
+
+    var selectedKey = inject('MenuSelectKey');
+    var selectedKeyChange = inject('MenuSelectKeyChange');
+    var menuProps = inject('MenuProps', {});
+
+    var mouseenter = function mouseenter(item) {
+      if (item.children && item.children.length > 0) {
+        onMouseEvent(item, true);
+      }
+    };
+
+    var mouseleave = function mouseleave(item) {
+      if (item.children && (item === null || item === void 0 ? void 0 : item.children.length) > 0) {
+        onMouseEvent(item, false);
+      }
+    };
+
+    var onMouseEvent = function onMouseEvent(item, add) {
+      if (menuProps.trigger === 'hover' && menuProps.mode === 'horizontal' || menuProps.mode === 'vertical' && menuProps.collapse) {
+        pushOrSplice(item, add);
+      }
+    };
+
+    var click = function click(item) {
+      if (item.disabled) {
+        return;
+      }
+
+      if (menuProps.trigger === 'click' || menuProps.mode === 'vertical') {
+        pushOrSplice(item, !visibleList.value.includes(item.key));
+      } // 如果没有子级，设置当前选中项
+
+
+      if (!item.children) {
+        selectedKeyChange && selectedKeyChange(item.key);
+        emits('select', item); // menuProps.router && router.push(item.key)
+      }
+
+      context.emit('click', item);
+    };
+
+    var pushOrSplice = function pushOrSplice(item, add) {
+      if (item.disabled) {
+        return;
+      }
+
+      if (add) {
+        // 有子级时才处理
+        if (item.children && !visibleList.value.includes(item.key)) {
+          menuVisibleListChange && menuVisibleListChange(item.key, add);
+        }
+      } else {
+        menuVisibleListChange && menuVisibleListChange(item.key, add);
+      }
+    };
+
+    var getUlHeight = function getUlHeight(item) {
+      if (item && item.children) {
+        return item.children.length * menuProps.liHeight + (item.childHeight || 0);
+      }
+
+      return null;
+    };
+
+    var select = function select(item) {
+      x;
+      context.emit('select', item);
+    };
+
+    var clickEmit = function clickEmit(item) {
+      context.emit('click', item);
+    }; // 高度展开动画
+
+
+    var beforeEvent = function beforeEvent(node) {
+      var height = node.getAttribute('data-height');
+
+      if (height) {
+        node.style.height = height + 'px';
+        node.style.overflow = 'hidden';
+      }
+    };
+
+    var afterEvent = function afterEvent(node) {
+      node.style.height = '';
+      node.style.overflow = '';
+    };
+
+    return {
+      visibleList: visibleList,
+      menuVisibleListChange: menuVisibleListChange,
+      selectedKey: selectedKey,
+      selectedKeyChange: selectedKeyChange,
+      menuProps: menuProps,
+      mouseenter: mouseenter,
+      mouseleave: mouseleave,
+      getUlHeight: getUlHeight,
+      click: click,
+      select: select,
+      clickEmit: clickEmit,
+      beforeEvent: beforeEvent,
+      afterEvent: afterEvent
+    };
+  }
+});
+
+var _hoisted_1 = ["data-height"];
+var _hoisted_2 = ["onMouseenter", "onMouseleave", "onClick"];
+var _hoisted_3 = {
+  class: "menu-title"
+};
+var _hoisted_4 = {
+  class: "name"
+};
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Icon = resolveComponent("Icon");
+
+  var _component_tool_tip = resolveComponent("tool-tip");
+
+  var _component_menu_item = resolveComponent("menu-item", true);
+
+  return openBlock(), createBlock(Transition, {
+    name: "menu",
+    onBeforeEnter: _ctx.beforeEvent,
+    onAfterEnter: _ctx.afterEvent,
+    onAfterLeave: _ctx.afterEvent,
+    onBeforeLeave: _ctx.beforeEvent,
+    persisted: ""
+  }, {
+    default: withCtx(function () {
+      var _normalizeClass2;
+
+      return [withDirectives(createElementVNode("ul", {
+        class: normalizeClass((_normalizeClass2 = {}, _defineProperty(_normalizeClass2, 'layer-' + _ctx.layer, true), _defineProperty(_normalizeClass2, 'is-child', _ctx.itemUl), _normalizeClass2)),
+        "data-height": _ctx.getUlHeight(_ctx.itemUl)
+      }, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.items, function (item) {
+        return openBlock(), createElementBlock("li", {
+          key: item.key,
+          class: normalizeClass({
+            disabled: item.disabled,
+            'is-down': _ctx.visibleList.includes(item.key),
+            selected: item.key == _ctx.selectedKey
+          }),
+          onMouseenter: function onMouseenter($event) {
+            return _ctx.mouseenter(item);
+          },
+          onMouseleave: function onMouseleave($event) {
+            return _ctx.mouseleave(item);
+          },
+          onClick: withModifiers(function ($event) {
+            return _ctx.click(item);
+          }, ["stop"])
+        }, [createElementVNode("span", _hoisted_3, [createVNode(_component_tool_tip, {
+          content: item.label,
+          direction: "right",
+          x: 15,
+          disabled: !(_ctx.layer === 0 && !item.children && _ctx.menuProps.collapse)
+        }, {
+          default: withCtx(function () {
+            return [item.icon ? (openBlock(), createBlock(_component_Icon, {
+              key: 0,
+              name: "item.icon",
+              class: "icon"
+            })) : createCommentVNode("v-if", true)];
+          }),
+          _: 2
+          /* DYNAMIC */
+
+        }, 1032
+        /* PROPS, DYNAMIC_SLOTS */
+        , ["content", "disabled"]), createElementVNode("span", _hoisted_4, toDisplayString(item.label), 1
+        /* TEXT */
+        ), item.children ? (openBlock(), createBlock(_component_Icon, {
+          key: 0,
+          name: "arrow-down",
+          class: "icon-arrow"
+        })) : createCommentVNode("v-if", true)]), item.children ? (openBlock(), createBlock(_component_menu_item, {
+          key: 0,
+          items: item.children,
+          itemUl: item,
+          layer: _ctx.layer + 1,
+          onClick: _ctx.clickEmit,
+          onSelect: _ctx.select
+        }, null, 8
+        /* PROPS */
+        , ["items", "itemUl", "layer", "onClick", "onSelect"])) : createCommentVNode("v-if", true)], 42
+        /* CLASS, PROPS, HYDRATE_EVENTS */
+        , _hoisted_2);
+      }), 128
+      /* KEYED_FRAGMENT */
+      ))], 10
+      /* CLASS, PROPS */
+      , _hoisted_1), [[vShow, !_ctx.itemUl || _ctx.visibleList.includes(_ctx.itemUl.key)]])];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["onBeforeEnter", "onAfterEnter", "onAfterLeave", "onBeforeLeave"]);
+}
+
+script$1.render = render$1;
+script$1.__file = "src/components/Menu/MenuItem.vue";
+
+var script = defineComponent({
+  name: "myMenu",
+  emits: ['click', 'select'],
+  components: {
+    MenuItem: script$1
+  },
+  props: {
+    // 显示模式：横向、竖向
+    mode: {
+      type: String,
+      default: 'vertical',
+      validator: function validator(value) {
+        return ['horizontal', 'vertical'].includes(value);
+      }
+    },
+    items: {
+      type: Array
+    },
+    classname: {
+      type: String,
+      default: ''
+    },
+    // 是否开启折叠
+    collapse: {
+      type: Boolean,
+      default: false
+    },
+    // 子菜单展开的触发方式(hover只在 mode 为 horizontal 时有效)
+    trigger: {
+      type: String,
+      default: 'hover',
+      validator: function validator(value) {
+        return ['hover', 'click'].includes(value);
+      }
+    },
+    theme: {
+      type: String,
+      default: 'light',
+      validator: function validator(value) {
+        return ['light', 'dark'].includes(value);
+      }
+    },
+    // 子菜单项高，仅在mode为vertical时，用于计算高度平滑动画效果
+    liheight: {
+      type: Number,
+      default: 40
+    },
+    openkeys: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    },
+    selectedKey: {
+      type: String,
+      default: ''
+    },
+    router: {
+      type: Boolean
+    }
+  },
+  setup: function setup(props, context) {
+    provide('MenuProps', props); // 展开的项集合
+
+    var visibleList = ref(props.openkeys);
+    provide('MenuVisibleList', visibleList); //非响应式的，需要一个对应的方法
+
+    provide('MenuVisibleListChange', function (key, add) {
+      if (add) {
+        visibleList.value.push(key);
+      } else {
+        var index = visibleList.value.indexOf(key);
+        visibleList.value.splice(index, 1);
+      }
+    }); // 当前选中项
+
+    var selectKey = ref(props.selectedKey);
+    provide('MenuSelectKey', selectKey);
+    provide('MenuSelectKeyChange', function (val) {
+      selectKey.value = val;
+    }); // 收起全部
+
+    var slideUp = function slideUp() {
+      visibleList.value = [];
+      selectKey.value = '';
+    };
+
+    var click = function click(item) {
+      context.emit('click', item);
+    };
+
+    var select = function select(item) {
+      context.emit('select', item);
+    };
+
+    onMounted(function () {
+      if (props.trigger === 'click' && props.mode === 'horizontal') {
+        document.addEventListener('click', slideUp, false);
+      }
+    });
+    onBeforeUnmount(function () {
+      if (props.trigger === 'click' && props.mode === 'horizontal') {
+        document.removeEventListener('click', slideUp, false);
+      }
+    });
+    return {
+      visibleList: visibleList,
+      selectKey: selectKey,
+      click: click,
+      select: select
+    };
+  }
+});
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _normalizeClass2;
+
+  var _component_menu_item = resolveComponent("menu-item");
+
+  return openBlock(), createElementBlock("div", {
+    class: normalizeClass((_normalizeClass2 = {
+      'menu': true
+    }, _defineProperty(_normalizeClass2, _ctx.mode, true), _defineProperty(_normalizeClass2, _ctx.theme, true), _defineProperty(_normalizeClass2, "collapse", _ctx.collapse && _ctx.mode == 'vertical'), _normalizeClass2))
+  }, [createVNode(_component_menu_item, {
+    items: _ctx.items,
+    onClick: _ctx.click,
+    onSelect: _ctx.select
+  }, null, 8
+  /* PROPS */
+  , ["items", "onClick", "onSelect"])], 2
+  /* CLASS */
+  );
+}
+
 script.render = render;
-script.__file = "src/components/Tooltip/ToolTip.vue";
+script.__file = "src/components/Menu/MyMenu.vue";
 
 script.install = function (Vue) {
   Vue.component(script.name, script);
+};
+
+script$1.install = function (Vue) {
+  Vue.component(script$1.name, script$1);
+};
+
+script$2.install = function (Vue) {
+  Vue.component(script$2.name, script$2);
 };
 
 var install = function install(app) {
@@ -1567,4 +1621,4 @@ var UI = {
   install: install
 }; // 支持按需导入
 
-export { script$c as Button, script$d as Icon, script$2 as MenuItem, script$8 as MyAside, script$9 as MyCol, script$7 as MyContainer, script$6 as MyFooter, script$5 as MyHeader, script$3 as MyInput, script$4 as MyMain, script$1 as MyMenu, script$a as MyRow, script$b as Select, script as ToolTip, UI as default };
+export { script$c as Button, script$d as Icon, script$1 as MenuItem, script$8 as MyAside, script$9 as MyCol, script$7 as MyContainer, script$6 as MyFooter, script$5 as MyHeader, script$3 as MyInput, script$4 as MyMain, script as MyMenu, script$a as MyRow, script$b as Select, script$2 as ToolTip, UI as default };

@@ -7,16 +7,34 @@
     @before-leave="beforeEvent"
   >
     <ul 
-    
+      :class="{['layer-'+layer]:true,'is-child':itemUl}"
+      v-show="!itemUl||visibleList.includes(itemUl.key)"
+      :data-height="getUlHeight(itemUl)"
     >
       <li
         v-for="item in items"
         :key="item.key"
+        :class="{
+          disabled:item.disabled,
+          'is-down':visibleList.includes(item.key),
+          selected:item.key == selectedKey
+        }"
         @mouseenter="mouseenter(item)"
         @mouseleave="mouseleave(item)"
-        @click="click(item, $event)"
+        @click.stop="click(item)"
       >
-      <span class="name">{{ item.label }}</span>
+      <span class="menu-title">
+        <tool-tip
+          :content="item.label"
+          direction="right"
+          :x="15"
+          :disabled="!(layer === 0 && !item.children && menuProps.collapse)"
+        >
+        <Icon name="item.icon" v-if="item.icon" class="icon"></Icon>
+        </tool-tip>
+        <span class="name">{{ item.label }}</span>
+        <Icon name="arrow-down" v-if="item.children" class="icon-arrow"></Icon>
+      </span>
       <menu-item
         v-if="item.children"
         :items="item.children"
@@ -32,9 +50,15 @@
 </template>
 <script>
 import { defineComponent,watch,ref,computed,inject } from 'vue'
+import ToolTip from '../Tooltip/ToolTip.vue'
+import Icon from '../Icon/icon.vue'
 export default defineComponent({
   name:"MenuItem",
   emits:['click','select'],
+  components:{
+    ToolTip,
+    Icon
+},
   props:{
     items:{
       type:Array
@@ -73,7 +97,7 @@ export default defineComponent({
         pushOrSplice(item,add)
       }
     }
-    const click = (item,event)=>{
+    const click = (item)=>{
       if(item.disabled){
         return
       }
@@ -87,7 +111,6 @@ export default defineComponent({
         // menuProps.router && router.push(item.key)
       }
       context.emit('click', item)
-      event.stopPropagation()
     }
     const pushOrSplice = (item, add) => {
       if (item.disabled) {
@@ -145,3 +168,6 @@ export default defineComponent({
 })
 
 </script>
+<style lang="scss">
+  @import './styles.scss';
+</style>

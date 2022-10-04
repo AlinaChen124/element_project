@@ -29,6 +29,7 @@
     }
     .header{
       background-color: #c0d7ef;
+      
     }
     .aside{
       background-color: antiquewhite;
@@ -42,9 +43,9 @@
   <div id="app">
     <div >
       <my-container>
-        <my-header class="header">Header</my-header>
+        <my-header class="header" height="40px"><my-menu :items=items mode="horizontal" trigger='click' /></my-header>
         <my-container>
-          <my-aside width="200px" class="aside"><my-menu :items=items mode="horizontal" trigger='click' /></my-aside>
+          <my-aside width="200px" class="aside"><my-menu :items=items mode="vertical" trigger='click' /></my-aside>
           <my-container>
             <my-main>
               <div class="button">
