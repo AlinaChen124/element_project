@@ -7,6 +7,7 @@ import {MyAside,MyContainer,MyFooter,MyHeader,MyMain} from "./components/Contain
 import MyInput from "./components/MyInput/index.js";
 import { MyMenu,MenuItem } from "./components/Menu/index.js";
 import ToolTip from "./components/Tooltip/index.js";
+import PopoverItem from "./components/Popover/index.js";
 const install = (app)=>{
   app.use(Button)
 }
@@ -28,7 +29,8 @@ export {
   MyInput,
   MyMenu,
   MenuItem,
-  ToolTip
+  ToolTip,
+  PopoverItem
 }
 // 支持全局导入
 export default UI 

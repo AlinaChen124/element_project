@@ -58,7 +58,7 @@ export default defineComponent({
   components:{
     ToolTip,
     Icon
-},
+  },
   props:{
     items:{
       type:Array
@@ -119,6 +119,7 @@ export default defineComponent({
       if (add) {
         // 有子级时才处理
         if (item.children && !visibleList.value.includes(item.key)) {
+          // 将子级目录添加到可视列表中
           menuVisibleListChange && menuVisibleListChange(item.key, add)
         }
       } else {

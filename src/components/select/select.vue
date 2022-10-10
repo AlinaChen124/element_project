@@ -1,44 +1,51 @@
 <template>
-  <div class="y-select" ref="selectRef" @click.prevent="selectOpen">
+  <div
+    :class="[selectClass,customClass]"
+    :style="[
+      customClass?{}:{ width:parseInt(width)<100?'100px':width}
+    ]"
+  >
+  <div :class="selectInputClass" ref="selectRef" @click.prevent="selectOpen">
     <input 
       type="text" 
       readonly
+      :style="[customClass?{}:customStyle]"
+      :class="[selValue ==''?'select-input':'select-input-value']"
+      :disabled = disabled
       :value="selValue"
       @input="input"
       :placeholder="selValue ==''?placeholder:selValue"
       >
-    <Icon name="arrow-down" class="right-icon" :style="{transform:rotate}"></Icon>
-    <Transition name="slide-fade">
-      <div class="select-option-box" v-if="optionShow">
-        <div class="select-option-find">
-          <ul>
-            <li
-              class="select-option-li"
-              v-for="(item,index) in optionsData" 
-              key="index" 
-              @click="change(item,index)"
-              :class="{
-                'select-active':
-                activeIndex==index||
-                selValue == item[labelFiled]||item.selected,
-                'select-disabled':item.disabled,
-              }">{{item[labelFiled]}}
-              <Icon name="success" v-if="multiple&&item.selected" class="icon"></Icon>
-            </li>
-
-          </ul>
-
-        </div>
-        
-      </div>
-    </Transition>
+    <Icon name="arrow-down" :style="[{transform:rotate},fixIcon]" :class="iconClass"></Icon>
   </div>
+  <Transition name="slide-fade">
+    <div class="select-option-box" v-if="optionShow">
+      <div class="select-option-find">
+        <ul>
+          <li
+            class="select-option-li"
+            v-for="(item,index) in optionsData" 
+            key="index" 
+            @click="change(item,index)"
+            :class="{
+              'select-active':
+              activeIndex==index||
+              selValue == item[labelFiled]||item.selected,
+              'select-disabled':item.disabled,
+            }">{{item[labelFiled]}}
+            <Icon name="success" v-if="multiple&&item.selected" class="icon"></Icon>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </Transition>
+</div>
 </template>
 
 <script>
 import useClickOutside from '../../hooks/useClickOutside.js'
 import Icon from '../Icon/icon.vue';
-import { defineComponent,watch,ref, onMounted} from 'vue';
+import { defineComponent,watch,ref, reactive,computed} from 'vue';
 const optionShow = ref(false)
 const selectRef = ref(null)
   const rotate = ref("rotate(0deg)")
@@ -52,6 +59,7 @@ const selectRef = ref(null)
     props:{
       placeholder:String,
       modelValue: String | Array,
+      customClass:String,
       disabled: Boolean,
       multiple: Boolean,
       searchable:Boolean,
@@ -68,6 +76,18 @@ const selectRef = ref(null)
       valueFiled: {
         type: String,
         default: "value",
+      },
+      size: {
+        type: String,
+        default: "default",
+      },
+      width: {
+        type: String,
+        default: "260px",
+      },
+      height: {
+        type: String,
+        default: "",
       },
     },
     setup(props,context){
@@ -87,7 +107,42 @@ const selectRef = ref(null)
           }
         })
       }
-    })
+      })
+      /* 1.增加选择框width和height属性的大小限制，高度最小是25px，width属性最小是100px
+      2.动态计算下拉图标的行高 */
+      const fixIcon = reactive({})
+      // icon class
+      const iconClass = computed(()=>{
+        return ["select-icon"]
+      })
+      //根据自定义的组件尺寸适配组件里面的下拉框相对位置以及图标居中
+      const customStyle = computed(() => {
+        let styles = {};
+        if (props.height) {
+          let height = parseInt(props.height) < 25 ? "25px" : props.height;
+          styles.height = height;
+          fixIcon.lineHeight = height;
+          fixIcon.top = 0;
+          fixIcon.height = "100%";
+        }
+        return styles;
+      });
+      // select class
+      const selectClass = computed(()=>{
+        return [
+          `select-${props.size}`,
+          props.disabled? `select-${props.size}-disabled`:'',
+        ]
+      })
+      // select input class
+      const selectInputClass = computed(() => {
+        return [
+          "select-input-box",
+          `select-input-${props.size}`,
+          props.disabled ? `select-input-${props.size}-disabled` : "",
+        ];
+      });
+
     const selectOpen = ()=>{
       optionShow.value = !optionShow.value
       if(optionShow.value){
@@ -158,7 +213,12 @@ const selectRef = ref(null)
       activeIndex,
       input,
       change,
-      rotate
+      rotate,
+      iconClass,
+      fixIcon,
+      customStyle,
+      selectClass,
+      selectInputClass
     }
   }
 })

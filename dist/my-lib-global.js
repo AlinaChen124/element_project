@@ -69,7 +69,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   }(window);
 
-  var script$d = vue.defineComponent({
+  var script$e = vue.defineComponent({
     name: "Icon",
     props: {
       name: {
@@ -87,26 +87,26 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$6 = {
+  var _hoisted_1$7 = {
     class: "icon",
     "aria-hidden": "true"
   };
-  var _hoisted_2$4 = ["xlink:href"];
-  function render$d(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$6, [vue.createElementVNode("use", {
+  var _hoisted_2$5 = ["xlink:href"];
+  function render$e(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$7, [vue.createElementVNode("use", {
       "xlink:href": _ctx.iconName
     }, null, 8
     /* PROPS */
-    , _hoisted_2$4)]);
+    , _hoisted_2$5)]);
   }
 
-  script$d.render = render$d;
-  script$d.__file = "src/components/Icon/icon.vue";
+  script$e.render = render$e;
+  script$e.__file = "src/components/Icon/icon.vue";
 
-  var script$c = vue.defineComponent({
+  var script$d = vue.defineComponent({
     name: 'Button',
     components: {
-      Icon: script$d
+      Icon: script$e
     },
     props: {
       type: {
@@ -156,12 +156,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$5 = ["disabled", "text"];
-  var _hoisted_2$3 = {
+  var _hoisted_1$6 = ["disabled", "text"];
+  var _hoisted_2$4 = {
     key: 0,
     class: "icon"
   };
-  function render$c(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$d(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
     return vue.openBlock(), vue.createElementBlock("button", {
@@ -171,25 +171,25 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       onClick: _cache[0] || (_cache[0] = function () {
         return _ctx.handleClick && _ctx.handleClick.apply(_ctx, arguments);
       })
-    }, [_ctx.icon ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_2$3, [vue.createVNode(_component_Icon, {
+    }, [_ctx.icon ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_2$4, [vue.createVNode(_component_Icon, {
       name: _ctx.icon
     }, null, 8
     /* PROPS */
     , ["name"])])) : vue.createCommentVNode("v-if", true), vue.renderSlot(_ctx.$slots, "default")], 10
     /* CLASS, PROPS */
-    , _hoisted_1$5);
+    , _hoisted_1$6);
   }
 
-  script$c.render = render$c;
-  script$c.__scopeId = "data-v-4439b54f";
-  script$c.__file = "src/components/Button/Button.vue";
-
-  script$c.install = function (Vue) {
-    Vue.component(script$c.name, script$c);
-  };
+  script$d.render = render$d;
+  script$d.__scopeId = "data-v-4439b54f";
+  script$d.__file = "src/components/Button/Button.vue";
 
   script$d.install = function (Vue) {
     Vue.component(script$d.name, script$d);
+  };
+
+  script$e.install = function (Vue) {
+    Vue.component(script$e.name, script$e);
   };
 
   var useClickOutside = function useClickOutside(elementRef) {
@@ -219,11 +219,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   var selectRef = vue.ref(null);
   var rotate = vue.ref("rotate(0deg)");
   var activeIndex = vue.ref(-1);
-  var script$b = vue.defineComponent({
+  var script$c = vue.defineComponent({
     name: "Select",
     emits: ["update:modelValue"],
     components: {
-      Icon: script$d
+      Icon: script$e
     },
     props: {
       placeholder: String,
@@ -400,16 +400,16 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$4 = ["disabled", "value", "placeholder"];
-  var _hoisted_2$2 = {
+  var _hoisted_1$5 = ["disabled", "value", "placeholder"];
+  var _hoisted_2$3 = {
     key: 0,
     class: "select-option-box"
   };
-  var _hoisted_3$1 = {
+  var _hoisted_3$2 = {
     class: "select-option-find"
   };
   var _hoisted_4$1 = ["onClick"];
-  function render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$c(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
     return vue.openBlock(), vue.createElementBlock("div", {
@@ -436,7 +436,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       placeholder: _ctx.selValue == '' ? _ctx.placeholder : _ctx.selValue
     }, null, 46
     /* CLASS, STYLE, PROPS, HYDRATE_EVENTS */
-    , _hoisted_1$4), vue.createVNode(_component_Icon, {
+    , _hoisted_1$5), vue.createVNode(_component_Icon, {
       name: "arrow-down",
       style: vue.normalizeStyle([{
         transform: _ctx.rotate
@@ -450,7 +450,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       name: "slide-fade"
     }, {
       default: vue.withCtx(function () {
-        return [_ctx.optionShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$2, [vue.createElementVNode("div", _hoisted_3$1, [vue.createElementVNode("ul", null, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.optionsData, function (item, index) {
+        return [_ctx.optionShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$3, [vue.createElementVNode("div", _hoisted_3$2, [vue.createElementVNode("ul", null, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.optionsData, function (item, index) {
           return vue.openBlock(), vue.createElementBlock("li", {
             class: vue.normalizeClass(["select-option-li", {
               'select-active': _ctx.activeIndex == index || _ctx.selValue == item[_ctx.labelFiled] || item.selected,
@@ -481,14 +481,14 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$b.render = render$b;
-  script$b.__file = "src/components/Select/select.vue";
+  script$c.render = render$c;
+  script$c.__file = "src/components/Select/select.vue";
 
-  script$b.install = function (Vue) {
-    Vue.component(script$b.name, script$b);
+  script$c.install = function (Vue) {
+    Vue.component(script$c.name, script$c);
   };
 
-  var script$a = vue.defineComponent({
+  var script$b = vue.defineComponent({
     name: "MyRow",
     props: {
       gutter: {
@@ -568,7 +568,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$a(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$b(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("div", {
       class: vue.normalizeClass(_ctx.className),
       ref: "row"
@@ -577,15 +577,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$a.render = render$a;
-  script$a.__scopeId = "data-v-2a2adb2d";
-  script$a.__file = "src/components/MyRow/MyRow.vue";
+  script$b.render = render$b;
+  script$b.__scopeId = "data-v-2a2adb2d";
+  script$b.__file = "src/components/MyRow/MyRow.vue";
 
-  script$a.install = function (Vue) {
-    Vue.component(script$a.name, script$a);
+  script$b.install = function (Vue) {
+    Vue.component(script$b.name, script$b);
   };
 
-  var script$9 = vue.defineComponent({
+  var script$a = vue.defineComponent({
     name: "MyCol",
     props: {
       span: {
@@ -615,7 +615,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$a(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("div", {
       class: vue.normalizeClass(_ctx.colClassName)
     }, [vue.renderSlot(_ctx.$slots, "default")], 2
@@ -623,15 +623,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$9.render = render$9;
-  script$9.__scopeId = "data-v-9edd600e";
-  script$9.__file = "src/components/MyCol/MyCol.vue";
+  script$a.render = render$a;
+  script$a.__scopeId = "data-v-9edd600e";
+  script$a.__file = "src/components/MyCol/MyCol.vue";
 
-  script$9.install = function (Vue) {
-    Vue.component(script$9.name, script$9);
+  script$a.install = function (Vue) {
+    Vue.component(script$a.name, script$a);
   };
 
-  var script$8 = vue.defineComponent({
+  var script$9 = vue.defineComponent({
     name: "MyAside",
     props: {
       width: {
@@ -641,7 +641,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$9(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("aside", {
       class: "my-aside",
       style: vue.normalizeStyle({
@@ -652,11 +652,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$8.render = render$8;
-  script$8.__scopeId = "data-v-d5507784";
-  script$8.__file = "src/components/Container/MyAside.vue";
+  script$9.render = render$9;
+  script$9.__scopeId = "data-v-d5507784";
+  script$9.__file = "src/components/Container/MyAside.vue";
 
-  var script$7 = vue.defineComponent({
+  var script$8 = vue.defineComponent({
     name: "MyContainer",
     props: {
       direction: {
@@ -686,7 +686,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$8(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("section", {
       class: vue.normalizeClass(["container", {
         'is-vertical': _ctx.isVertical
@@ -696,11 +696,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$7.render = render$7;
-  script$7.__scopeId = "data-v-aea0cff2";
-  script$7.__file = "src/components/Container/MyContainer.vue";
+  script$8.render = render$8;
+  script$8.__scopeId = "data-v-aea0cff2";
+  script$8.__file = "src/components/Container/MyContainer.vue";
 
-  var script$6 = vue.defineComponent({
+  var script$7 = vue.defineComponent({
     name: "MyFooter",
     props: {
       height: {
@@ -710,7 +710,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$7(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("footer", {
       class: "my-footer",
       style: vue.normalizeStyle({
@@ -721,11 +721,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$6.render = render$6;
-  script$6.__scopeId = "data-v-4b468805";
-  script$6.__file = "src/components/Container/MyFooter.vue";
+  script$7.render = render$7;
+  script$7.__scopeId = "data-v-4b468805";
+  script$7.__file = "src/components/Container/MyFooter.vue";
 
-  var script$5 = vue.defineComponent({
+  var script$6 = vue.defineComponent({
     name: "MyHeader",
     props: {
       height: {
@@ -735,7 +735,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$6(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("header", {
       class: "my-header",
       style: vue.normalizeStyle({
@@ -746,24 +746,28 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$5.render = render$5;
-  script$5.__scopeId = "data-v-6c78ebf7";
-  script$5.__file = "src/components/Container/MyHeader.vue";
+  script$6.render = render$6;
+  script$6.__scopeId = "data-v-6c78ebf7";
+  script$6.__file = "src/components/Container/MyHeader.vue";
 
-  var script$4 = vue.defineComponent({
+  var script$5 = vue.defineComponent({
     name: "MyMain"
   });
 
-  var _hoisted_1$3 = {
+  var _hoisted_1$4 = {
     class: "my-main"
   };
-  function render$4(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("main", _hoisted_1$3, [vue.renderSlot(_ctx.$slots, "default")]);
+  function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("main", _hoisted_1$4, [vue.renderSlot(_ctx.$slots, "default")]);
   }
 
-  script$4.render = render$4;
-  script$4.__scopeId = "data-v-75f6c5a3";
-  script$4.__file = "src/components/Container/MyMain.vue";
+  script$5.render = render$5;
+  script$5.__scopeId = "data-v-75f6c5a3";
+  script$5.__file = "src/components/Container/MyMain.vue";
+
+  script$9.install = function (Vue) {
+    Vue.component(script$9.name, script$9);
+  };
 
   script$8.install = function (Vue) {
     Vue.component(script$8.name, script$8);
@@ -781,15 +785,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     Vue.component(script$5.name, script$5);
   };
 
-  script$4.install = function (Vue) {
-    Vue.component(script$4.name, script$4);
-  };
-
-  var script$3 = vue.defineComponent(_defineProperty({
+  var script$4 = vue.defineComponent(_defineProperty({
     emits: ["update:modelValue", "focus", "clear", "blur", "input"],
     name: "MyInput",
     components: {
-      Icon: script$d
+      Icon: script$e
     },
     props: {
       modelValue: String | Number,
@@ -885,11 +885,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       };
     }
   }, "components", {
-    Icon: script$d
+    Icon: script$e
   }));
 
-  var _hoisted_1$2 = ["type", "value", "disabled", "placeholder", "readonly", "form"];
-  function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  var _hoisted_1$3 = ["type", "value", "disabled", "placeholder", "readonly", "form"];
+  function render$4(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
     return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [vue.createElementVNode("div", {
@@ -922,7 +922,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       form: _ctx.form
     }, null, 40
     /* PROPS, HYDRATE_EVENTS */
-    , _hoisted_1$2), vue.createVNode(vue.Transition, {
+    , _hoisted_1$3), vue.createVNode(vue.Transition, {
       name: "slide-fade"
     }, {
       default: vue.withCtx(function () {
@@ -956,11 +956,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$3.render = render$3;
-  script$3.__file = "src/components/MyInput/MyInput.vue";
+  script$4.render = render$4;
+  script$4.__file = "src/components/MyInput/MyInput.vue";
 
-  script$3.install = function (Vue) {
-    Vue.component(script$3.name, script$3);
+  script$4.install = function (Vue) {
+    Vue.component(script$4.name, script$4);
   };
 
   var getOffset = function getOffset(el) {
@@ -990,11 +990,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     };
   };
 
-  var script$2 = vue.defineComponent({
+  var script$3 = vue.defineComponent({
     name: "ToolTip",
     emits: ['click'],
     components: {
-      Icon: script$d
+      Icon: script$e
     },
     props: {
       content: {
@@ -1242,14 +1242,14 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$1 = /*#__PURE__*/vue.createElementVNode("i", {
+  var _hoisted_1$2 = /*#__PURE__*/vue.createElementVNode("i", {
     class: "arrow"
   }, null, -1
   /* HOISTED */
   );
 
-  var _hoisted_2$1 = ["innerHTML"];
-  function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  var _hoisted_2$2 = ["innerHTML"];
+  function render$3(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("span", {
       ref: "el",
       class: vue.normalizeClass(_ctx.tooltip - _ctx.box)
@@ -1263,12 +1263,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
           class: vue.normalizeClass(['tooltip', _ctx.direction, _ctx.className]),
           style: vue.normalizeStyle(_ctx.state.tooltipStyle),
           onClick: _cache[0] || (_cache[0] = vue.withModifiers(function () {}, ["stop"]))
-        }, [_hoisted_1$1, _ctx.content ? (vue.openBlock(), vue.createElementBlock("span", {
+        }, [_hoisted_1$2, _ctx.content ? (vue.openBlock(), vue.createElementBlock("span", {
           key: 0,
           innerHTML: _ctx.content
         }, null, 8
         /* PROPS */
-        , _hoisted_2$1)) : vue.renderSlot(_ctx.$slots, "content", {
+        , _hoisted_2$2)) : vue.renderSlot(_ctx.$slots, "content", {
           key: 1
         })], 6
         /* CLASS, STYLE */
@@ -1282,15 +1282,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$2.render = render$2;
-  script$2.__file = "src/components/Tooltip/ToolTip.vue";
+  script$3.render = render$3;
+  script$3.__file = "src/components/Tooltip/ToolTip.vue";
 
-  var script$1 = vue.defineComponent({
+  var script$2 = vue.defineComponent({
     name: "MenuItem",
     emits: ['click', 'select'],
     components: {
-      ToolTip: script$2,
-      Icon: script$d
+      ToolTip: script$3,
+      Icon: script$e
     },
     props: {
       items: {
@@ -1357,6 +1357,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
         if (add) {
           // 有子级时才处理
           if (item.children && !visibleList.value.includes(item.key)) {
+            // 将子级目录添加到可视列表中
             menuVisibleListChange && menuVisibleListChange(item.key, add);
           }
         } else {
@@ -1414,15 +1415,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1 = ["data-height"];
-  var _hoisted_2 = ["onMouseenter", "onMouseleave", "onClick"];
-  var _hoisted_3 = {
+  var _hoisted_1$1 = ["data-height"];
+  var _hoisted_2$1 = ["onMouseenter", "onMouseleave", "onClick"];
+  var _hoisted_3$1 = {
     class: "menu-title"
   };
   var _hoisted_4 = {
     class: "name"
   };
-  function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$2(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
     var _component_tool_tip = vue.resolveComponent("tool-tip");
@@ -1460,7 +1461,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
             onClick: vue.withModifiers(function ($event) {
               return _ctx.click(item);
             }, ["stop"])
-          }, [vue.createElementVNode("span", _hoisted_3, [vue.createVNode(_component_tool_tip, {
+          }, [vue.createElementVNode("span", _hoisted_3$1, [vue.createVNode(_component_tool_tip, {
             content: item.label,
             direction: "right",
             x: 15,
@@ -1495,12 +1496,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
           /* PROPS */
           , ["items", "itemUl", "layer", "onClick", "onSelect"])) : vue.createCommentVNode("v-if", true)], 42
           /* CLASS, PROPS, HYDRATE_EVENTS */
-          , _hoisted_2);
+          , _hoisted_2$1);
         }), 128
         /* KEYED_FRAGMENT */
         ))], 10
         /* CLASS, PROPS */
-        , _hoisted_1), [[vue.vShow, !_ctx.itemUl || _ctx.visibleList.includes(_ctx.itemUl.key)]])];
+        , _hoisted_1$1), [[vue.vShow, !_ctx.itemUl || _ctx.visibleList.includes(_ctx.itemUl.key)]])];
       }),
       _: 1
       /* STABLE */
@@ -1510,14 +1511,14 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     , ["onBeforeEnter", "onAfterEnter", "onAfterLeave", "onBeforeLeave"]);
   }
 
-  script$1.render = render$1;
-  script$1.__file = "src/components/Menu/MenuItem.vue";
+  script$2.render = render$2;
+  script$2.__file = "src/components/Menu/MenuItem.vue";
 
-  var script = vue.defineComponent({
+  var script$1 = vue.defineComponent({
     name: "myMenu",
     emits: ['click', 'select'],
     components: {
-      MenuItem: script$1
+      MenuItem: script$2
     },
     props: {
       // 显示模式：横向、竖向
@@ -1627,7 +1628,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     var _normalizeClass2;
 
     var _component_menu_item = vue.resolveComponent("menu-item");
@@ -1647,12 +1648,8 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script.render = render;
-  script.__file = "src/components/Menu/MyMenu.vue";
-
-  script.install = function (Vue) {
-    Vue.component(script.name, script);
-  };
+  script$1.render = render$1;
+  script$1.__file = "src/components/Menu/MyMenu.vue";
 
   script$1.install = function (Vue) {
     Vue.component(script$1.name, script$1);
@@ -1662,28 +1659,268 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     Vue.component(script$2.name, script$2);
   };
 
+  script$3.install = function (Vue) {
+    Vue.component(script$3.name, script$3);
+  };
+
+  var script = vue.defineComponent({
+    name: 'PopoverItem',
+    emits: ['after-enter', 'after-leave'],
+    props: {
+      width: {
+        type: [Number, String]
+      },
+      placement: {
+        //popover展示的位置，可选方向与tooltip相同
+        type: String,
+        default: 'top'
+      },
+      content: {
+        //popover中的内容
+        type: [String]
+      },
+      popclass: {
+        //popover自定义样式
+        type: [String]
+      },
+      title: {
+        // popover标题
+        type: [String]
+      },
+      transition: {
+        // popover弹出动画设置
+        type: String,
+        default: 'slide-fade'
+      },
+      disabled: {
+        // popover禁用
+        type: Boolean,
+        default: false
+      },
+      trigger: {
+        // 触发方式-hover，focus，click，manual
+        type: String,
+        default: 'click'
+      },
+      modelVal: {
+        type: Boolean,
+        default: true
+      }
+    },
+    setup: function setup(props, _ref) {
+      var emit = _ref.emit;
+      var visible = vue.ref(false); // 设置一个计算属性用于检测popover是显示还是隐藏
+
+      var showPopover = vue.computed(function () {
+        if (props.trigger !== 'manual') {
+          return visible.value;
+        } else {
+          console.log(props.modelValue); //自定义触发
+
+          return props.modelValue;
+        }
+      });
+      var popoverStyles = vue.computed(function () {
+        var _props$width;
+
+        var style = {}; // ??空值合并操作符：只有当左侧为null和undefined时，才会返回右侧的数
+
+        if ((_props$width = props.width) !== null && _props$width !== void 0 ? _props$width : null) {
+          style.width = props.width + 'px';
+        }
+
+        return style;
+      }); // 设置reference和arrow的位置
+
+      var referrence = vue.ref(null);
+      var popoverArrow = vue.ref(null);
+      vue.onMounted(function () {
+        if (props.placement.includes('top') || props.placement.includes('bottom')) {
+          var clientWidth = referrence.value.clientWidth;
+          popoverArrow.value.style.setProperty('--geticonsite', clientWidth / 2 + 'px');
+        } else if (props.placement.includes('left') || props.placement.includes('right')) {
+          var clientHeight = referrence.value.clientHeight;
+          popoverArrow.value.style.setProperty('--geticonsite', clientHeight / 2 + 'px');
+        }
+      }); // popover显示触发过程
+      // 点击触发
+
+      var clickTriggerHandler = function clickTriggerHandler() {
+        if (props.trigger.toLowerCase() == 'click') {
+          if (!props.disabled) {
+            visible.value = !visible.value;
+          }
+        }
+      }; // 聚焦触发
+
+
+      var focusTriggerHandler = function focusTriggerHandler() {
+        if (props.trigger.toLowerCase() == 'focus') {
+          if (!props.disabled) {
+            visible.value = true;
+          }
+        }
+      }; // 失焦消失
+
+
+      var blurTriggerHandler = function blurTriggerHandler() {
+        if (props.trigger.toLowerCase() == 'focus') {
+          if (!props.disabled) {
+            visible.value = false;
+          }
+        }
+      }; // 鼠标移入触发-hover
+
+
+      var timer = vue.ref(null);
+
+      var mouseenterTriggerHandler = function mouseenterTriggerHandler() {
+        if (props.trigger.toLowerCase() == 'hover') {
+          if (!props.disabled) {
+            clearTimeout(timer.value);
+            visible.value = true;
+          }
+        }
+      }; // 鼠标移出触发
+
+
+      var mouseleaveTriggerHandler = function mouseleaveTriggerHandler() {
+        if (props.trigger.toLowerCase() == 'hover') {
+          if (!props.disabled) {
+            timer.value = setTimeout(function () {
+              visible.value = false;
+            }, 300);
+          }
+        }
+      }; //弹窗显示时触发
+
+
+      var handleAfterEnter = function handleAfterEnter() {
+        emit('after-enter');
+      }; //弹窗消时时触发
+
+
+      var handleAfterLeave = function handleAfterLeave() {
+        emit('after-leave');
+      };
+
+      return {
+        visible: visible,
+        showPopover: showPopover,
+        popoverStyles: popoverStyles,
+        referrence: referrence,
+        popoverArrow: popoverArrow,
+        clickTriggerHandler: clickTriggerHandler,
+        focusTriggerHandler: focusTriggerHandler,
+        blurTriggerHandler: blurTriggerHandler,
+        mouseenterTriggerHandler: mouseenterTriggerHandler,
+        mouseleaveTriggerHandler: mouseleaveTriggerHandler,
+        handleAfterEnter: handleAfterEnter,
+        handleAfterLeave: handleAfterLeave
+      };
+    }
+  });
+
+  var _hoisted_1 = ["aria-hidden"];
+  var _hoisted_2 = {
+    class: "popover-arrow",
+    ref: "popoverArrow"
+  };
+  var _hoisted_3 = {
+    key: 0,
+    class: "popover-title"
+  };
+  function render(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("div", {
+      class: "popover-box",
+      onMouseenter: _cache[3] || (_cache[3] = function () {
+        return _ctx.mouseenterTriggerHandler && _ctx.mouseenterTriggerHandler.apply(_ctx, arguments);
+      }),
+      onMouseleave: _cache[4] || (_cache[4] = function () {
+        return _ctx.mouseleaveTriggerHandler && _ctx.mouseleaveTriggerHandler.apply(_ctx, arguments);
+      })
+    }, [vue.createVNode(vue.Transition, {
+      name: _ctx.transition,
+      onAfterEnter: _ctx.handleAfterEnter,
+      onAfterLeave: _ctx.handleAfterLeave,
+      persisted: ""
+    }, {
+      default: vue.withCtx(function () {
+        return [vue.withDirectives(vue.createElementVNode("div", {
+          class: vue.normalizeClass(['popover-outbox', _ctx.placement, _ctx.popoverClass]),
+          "aria-hidden": _ctx.disabled || !_ctx.showPopover ? 'true' : 'false'
+        }, [vue.createCommentVNode(" popover arrow "), vue.createElementVNode("i", _hoisted_2, null, 512
+        /* NEED_PATCH */
+        ), vue.createCommentVNode(" popover content "), vue.createElementVNode("div", {
+          style: vue.normalizeStyle(_ctx.popoverStyles),
+          class: vue.normalizeClass(['popover-box-content'])
+        }, [_ctx.title ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, vue.toDisplayString(_ctx.title), 1
+        /* TEXT */
+        )) : vue.createCommentVNode("v-if", true), vue.renderSlot(_ctx.$slots, "default", {}, function () {
+          return [vue.createTextVNode(vue.toDisplayString(_ctx.content), 1
+          /* TEXT */
+          )];
+        })], 4
+        /* STYLE */
+        )], 10
+        /* CLASS, PROPS */
+        , _hoisted_1), [[vue.vShow, !_ctx.disabled && _ctx.showPopover]])];
+      }),
+      _: 3
+      /* FORWARDED */
+
+    }, 8
+    /* PROPS */
+    , ["name", "onAfterEnter", "onAfterLeave"]), vue.createCommentVNode(" referrence content "), vue.createElementVNode("div", {
+      ref: "referrence",
+      class: "reference-content",
+      onClick: _cache[0] || (_cache[0] = function () {
+        return _ctx.clickTriggerHandler && _ctx.clickTriggerHandler.apply(_ctx, arguments);
+      }),
+      onMousedown: _cache[1] || (_cache[1] = function () {
+        return _ctx.focusTriggerHandler && _ctx.focusTriggerHandler.apply(_ctx, arguments);
+      }),
+      onMouseup: _cache[2] || (_cache[2] = function () {
+        return _ctx.blurTriggerHandler && _ctx.blurTriggerHandler.apply(_ctx, arguments);
+      })
+    }, [vue.renderSlot(_ctx.$slots, "referrence")], 544
+    /* HYDRATE_EVENTS, NEED_PATCH */
+    )], 32
+    /* HYDRATE_EVENTS */
+    );
+  }
+
+  script.render = render;
+  script.__scopeId = "data-v-779845ce";
+  script.__file = "src/components/Popover/PopoverItem.vue";
+
+  script.install = function (Vue) {
+    Vue.component(script.name, script);
+  };
+
   var install = function install(app) {
-    app.use(script$c);
+    app.use(script$d);
   };
 
   var UI = {
     install: install
   }; // 支持按需导入
 
-  exports.Button = script$c;
-  exports.Icon = script$d;
-  exports.MenuItem = script$1;
-  exports.MyAside = script$8;
-  exports.MyCol = script$9;
-  exports.MyContainer = script$7;
-  exports.MyFooter = script$6;
-  exports.MyHeader = script$5;
-  exports.MyInput = script$3;
-  exports.MyMain = script$4;
-  exports.MyMenu = script;
-  exports.MyRow = script$a;
-  exports.Select = script$b;
-  exports.ToolTip = script$2;
+  exports.Button = script$d;
+  exports.Icon = script$e;
+  exports.MenuItem = script$2;
+  exports.MyAside = script$9;
+  exports.MyCol = script$a;
+  exports.MyContainer = script$8;
+  exports.MyFooter = script$7;
+  exports.MyHeader = script$6;
+  exports.MyInput = script$4;
+  exports.MyMain = script$5;
+  exports.MyMenu = script$1;
+  exports.MyRow = script$b;
+  exports.PopoverItem = script;
+  exports.Select = script$c;
+  exports.ToolTip = script$3;
   exports["default"] = UI;
 
   Object.defineProperty(exports, '__esModule', { value: true });

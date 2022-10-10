@@ -1,0 +1,188 @@
+@import '../../asset/style/style.scss';
+.popover-box{
+  --geticonsite:0;
+  display: inline-block;
+  position: relative;
+  .popover-outbox{
+    min-width: 150px;
+    padding: 18px 20px;
+    background-color: $background;
+    position: absolute;
+    z-index: 100;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.12);
+  }
+  .popover-arrow {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px;
+    // filter: drop-shadow(x偏移, y偏移, 模糊大小, 色值);
+    filter: drop-shadow(0 2px 12px rgba(0, 0, 0, .03));
+    border-bottom-width: 0;
+    border-top-color: $border;
+    &:before{
+      content:'';
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-color:transparent;
+      border-style: solid;
+      border-width: 5px;
+      border-bottom-width: 0;
+      border-top-color: $background;
+      bottom: 1px;
+      left: -5px;
+    }
+  }
+  &-content{
+    overflow: auto;
+    .popover-title{
+      color: $text;
+      font-size: 16px;
+      line-height: 1;/* 设置一倍行间距 */
+      margin-bottom: 12px;
+    }
+  }
+  .top{
+    bottom: 100%;/* 相对于父元素在顶端显示 */
+    left:50%;
+    transform: translateX(-50%);
+    margin-bottom: 12px;
+    .popover-arrow{
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .top-start{
+    bottom: 100%;
+    left: 0;
+    margin-bottom: 12px;
+    .popover-arrow{
+      top:100%;
+      left:var(--geticonsite);
+      transform: translateX(-50%);
+    }
+  }
+  .top-end{
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 12px;
+    .popover-arrow{
+      top:100%;
+      right: var(--geticonsite);
+      transform: translateX(-50%);
+    }
+  }
+  .bottom{
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 12px;
+    .popover-arrow{
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .bottom-start{
+    top: 100%;
+    left: 0;
+    margin-top: 12px;
+    .popover-arrow{
+      bottom: 100%;
+      left: var(--geticonsite);
+      transform: translateX(-50%);
+    }
+  }
+  .bottom-end{
+    top: 100%;
+    right: 0;
+    margin-top: 12px;
+    .popover-arrow{
+      bottom: 100%;
+      right: var(--geticonsite);
+      transform: translateX(-50%);
+    }
+  }
+  .left{
+    right: 100%;
+    top:50%;
+    transform: translateY(-50%);
+    margin-right: 12px;
+    .popover-arrow{
+      left:100%;
+      top: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .left-start{
+    right: 100%;
+    top:0;
+    margin-right: 12px;
+    .popover-arrow{
+      left:100%;
+      top: var(--geticonsite);
+      transform: translateX(-50%);
+    }
+  }
+  .left-end{
+    right: 100%;
+    bottom:0;
+    margin-right: 12px;
+    .popover-arrow{
+      left:100%;
+      bottom: var(--geticonsite);
+      transform: translateX(-50%);
+    }
+  }
+  .right{
+    left:100%;
+    top:50%;
+    transform: translateX(-50%);
+    margin-left:12px ;
+    .popover-arrow{
+      right:100%;
+      top: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .right-start{
+    left:100%;
+    top:0;
+    margin-left:12px ;
+    .popover-arrow{
+      right:100%;
+      top: var(--geticonsite);
+      transform: translateX(-50%);
+    }
+  }
+  .right-end{
+    left:100%;
+    bottom:0;
+    margin-left:12px ;
+    .popover-arrow{
+      right:100%;
+      bottom: var(--geticonsite);
+      transform: translateX(-50%);
+    }
+  }
+  .reference-content{
+    display: inline-block;
+  }
+}
+.slide-fade-enter-active{
+  transition: all 0.3s ease-out;
+}
+.slide-fade-leave-active{
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.6, 1);
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  opacity: 0;
+}

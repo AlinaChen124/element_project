@@ -111,6 +111,11 @@
             <tool-tip content="这是提示内容" direction="bottom-left" delay="5000">内容 </tool-tip>
             <tool-tip content="这是提示内容" direction="bottom" trigger="click" >内容 </tool-tip>
             <tool-tip content="这是提示内容" direction="bottom-right">内容 </tool-tip>
+            <popover-item trigger="click" placement="top-start" content="hover激活">
+              <template #referrence>
+                <my-button>hover激活</my-button>
+              </template>
+            </popover-item>
             <p>{{val}}</p>
             </my-main>
             <my-footer class="footer">Footer</my-footer>
@@ -141,7 +146,8 @@ const app = createApp({
     MyMain:myLib.MyMain,
     MyInput:myLib.MyInput,
     MyMenu:myLib.MyMenu,
-    ToolTip:myLib.ToolTip
+    ToolTip:myLib.ToolTip,
+    PopoverItem:myLib.PopoverItem
   },
   data() {
     return {
