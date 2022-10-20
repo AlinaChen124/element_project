@@ -111,12 +111,23 @@
             <tool-tip content="这是提示内容" direction="bottom-left" delay="5000">内容 </tool-tip>
             <tool-tip content="这是提示内容" direction="bottom" trigger="click" >内容 </tool-tip>
             <tool-tip content="这是提示内容" direction="bottom-right">内容 </tool-tip>
-            <popover-item trigger="click" placement="top-start" content="hover激活">
+            <popover-item trigger="hover" placement="top-start" content="hover激活">
               <template #referrence>
                 <my-button>hover激活</my-button>
               </template>
             </popover-item>
+            <p>
+              <check-box v-model="checkbox1">选项1</check-box>
+              {{ checkbox1 }}
+            </p>
             <p>{{val}}</p>
+            <div>
+              <tag>标签一</tag>
+              <tag type="success">标签二</tag>
+              <tag type="warning">标签三</tag>
+              <tag type="danger">标签四</tag>
+              <tag type="danger" color="#fff" bgcolor="#c642e7" bordercolor="#c642e7">自定样式</tag>
+            </div>
             </my-main>
             <my-footer class="footer">Footer</my-footer>
           </my-container>
@@ -130,7 +141,7 @@
 <script>
   const { createApp } = Vue
 
-  console.log('myLib', myLib)
+  // console.log('myLib', myLib)
 
 const app = createApp({
   components: {
@@ -147,7 +158,10 @@ const app = createApp({
     MyInput:myLib.MyInput,
     MyMenu:myLib.MyMenu,
     ToolTip:myLib.ToolTip,
-    PopoverItem:myLib.PopoverItem
+    PopoverItem:myLib.PopoverItem,
+    CheckBox:myLib.CheckBox,
+    Table:myLib.Table,
+    Tag:myLib.Tag
   },
   data() {
     return {
@@ -217,6 +231,49 @@ const app = createApp({
           key: 'set',
           icon: 'date',
           disabled: true
+        }
+      ],
+      checkbox1:true,
+      columns:[
+        {
+          label: '日期',
+          prop: 'dateTime',
+          children: [
+            {
+              label: '年份',
+              prop: 'date'
+            },
+            {
+              label: '月份',
+              prop: 'date'
+            }
+          ]
+        },
+        {
+          prop: 'name',
+          label: '姓名'
+        },
+        {
+          label: '收化地址',
+          prop: 'address2',
+          children: [
+            {
+              label: '省份',
+              prop: 'province'
+            },
+            {
+              label: '城市',
+              prop: 'city'
+            },
+            {
+              label: '地址',
+              prop: 'address'
+            }
+          ]
+        },
+        {
+          prop: 'control',
+          label: '操作'
         }
       ]
     }

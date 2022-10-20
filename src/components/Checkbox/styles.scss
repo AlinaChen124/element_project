@@ -1,0 +1,42 @@
+@import '../../asset/style/style.scss';
+.checkbox{
+  cursor: pointer;
+  display: inline-block;
+  > span{
+    display: flex;
+    align-items: center;
+  }
+  .checkbox-text {
+    margin-left: 5px
+  }
+  .checkbox-inner {
+    border: 1px solid $border;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    &:hover {opacity: .8}
+
+    .icon-show {
+      font-size: 14px;
+      display: block;
+      opacity: 1;
+      transform: scale(.9);color: $primary;      
+    }
+    .icon-invisible{
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity .3s, transform .3s;
+
+    }
+
+  }
+  &.disabled {
+    cursor: not-allowed;
+    .checkbox-inner {opacity: $disabledOpacity;background: #ddd}
+  }
+}

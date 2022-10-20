@@ -101,6 +101,7 @@ export default defineComponent({
     if (props.trigger === 'click' && props.mode === 'horizontal') {
       document.addEventListener('click', slideUp, false)
     }
+    
   })
   onBeforeUnmount(() => {
     if (props.trigger === 'click' && props.mode === 'horizontal') {
