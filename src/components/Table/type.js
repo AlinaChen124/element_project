@@ -17,5 +17,5 @@ const Columns = {
   drag: boolean, // 当前单元格允许拖动，仅在table设置drag＝true时有效
   formatter: (rowIndex, colIndex, row, col) => {},
   tooltip: boolean | object,
-  tag: boolean | object,
+  tag: boolean | object,//使用tag样式显示对应值，参数详见tag
 }

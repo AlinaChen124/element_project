@@ -128,6 +128,23 @@
               <tag type="danger">标签四</tag>
               <tag type="danger" color="#fff" bgcolor="#c642e7" bordercolor="#c642e7">自定样式</tag>
             </div>
+            <div>
+            </div>
+            <alert title="success alert" type="success" show-icon></alert>
+            <alert
+              title="error alert"
+              type="error"
+              description="more text description"
+              show-icon
+              center
+            ></alert>              
+            <div>
+              <div
+                v-loading="loading"
+                style="width: 400px; height: 200px; border: 1px solid #ddd"
+                >容器区域</div
+              >
+            </div>
             </my-main>
             <my-footer class="footer">Footer</my-footer>
           </my-container>
@@ -160,8 +177,8 @@ const app = createApp({
     ToolTip:myLib.ToolTip,
     PopoverItem:myLib.PopoverItem,
     CheckBox:myLib.CheckBox,
-    Table:myLib.Table,
-    Tag:myLib.Tag
+    Tag:myLib.Tag,
+    Alert:myLib.Alert,
   },
   data() {
     return {
@@ -181,6 +198,7 @@ const app = createApp({
       selVal_arr:[],
       val:'',
       something:'',
+      loading:true,
       items:[
         {
           label: '用户管理',
@@ -286,7 +304,7 @@ const app = createApp({
       console.log(item, index);
     }
   },
-}).mount('#app')
+}).use(myLib.vLoading).mount('#app')
 
 
 </script>

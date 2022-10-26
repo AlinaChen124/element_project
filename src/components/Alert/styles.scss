@@ -1,0 +1,71 @@
+@import '../../asset/style/style.scss';
+
+.alert{
+  width:100% ;
+  padding: 8px 16px;
+  margin:0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s;
+  &.alert-success{
+    background-color:$success-background;
+    color: $success;
+  }
+  &.alert-info{
+    background-color: $info-background;
+    color: $info;
+  }
+  &.alert-warning{
+    background-color: $warn-background;
+    color: $warn;
+  }
+  &.alert-error{
+    background-color: $danger-background;
+    color: $danger;
+  }
+  &.is-center{
+    justify-content: center;
+  }
+  & .icon{
+    font-size: normal;
+    width: normal;
+    &.is-big{
+      font-size: larger;
+      width: larger;
+    }
+  }
+  & .alert-content{
+    display: table-cell;
+    padding: 0 8px;
+    & .alert-title{
+      font-size: larger;
+      line-height: 18px;
+      vertical-align: text-top;
+      &.is-bold{
+        font-weight: bold;
+      }
+    }
+    & .alert-description{
+      font-size: normal;
+      margin: 5px 0 0 0;
+    }
+  }
+  & .close-btn{
+    font-size: normal;
+    opacity: 1;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+  }
+}
+.alert-fade-enter-from,
+.alert-fade-leave-active{
+  opacity: 0;
+}

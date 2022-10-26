@@ -8,7 +8,7 @@
     @click="changeHandler"
     >
     <span>
-      <span  class="checkbox-inner" >
+      <span  class="checkbox-inner" :style="{border: checked?'1px solid #409EFF':'1px solid #DCDFE6'}">
         <icon name="check"       
         :class="checked?'icon-show':'icon-invisible'"
       ></icon>
@@ -110,7 +110,7 @@ export default defineComponent({
     })
     return {
       checked,
-      changeHandler
+      changeHandler,
     }
   }
   

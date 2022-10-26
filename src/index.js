@@ -9,8 +9,9 @@ import { MyMenu,MenuItem } from "./components/Menu/index.js";
 import ToolTip from "./components/Tooltip/index.js";
 import PopoverItem from "./components/Popover/index.js";
 import CheckBox from "./components/Checkbox/index.js";
-import {Table} from "./components/Table/index.js";
 import Tag from "./components/Tag/index.js";
+import Alert from "./components/Alert/index.js";
+import { loading, vLoading } from './components/Loading/index'
 const install = (app)=>{
   app.use(Button)
 }
@@ -35,8 +36,10 @@ export {
   ToolTip,
   PopoverItem,
   CheckBox,
-  Table,
-  Tag
+  Tag,
+  Alert,
+  loading, 
+  vLoading
 }
 // 支持全局导入
 export default UI 
