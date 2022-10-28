@@ -20,6 +20,7 @@ const loading = (opt) => {
 
 const vLoading = (app) => {
   app.directive('loading', {
+    // el:当前的挂挂载，binding:自定义属性传递过来的值
     mounted(el, binding) {
       console.log(binding);
       el.style.position = 'relative'
@@ -39,14 +40,14 @@ const vLoading = (app) => {
         background: background,
         lock: binding.modifiers.lock,
         zIndex: parseInt(zIndex),
-        el: bodyEl || el
+        el: bodyEl || el// 挂载到全局还是当前元素
       })
       console.log('component')
-      console.log(component)
       if (binding.value) {
         component && component.open()
       }
       el.component = component // 保存当前组件和样式，更新时调用
+      // console.log(el.component)
     },
     updated(el, binding) {
       if (binding.value) {

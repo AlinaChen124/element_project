@@ -1,8 +1,19 @@
 <template>
-  <transition>
-    <div>
-      <div>
-        <svg viewBox="0 0 50 50"></svg>
+  <transition name="loading-fade">
+    <div 
+      v-show="state.visible"
+      :style="{backgroundColor:background || '', 'z-index':zindex}"
+      :class="{
+        'no-background':background=='none',
+        'loading-full':!el,
+        'loading':true
+      }"
+    >
+      <div class="loading-spinner">
+        <svg viewBox="0 0 50 50" class="loading-svg">
+          <circle class="svg-path" cx="25" cy="25" r="20" fill="none"></circle>
+        </svg>
+        <p v-if="text" class="loading-text">{{text}}</p>
       </div>
     </div>
   </transition>
@@ -20,7 +31,7 @@ export default defineComponent({
       type:Object,
       default:()=>{ }
     },
-    zIndex:Number,
+    zindex:Number,
     modelValue:{
       type:Boolean,
       default:false
@@ -84,3 +95,6 @@ export default defineComponent({
   }
 })
 </script>
+<style lang="scss">
+@import './styles.scss';
+</style>

@@ -91,13 +91,13 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     class: "icon",
     "aria-hidden": "true"
   };
-  var _hoisted_2$7 = ["xlink:href"];
+  var _hoisted_2$8 = ["xlink:href"];
   function render$i(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$a, [vue.createElementVNode("use", {
       "xlink:href": _ctx.iconName
     }, null, 8
     /* PROPS */
-    , _hoisted_2$7)]);
+    , _hoisted_2$8)]);
   }
 
   script$i.render = render$i;
@@ -157,7 +157,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   });
 
   var _hoisted_1$9 = ["disabled", "text"];
-  var _hoisted_2$6 = {
+  var _hoisted_2$7 = {
     key: 0,
     class: "icon"
   };
@@ -171,7 +171,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       onClick: _cache[0] || (_cache[0] = function () {
         return _ctx.handleClick && _ctx.handleClick.apply(_ctx, arguments);
       })
-    }, [_ctx.icon ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_2$6, [vue.createVNode(_component_Icon, {
+    }, [_ctx.icon ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_2$7, [vue.createVNode(_component_Icon, {
       name: _ctx.icon
     }, null, 8
     /* PROPS */
@@ -401,11 +401,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   });
 
   var _hoisted_1$8 = ["disabled", "value", "placeholder"];
-  var _hoisted_2$5 = {
+  var _hoisted_2$6 = {
     key: 0,
     class: "select-option-box"
   };
-  var _hoisted_3$2 = {
+  var _hoisted_3$3 = {
     class: "select-option-find"
   };
   var _hoisted_4$1 = ["onClick"];
@@ -450,7 +450,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       name: "slide-fade"
     }, {
       default: vue.withCtx(function () {
-        return [_ctx.optionShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$5, [vue.createElementVNode("div", _hoisted_3$2, [vue.createElementVNode("ul", null, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.optionsData, function (item, index) {
+        return [_ctx.optionShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$6, [vue.createElementVNode("div", _hoisted_3$3, [vue.createElementVNode("ul", null, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.optionsData, function (item, index) {
           return vue.openBlock(), vue.createElementBlock("li", {
             class: vue.normalizeClass(["select-option-li", {
               'select-active': _ctx.activeIndex == index || _ctx.selValue == item[_ctx.labelFiled] || item.selected,
@@ -1248,7 +1248,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   /* HOISTED */
   );
 
-  var _hoisted_2$4 = ["innerHTML"];
+  var _hoisted_2$5 = ["innerHTML"];
   function render$7(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("span", {
       ref: "el",
@@ -1268,7 +1268,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
           innerHTML: _ctx.content
         }, null, 8
         /* PROPS */
-        , _hoisted_2$4)) : vue.renderSlot(_ctx.$slots, "content", {
+        , _hoisted_2$5)) : vue.renderSlot(_ctx.$slots, "content", {
           key: 1
         })], 6
         /* CLASS, STYLE */
@@ -1416,8 +1416,8 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   });
 
   var _hoisted_1$4 = ["data-height"];
-  var _hoisted_2$3 = ["onMouseenter", "onMouseleave", "onClick"];
-  var _hoisted_3$1 = {
+  var _hoisted_2$4 = ["onMouseenter", "onMouseleave", "onClick"];
+  var _hoisted_3$2 = {
     class: "menu-title"
   };
   var _hoisted_4 = {
@@ -1461,7 +1461,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
             onClick: vue.withModifiers(function ($event) {
               return _ctx.click(item);
             }, ["stop"])
-          }, [vue.createElementVNode("span", _hoisted_3$1, [vue.createVNode(_component_tool_tip, {
+          }, [vue.createElementVNode("span", _hoisted_3$2, [vue.createVNode(_component_tool_tip, {
             content: item.label,
             direction: "right",
             x: 15,
@@ -1496,7 +1496,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
           /* PROPS */
           , ["items", "itemUl", "layer", "onClick", "onSelect"])) : vue.createCommentVNode("v-if", true)], 42
           /* CLASS, PROPS, HYDRATE_EVENTS */
-          , _hoisted_2$3);
+          , _hoisted_2$4);
         }), 128
         /* KEYED_FRAGMENT */
         ))], 10
@@ -1822,11 +1822,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   });
 
   var _hoisted_1$3 = ["aria-hidden"];
-  var _hoisted_2$2 = {
+  var _hoisted_2$3 = {
     class: "popover-arrow",
     ref: "popoverArrow"
   };
-  var _hoisted_3 = {
+  var _hoisted_3$1 = {
     key: 0,
     class: "popover-title"
   };
@@ -1849,12 +1849,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
         return [vue.withDirectives(vue.createElementVNode("div", {
           class: vue.normalizeClass(['popover-outbox', _ctx.placement, _ctx.popoverClass]),
           "aria-hidden": _ctx.disabled || !_ctx.showPopover ? 'true' : 'false'
-        }, [vue.createCommentVNode(" popover arrow "), vue.createElementVNode("i", _hoisted_2$2, null, 512
+        }, [vue.createCommentVNode(" popover arrow "), vue.createElementVNode("i", _hoisted_2$3, null, 512
         /* NEED_PATCH */
         ), vue.createCommentVNode(" popover content "), vue.createElementVNode("div", {
           style: vue.normalizeStyle(_ctx.popoverStyles),
           class: vue.normalizeClass(['popover-box-content'])
-        }, [_ctx.title ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3, vue.toDisplayString(_ctx.title), 1
+        }, [_ctx.title ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$1, vue.toDisplayString(_ctx.title), 1
         /* TEXT */
         )) : vue.createCommentVNode("v-if", true), vue.renderSlot(_ctx.$slots, "default", {}, function () {
           return [vue.createTextVNode(vue.toDisplayString(_ctx.content), 1
@@ -2016,7 +2016,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     key: 0,
     class: "checkbox-text"
   };
-  var _hoisted_2$1 = ["textContent"];
+  var _hoisted_2$2 = ["textContent"];
   function render$3(_ctx, _cache, $props, $setup, $data, $options) {
     var _normalizeClass2;
 
@@ -2045,7 +2045,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       textContent: vue.toDisplayString(_ctx.label)
     }, null, 8
     /* PROPS */
-    , _hoisted_2$1))])], 2
+    , _hoisted_2$2))])], 2
     /* CLASS */
     );
   }
@@ -2220,7 +2220,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   var _hoisted_1$1 = {
     class: "alert-content"
   };
-  var _hoisted_2 = {
+  var _hoisted_2$1 = {
     key: 1,
     class: /*#__PURE__*/vue.normalizeClass('alert-description')
   };
@@ -2251,7 +2251,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
           )];
         })], 2
         /* CLASS */
-        )) : vue.createCommentVNode("v-if", true), _ctx.$slots.default || _ctx.description ? (vue.openBlock(), vue.createElementBlock("p", _hoisted_2, [vue.renderSlot(_ctx.$slots, "default", {}, function () {
+        )) : vue.createCommentVNode("v-if", true), _ctx.$slots.default || _ctx.description ? (vue.openBlock(), vue.createElementBlock("p", _hoisted_2$1, [vue.renderSlot(_ctx.$slots, "default", {}, function () {
           return [vue.createTextVNode(vue.toDisplayString(_ctx.description), 1
           /* TEXT */
           )];
@@ -2304,7 +2304,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
         type: Object,
         default: function _default() {}
       },
-      zIndex: Number,
+      zindex: Number,
       modelValue: {
         type: Boolean,
         default: false
@@ -2371,16 +2371,48 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1 = /*#__PURE__*/vue.createElementVNode("div", null, [/*#__PURE__*/vue.createElementVNode("div", null, [/*#__PURE__*/vue.createElementVNode("svg", {
-    viewBox: "0 0 50 50"
-  })])], -1
+  var _hoisted_1 = {
+    class: "loading-spinner"
+  };
+
+  var _hoisted_2 = /*#__PURE__*/vue.createElementVNode("svg", {
+    viewBox: "0 0 50 50",
+    class: "loading-svg"
+  }, [/*#__PURE__*/vue.createElementVNode("circle", {
+    class: "svg-path",
+    cx: "25",
+    cy: "25",
+    r: "20",
+    fill: "none"
+  })], -1
   /* HOISTED */
   );
 
+  var _hoisted_3 = {
+    key: 0,
+    class: "loading-text"
+  };
   function render(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createBlock(vue.Transition, null, {
+    return vue.openBlock(), vue.createBlock(vue.Transition, {
+      name: "loading-fade",
+      persisted: ""
+    }, {
       default: vue.withCtx(function () {
-        return [_hoisted_1];
+        return [vue.withDirectives(vue.createElementVNode("div", {
+          style: vue.normalizeStyle({
+            backgroundColor: _ctx.background || '',
+            'z-index': _ctx.zindex
+          }),
+          class: vue.normalizeClass({
+            'no-background': _ctx.background == 'none',
+            'loading-full': !_ctx.el,
+            'loading': true
+          })
+        }, [vue.createElementVNode("div", _hoisted_1, [_hoisted_2, _ctx.text ? (vue.openBlock(), vue.createElementBlock("p", _hoisted_3, vue.toDisplayString(_ctx.text), 1
+        /* TEXT */
+        )) : vue.createCommentVNode("v-if", true)])], 6
+        /* CLASS, STYLE */
+        ), [[vue.vShow, _ctx.state.visible]])];
       }),
       _: 1
       /* STABLE */
@@ -2412,6 +2444,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
 
   var vLoading = function vLoading(app) {
     app.directive('loading', {
+      // el:当前的挂挂载，binding:自定义属性传递过来的值
       mounted: function mounted(el, binding) {
         console.log(binding);
         el.style.position = 'relative';
@@ -2432,16 +2465,17 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
           background: background,
           lock: binding.modifiers.lock,
           zIndex: parseInt(zIndex),
-          el: bodyEl || el
+          el: bodyEl || el // 挂载到全局还是当前元素
+
         });
         console.log('component');
-        console.log(component);
 
         if (binding.value) {
           component && component.open();
         }
 
         el.component = component; // 保存当前组件和样式，更新时调用
+        // console.log(el.component)
       },
       updated: function updated(el, binding) {
         if (binding.value) {
