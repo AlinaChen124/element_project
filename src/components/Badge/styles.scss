@@ -1,0 +1,38 @@
+@import '../../asset/style/style.scss';
+
+.badge{
+  position: relative;
+  vertical-align:middle;
+  display: inline-block;
+  sup{
+    position: absolute;
+    top:0;
+    right: 10px;
+    transform: translateX(100%) translateY(-50%);
+    display: inline-block;
+    background-color: $primary;
+    border-radius: 10px;
+    color: $background2;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 6px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  &.dot{
+    sup {
+      height: 8px;
+      width: 8px;
+      padding: 0;
+      right: 0;
+      border-radius: 50%;
+      font-size: 0;
+      text-indent: -9999px;// 第一行缩进
+      overflow: hidden;
+    }
+  }
+  &.success sup{background-color: $success}
+  &.warning sup{background-color: $warn}
+  &.danger sup{background-color: $danger}
+}

@@ -12,6 +12,7 @@ import CheckBox from "./components/Checkbox/index.js";
 import Tag from "./components/Tag/index.js";
 import Alert from "./components/Alert/index.js";
 import { loading, vLoading } from './components/Loading/index'
+import Badge from "./components/Badge/index.js";
 const install = (app)=>{
   app.use(Button)
 }
@@ -39,7 +40,8 @@ export {
   Tag,
   Alert,
   loading, 
-  vLoading
+  vLoading,
+  Badge
 }
 // 支持全局导入
 export default UI 

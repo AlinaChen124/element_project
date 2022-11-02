@@ -69,7 +69,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   }(window);
 
-  var script$i = vue.defineComponent({
+  var script$j = vue.defineComponent({
     name: "Icon",
     props: {
       name: {
@@ -92,7 +92,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     "aria-hidden": "true"
   };
   var _hoisted_2$8 = ["xlink:href"];
-  function render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$j(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$a, [vue.createElementVNode("use", {
       "xlink:href": _ctx.iconName
     }, null, 8
@@ -100,13 +100,13 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     , _hoisted_2$8)]);
   }
 
-  script$i.render = render$i;
-  script$i.__file = "src/components/Icon/icon.vue";
+  script$j.render = render$j;
+  script$j.__file = "src/components/Icon/icon.vue";
 
-  var script$h = vue.defineComponent({
+  var script$i = vue.defineComponent({
     name: 'Button',
     components: {
-      Icon: script$i
+      Icon: script$j
     },
     props: {
       type: {
@@ -161,7 +161,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     key: 0,
     class: "icon"
   };
-  function render$h(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$i(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
     return vue.openBlock(), vue.createElementBlock("button", {
@@ -180,16 +180,16 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     , _hoisted_1$9);
   }
 
-  script$h.render = render$h;
-  script$h.__scopeId = "data-v-4439b54f";
-  script$h.__file = "src/components/Button/Button.vue";
-
-  script$h.install = function (Vue) {
-    Vue.component(script$h.name, script$h);
-  };
+  script$i.render = render$i;
+  script$i.__scopeId = "data-v-4439b54f";
+  script$i.__file = "src/components/Button/Button.vue";
 
   script$i.install = function (Vue) {
     Vue.component(script$i.name, script$i);
+  };
+
+  script$j.install = function (Vue) {
+    Vue.component(script$j.name, script$j);
   };
 
   var useClickOutside = function useClickOutside(elementRef) {
@@ -219,11 +219,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   var selectRef = vue.ref(null);
   var rotate = vue.ref("rotate(0deg)");
   var activeIndex = vue.ref(-1);
-  var script$g = vue.defineComponent({
+  var script$h = vue.defineComponent({
     name: "Select",
     emits: ["update:modelValue"],
     components: {
-      Icon: script$i
+      Icon: script$j
     },
     props: {
       placeholder: String,
@@ -409,7 +409,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     class: "select-option-find"
   };
   var _hoisted_4$1 = ["onClick"];
-  function render$g(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$h(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
     return vue.openBlock(), vue.createElementBlock("div", {
@@ -481,14 +481,14 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$g.render = render$g;
-  script$g.__file = "src/components/Select/select.vue";
+  script$h.render = render$h;
+  script$h.__file = "src/components/Select/select.vue";
 
-  script$g.install = function (Vue) {
-    Vue.component(script$g.name, script$g);
+  script$h.install = function (Vue) {
+    Vue.component(script$h.name, script$h);
   };
 
-  var script$f = vue.defineComponent({
+  var script$g = vue.defineComponent({
     name: "MyRow",
     props: {
       gutter: {
@@ -568,7 +568,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$f(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$g(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("div", {
       class: vue.normalizeClass(_ctx.className),
       ref: "row"
@@ -577,15 +577,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$f.render = render$f;
-  script$f.__scopeId = "data-v-2a2adb2d";
-  script$f.__file = "src/components/MyRow/MyRow.vue";
+  script$g.render = render$g;
+  script$g.__scopeId = "data-v-2a2adb2d";
+  script$g.__file = "src/components/MyRow/MyRow.vue";
 
-  script$f.install = function (Vue) {
-    Vue.component(script$f.name, script$f);
+  script$g.install = function (Vue) {
+    Vue.component(script$g.name, script$g);
   };
 
-  var script$e = vue.defineComponent({
+  var script$f = vue.defineComponent({
     name: "MyCol",
     props: {
       span: {
@@ -615,7 +615,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$e(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$f(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("div", {
       class: vue.normalizeClass(_ctx.colClassName)
     }, [vue.renderSlot(_ctx.$slots, "default")], 2
@@ -623,15 +623,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$e.render = render$e;
-  script$e.__scopeId = "data-v-9edd600e";
-  script$e.__file = "src/components/MyCol/MyCol.vue";
+  script$f.render = render$f;
+  script$f.__scopeId = "data-v-9edd600e";
+  script$f.__file = "src/components/MyCol/MyCol.vue";
 
-  script$e.install = function (Vue) {
-    Vue.component(script$e.name, script$e);
+  script$f.install = function (Vue) {
+    Vue.component(script$f.name, script$f);
   };
 
-  var script$d = vue.defineComponent({
+  var script$e = vue.defineComponent({
     name: "MyAside",
     props: {
       width: {
@@ -641,7 +641,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$d(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$e(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("aside", {
       class: "my-aside",
       style: vue.normalizeStyle({
@@ -652,11 +652,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$d.render = render$d;
-  script$d.__scopeId = "data-v-d5507784";
-  script$d.__file = "src/components/Container/MyAside.vue";
+  script$e.render = render$e;
+  script$e.__scopeId = "data-v-d5507784";
+  script$e.__file = "src/components/Container/MyAside.vue";
 
-  var script$c = vue.defineComponent({
+  var script$d = vue.defineComponent({
     name: "MyContainer",
     props: {
       direction: {
@@ -686,7 +686,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$c(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$d(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("section", {
       class: vue.normalizeClass(["container", {
         'is-vertical': _ctx.isVertical
@@ -696,11 +696,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$c.render = render$c;
-  script$c.__scopeId = "data-v-aea0cff2";
-  script$c.__file = "src/components/Container/MyContainer.vue";
+  script$d.render = render$d;
+  script$d.__scopeId = "data-v-aea0cff2";
+  script$d.__file = "src/components/Container/MyContainer.vue";
 
-  var script$b = vue.defineComponent({
+  var script$c = vue.defineComponent({
     name: "MyFooter",
     props: {
       height: {
@@ -710,7 +710,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$c(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("footer", {
       class: "my-footer",
       style: vue.normalizeStyle({
@@ -721,11 +721,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$b.render = render$b;
-  script$b.__scopeId = "data-v-4b468805";
-  script$b.__file = "src/components/Container/MyFooter.vue";
+  script$c.render = render$c;
+  script$c.__scopeId = "data-v-4b468805";
+  script$c.__file = "src/components/Container/MyFooter.vue";
 
-  var script$a = vue.defineComponent({
+  var script$b = vue.defineComponent({
     name: "MyHeader",
     props: {
       height: {
@@ -735,7 +735,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$a(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$b(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("header", {
       class: "my-header",
       style: vue.normalizeStyle({
@@ -746,24 +746,28 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$a.render = render$a;
-  script$a.__scopeId = "data-v-6c78ebf7";
-  script$a.__file = "src/components/Container/MyHeader.vue";
+  script$b.render = render$b;
+  script$b.__scopeId = "data-v-6c78ebf7";
+  script$b.__file = "src/components/Container/MyHeader.vue";
 
-  var script$9 = vue.defineComponent({
+  var script$a = vue.defineComponent({
     name: "MyMain"
   });
 
   var _hoisted_1$7 = {
     class: "my-main"
   };
-  function render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$a(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("main", _hoisted_1$7, [vue.renderSlot(_ctx.$slots, "default")]);
   }
 
-  script$9.render = render$9;
-  script$9.__scopeId = "data-v-75f6c5a3";
-  script$9.__file = "src/components/Container/MyMain.vue";
+  script$a.render = render$a;
+  script$a.__scopeId = "data-v-75f6c5a3";
+  script$a.__file = "src/components/Container/MyMain.vue";
+
+  script$e.install = function (Vue) {
+    Vue.component(script$e.name, script$e);
+  };
 
   script$d.install = function (Vue) {
     Vue.component(script$d.name, script$d);
@@ -781,15 +785,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     Vue.component(script$a.name, script$a);
   };
 
-  script$9.install = function (Vue) {
-    Vue.component(script$9.name, script$9);
-  };
-
-  var script$8 = vue.defineComponent(_defineProperty({
+  var script$9 = vue.defineComponent(_defineProperty({
     emits: ["update:modelValue", "focus", "clear", "blur", "input"],
     name: "MyInput",
     components: {
-      Icon: script$i
+      Icon: script$j
     },
     props: {
       modelValue: String | Number,
@@ -885,11 +885,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       };
     }
   }, "components", {
-    Icon: script$i
+    Icon: script$j
   }));
 
   var _hoisted_1$6 = ["type", "value", "disabled", "placeholder", "readonly", "form"];
-  function render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$9(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
     return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [vue.createElementVNode("div", {
@@ -956,11 +956,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$8.render = render$8;
-  script$8.__file = "src/components/MyInput/MyInput.vue";
+  script$9.render = render$9;
+  script$9.__file = "src/components/MyInput/MyInput.vue";
 
-  script$8.install = function (Vue) {
-    Vue.component(script$8.name, script$8);
+  script$9.install = function (Vue) {
+    Vue.component(script$9.name, script$9);
   };
 
   var getOffset = function getOffset(el) {
@@ -990,11 +990,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     };
   };
 
-  var script$7 = vue.defineComponent({
+  var script$8 = vue.defineComponent({
     name: "ToolTip",
     emits: ['click'],
     components: {
-      Icon: script$i
+      Icon: script$j
     },
     props: {
       content: {
@@ -1249,7 +1249,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   );
 
   var _hoisted_2$5 = ["innerHTML"];
-  function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$8(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("span", {
       ref: "el",
       class: vue.normalizeClass(_ctx.tooltip - _ctx.box)
@@ -1282,15 +1282,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$7.render = render$7;
-  script$7.__file = "src/components/Tooltip/ToolTip.vue";
+  script$8.render = render$8;
+  script$8.__file = "src/components/Tooltip/ToolTip.vue";
 
-  var script$6 = vue.defineComponent({
+  var script$7 = vue.defineComponent({
     name: "MenuItem",
     emits: ['click', 'select'],
     components: {
-      ToolTip: script$7,
-      Icon: script$i
+      ToolTip: script$8,
+      Icon: script$j
     },
     props: {
       items: {
@@ -1423,7 +1423,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   var _hoisted_4 = {
     class: "name"
   };
-  function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$7(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
     var _component_tool_tip = vue.resolveComponent("tool-tip");
@@ -1511,14 +1511,14 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     , ["onBeforeEnter", "onAfterEnter", "onAfterLeave", "onBeforeLeave"]);
   }
 
-  script$6.render = render$6;
-  script$6.__file = "src/components/Menu/MenuItem.vue";
+  script$7.render = render$7;
+  script$7.__file = "src/components/Menu/MenuItem.vue";
 
-  var script$5 = vue.defineComponent({
+  var script$6 = vue.defineComponent({
     name: "myMenu",
     emits: ['click', 'select'],
     components: {
-      MenuItem: script$6
+      MenuItem: script$7
     },
     props: {
       // 显示模式：横向、竖向
@@ -1628,7 +1628,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$6(_ctx, _cache, $props, $setup, $data, $options) {
     var _normalizeClass2;
 
     var _component_menu_item = vue.resolveComponent("menu-item");
@@ -1648,12 +1648,8 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$5.render = render$5;
-  script$5.__file = "src/components/Menu/MyMenu.vue";
-
-  script$5.install = function (Vue) {
-    Vue.component(script$5.name, script$5);
-  };
+  script$6.render = render$6;
+  script$6.__file = "src/components/Menu/MyMenu.vue";
 
   script$6.install = function (Vue) {
     Vue.component(script$6.name, script$6);
@@ -1663,7 +1659,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     Vue.component(script$7.name, script$7);
   };
 
-  var script$4 = vue.defineComponent({
+  script$8.install = function (Vue) {
+    Vue.component(script$8.name, script$8);
+  };
+
+  var script$5 = vue.defineComponent({
     name: 'PopoverItem',
     emits: ['after-enter', 'after-leave'],
     props: {
@@ -1830,7 +1830,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     key: 0,
     class: "popover-title"
   };
-  function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$5(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("div", {
       class: "popover-box",
       onMouseenter: _cache[3] || (_cache[3] = function () {
@@ -1890,12 +1890,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$4.render = render$4;
-  script$4.__scopeId = "data-v-779845ce";
-  script$4.__file = "src/components/Popover/PopoverItem.vue";
+  script$5.render = render$5;
+  script$5.__scopeId = "data-v-779845ce";
+  script$5.__file = "src/components/Popover/PopoverItem.vue";
 
-  script$4.install = function (Vue) {
-    Vue.component(script$4.name, script$4);
+  script$5.install = function (Vue) {
+    Vue.component(script$5.name, script$5);
   };
 
   function _typeof(obj) {
@@ -1908,10 +1908,10 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }, _typeof(obj);
   }
 
-  var script$3 = vue.defineComponent({
+  var script$4 = vue.defineComponent({
     name: 'CheckBox',
     components: {
-      Icon: script$i
+      Icon: script$j
     },
     props: {
       disabled: {
@@ -2017,7 +2017,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     class: "checkbox-text"
   };
   var _hoisted_2$2 = ["textContent"];
-  function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$4(_ctx, _cache, $props, $setup, $data, $options) {
     var _normalizeClass2;
 
     var _component_icon = vue.resolveComponent("icon");
@@ -2050,17 +2050,17 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$3.render = render$3;
-  script$3.__file = "src/components/Checkbox/CheckBox.vue";
+  script$4.render = render$4;
+  script$4.__file = "src/components/Checkbox/CheckBox.vue";
 
-  script$3.install = function (Vue) {
-    Vue.component(script$3.name, script$3);
+  script$4.install = function (Vue) {
+    Vue.component(script$4.name, script$4);
   };
 
-  var script$2 = vue.defineComponent({
+  var script$3 = vue.defineComponent({
     name: 'Tag',
     components: {
-      Icon: script$i
+      Icon: script$j
     },
     props: {
       type: {
@@ -2109,7 +2109,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$3(_ctx, _cache, $props, $setup, $data, $options) {
     var _normalizeClass2;
 
     var _component_icon = vue.resolveComponent("icon");
@@ -2136,11 +2136,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     )), [[vue.vShow, _ctx.visible]]);
   }
 
-  script$2.render = render$2;
-  script$2.__file = "src/components/Tag/Tag.vue";
+  script$3.render = render$3;
+  script$3.__file = "src/components/Tag/Tag.vue";
 
-  script$2.install = function (Vue) {
-    Vue.component(script$2.name, script$2);
+  script$3.install = function (Vue) {
+    Vue.component(script$3.name, script$3);
   };
 
   var TypeComponentsMap = {
@@ -2150,11 +2150,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     'error': 'round_close_fill_light'
   };
 
-  var script$1 = vue.defineComponent({
+  var script$2 = vue.defineComponent({
     name: 'Alert',
     components: _defineProperty({
-      Icon: script$i
-    }, "Icon", script$i),
+      Icon: script$j
+    }, "Icon", script$j),
     props: {
       title: {
         type: String,
@@ -2224,7 +2224,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     key: 1,
     class: /*#__PURE__*/vue.normalizeClass('alert-description')
   };
-  function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$2(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_icon = vue.resolveComponent("icon");
 
     return vue.openBlock(), vue.createBlock(vue.Transition, {
@@ -2284,14 +2284,14 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     });
   }
 
-  script$1.render = render$1;
-  script$1.__file = "src/components/Alert/Alert.vue";
+  script$2.render = render$2;
+  script$2.__file = "src/components/Alert/Alert.vue";
 
-  script$1.install = function (Vue) {
-    Vue.component(script$1.name, script$1);
+  script$2.install = function (Vue) {
+    Vue.component(script$2.name, script$2);
   };
 
-  var script = vue.defineComponent({
+  var script$1 = vue.defineComponent({
     name: 'Loading',
     props: {
       text: String,
@@ -2392,7 +2392,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     key: 0,
     class: "loading-text"
   };
-  function render(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createBlock(vue.Transition, {
       name: "loading-fade",
       persisted: ""
@@ -2420,11 +2420,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     });
   }
 
-  script.render = render;
-  script.__file = "src/components/Loading/Loading.vue";
+  script$1.render = render$1;
+  script$1.__file = "src/components/Loading/Loading.vue";
 
   var appendChild = function appendChild(opt) {
-    var app = vue.createApp(script, opt);
+    var app = vue.createApp(script$1, opt);
 
     if (opt.el === document.body || !opt.el) {
       var container = document.createElement('div');
@@ -2487,32 +2487,92 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     });
   };
 
+  var script = vue.defineComponent({
+    name: 'Badge',
+    props: {
+      value: String | Number,
+      dot: {
+        type: Boolean,
+        default: false
+      },
+      max: {
+        type: Number,
+        default: 99
+      },
+      type: {
+        type: String,
+        default: 'danger',
+        validator: function validator(value) {
+          return ["primary", "success", "warning", "danger"].includes(value);
+        }
+      }
+    },
+    setup: function setup(props) {
+      var showValue = vue.computed(function () {
+        if (typeof props.value == 'number' && !isNaN(props.value) && props.value > props.max) {
+          return props.max + '+';
+        } else {
+          return props.value;
+        }
+      }); // value有值，并dot为true时
+
+      var isDot = vue.computed(function () {
+        return props.value && props.dot;
+      });
+      return {
+        showValue: showValue,
+        isDot: isDot
+      };
+    }
+  });
+
+  function render(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("span", {
+      class: vue.normalizeClass(_defineProperty({
+        'badge': true,
+        dot: _ctx.isDot
+      }, _ctx.type, true))
+    }, [vue.renderSlot(_ctx.$slots, "default"), vue.createElementVNode("sup", null, vue.toDisplayString(_ctx.showValue), 1
+    /* TEXT */
+    )], 2
+    /* CLASS */
+    );
+  }
+
+  script.render = render;
+  script.__file = "src/components/Badge/Badge.vue";
+
+  script.install = function (Vue) {
+    Vue.component(script.name, script);
+  };
+
   var install = function install(app) {
-    app.use(script$h);
+    app.use(script$i);
   };
 
   var UI = {
     install: install
   }; // 支持按需导入
 
-  exports.Alert = script$1;
-  exports.Button = script$h;
-  exports.CheckBox = script$3;
-  exports.Icon = script$i;
-  exports.MenuItem = script$6;
-  exports.MyAside = script$d;
-  exports.MyCol = script$e;
-  exports.MyContainer = script$c;
-  exports.MyFooter = script$b;
-  exports.MyHeader = script$a;
-  exports.MyInput = script$8;
-  exports.MyMain = script$9;
-  exports.MyMenu = script$5;
-  exports.MyRow = script$f;
-  exports.PopoverItem = script$4;
-  exports.Select = script$g;
-  exports.Tag = script$2;
-  exports.ToolTip = script$7;
+  exports.Alert = script$2;
+  exports.Badge = script;
+  exports.Button = script$i;
+  exports.CheckBox = script$4;
+  exports.Icon = script$j;
+  exports.MenuItem = script$7;
+  exports.MyAside = script$e;
+  exports.MyCol = script$f;
+  exports.MyContainer = script$d;
+  exports.MyFooter = script$c;
+  exports.MyHeader = script$b;
+  exports.MyInput = script$9;
+  exports.MyMain = script$a;
+  exports.MyMenu = script$6;
+  exports.MyRow = script$g;
+  exports.PopoverItem = script$5;
+  exports.Select = script$h;
+  exports.Tag = script$3;
+  exports.ToolTip = script$8;
   exports["default"] = UI;
   exports.loading = loading;
   exports.vLoading = vLoading;

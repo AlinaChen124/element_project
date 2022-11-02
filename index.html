@@ -11,6 +11,9 @@
     .button{
       margin:10px;
     }
+    .badge{
+      margin:20px;
+    }
     .select{
       position: relative;
       padding: 10px;
@@ -145,6 +148,23 @@
                 >容器区域</div
               >
             </div>
+            <div >
+              <badge :value="12" class="badge">
+                <my-button>评论</my-button>
+              </badge>
+              <badge :value="2" class="badge">
+                <my-button>回复</my-button>
+              </badge>
+              <badge :value="222" class="badge">
+                <my-button>评论</my-button>
+              </badge>
+              <badge :value="12" class="badge" type="primary">
+                <my-button>评论</my-button>
+              </badge>
+              <badge :value="12" class="badge" type="success">
+                <my-button>评论</my-button>
+              </badge>
+            </div>
             </my-main>
             <my-footer class="footer">Footer</my-footer>
           </my-container>
@@ -179,6 +199,7 @@ const app = createApp({
     CheckBox:myLib.CheckBox,
     Tag:myLib.Tag,
     Alert:myLib.Alert,
+    Badge:myLib.Badge
   },
   data() {
     return {
