@@ -14,6 +14,9 @@ import Alert from "./components/Alert/index.js";
 import { loading, vLoading } from './components/Loading/index'
 import Badge from "./components/Badge/index.js";
 import Divider from "./components/Divider/index.js";
+// import Table from "./components/Table/index.js";
+// import TableVue from "./components/TableVue/index.js";
+import Table from "./components/TableNew/index.js";
 const install = (app)=>{
   app.use(Button)
 }
@@ -43,7 +46,8 @@ export {
   loading, 
   vLoading,
   Badge,
-  Divider
+  Divider,
+  Table,
 }
 // 支持全局导入
 export default UI 

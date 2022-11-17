@@ -2,9 +2,16 @@
   <tbody>
     <!-- 使用template标签不会被渲染成一个元素 -->
     <template v-for="(row,rowIndex) in dataList" :key="rowIndex">
-      <tr @click="rowClick(row, rowIndex)">
+      <tr
+      :class="{
+          warning: selectedRows.indexOf(row) !== -1,
+          [row.trClass]: row.trClass
+        }"
+      @click="rowClick(row, rowIndex)"
+      >
         <table-td
-          v-for="(column, indexTd) in colsNoExtend" :key="indexTd"
+          v-for="(column, indexTd) in colsNoExtend" 
+          :key="indexTd"
           :checked="selectedRows.indexOf(row) !== -1"
           :column="column"
           :row="row"
@@ -16,8 +23,7 @@
           :rowspan-colspan-list="state.rowspanColspanList"
           @toggle-extend="toggleExtend(rowIndex, row)"
           @cell-click="cellClick"
-        >
-        </table-td>
+        ></table-td>
       </tr>
       <!-- 扩展列 -->
       <tr 
@@ -68,13 +74,13 @@ export default defineComponent({
     TableTd
   },
   props:{
-    data,
-    rowColSpan,
+    data:Array,
+    rowColSpan:Array,
     hasChild: Boolean,
     lazyLoad: Function,
     extendToggle: Boolean,// 默认展开或收起状态
     title: Boolean,
-    selectedRows,
+    selectedRows:Array,
   },
   emits:['rowClick'],
   setup(props,{emit}){

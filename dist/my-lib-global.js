@@ -69,7 +69,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   }(window);
 
-  var script$k = vue.defineComponent({
+  var script$p = vue.defineComponent({
     name: "Icon",
     props: {
       name: {
@@ -87,26 +87,26 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$a = {
+  var _hoisted_1$d = {
     class: "icon",
     "aria-hidden": "true"
   };
-  var _hoisted_2$8 = ["xlink:href"];
+  var _hoisted_2$b = ["xlink:href"];
   function render$k(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$a, [vue.createElementVNode("use", {
+    return vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$d, [vue.createElementVNode("use", {
       "xlink:href": _ctx.iconName
     }, null, 8
     /* PROPS */
-    , _hoisted_2$8)]);
+    , _hoisted_2$b)]);
   }
 
-  script$k.render = render$k;
-  script$k.__file = "src/components/Icon/icon.vue";
+  script$p.render = render$k;
+  script$p.__file = "src/components/Icon/icon.vue";
 
-  var script$j = vue.defineComponent({
+  var script$o = vue.defineComponent({
     name: 'Button',
     components: {
-      Icon: script$k
+      Icon: script$p
     },
     props: {
       type: {
@@ -156,8 +156,8 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$9 = ["disabled", "text"];
-  var _hoisted_2$7 = {
+  var _hoisted_1$c = ["disabled", "text"];
+  var _hoisted_2$a = {
     key: 0,
     class: "icon"
   };
@@ -171,25 +171,25 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       onClick: _cache[0] || (_cache[0] = function () {
         return _ctx.handleClick && _ctx.handleClick.apply(_ctx, arguments);
       })
-    }, [_ctx.icon ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_2$7, [vue.createVNode(_component_Icon, {
+    }, [_ctx.icon ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_2$a, [vue.createVNode(_component_Icon, {
       name: _ctx.icon
     }, null, 8
     /* PROPS */
     , ["name"])])) : vue.createCommentVNode("v-if", true), vue.renderSlot(_ctx.$slots, "default")], 10
     /* CLASS, PROPS */
-    , _hoisted_1$9);
+    , _hoisted_1$c);
   }
 
-  script$j.render = render$j;
-  script$j.__scopeId = "data-v-4439b54f";
-  script$j.__file = "src/components/Button/Button.vue";
+  script$o.render = render$j;
+  script$o.__scopeId = "data-v-4439b54f";
+  script$o.__file = "src/components/Button/Button.vue";
 
-  script$j.install = function (Vue) {
-    Vue.component(script$j.name, script$j);
+  script$o.install = function (Vue) {
+    Vue.component(script$o.name, script$o);
   };
 
-  script$k.install = function (Vue) {
-    Vue.component(script$k.name, script$k);
+  script$p.install = function (Vue) {
+    Vue.component(script$p.name, script$p);
   };
 
   var useClickOutside = function useClickOutside(elementRef) {
@@ -219,11 +219,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   var selectRef = vue.ref(null);
   var rotate = vue.ref("rotate(0deg)");
   var activeIndex = vue.ref(-1);
-  var script$i = vue.defineComponent({
+  var script$n = vue.defineComponent({
     name: "Select",
     emits: ["update:modelValue"],
     components: {
-      Icon: script$k
+      Icon: script$p
     },
     props: {
       placeholder: String,
@@ -400,15 +400,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$8 = ["disabled", "value", "placeholder"];
-  var _hoisted_2$6 = {
+  var _hoisted_1$b = ["disabled", "value", "placeholder"];
+  var _hoisted_2$9 = {
     key: 0,
     class: "select-option-box"
   };
-  var _hoisted_3$3 = {
+  var _hoisted_3$5 = {
     class: "select-option-find"
   };
-  var _hoisted_4$1 = ["onClick"];
+  var _hoisted_4$3 = ["onClick"];
   function render$i(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
@@ -436,7 +436,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       placeholder: _ctx.selValue == '' ? _ctx.placeholder : _ctx.selValue
     }, null, 46
     /* CLASS, STYLE, PROPS, HYDRATE_EVENTS */
-    , _hoisted_1$8), vue.createVNode(_component_Icon, {
+    , _hoisted_1$b), vue.createVNode(_component_Icon, {
       name: "arrow-down",
       style: vue.normalizeStyle([{
         transform: _ctx.rotate
@@ -450,7 +450,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       name: "slide-fade"
     }, {
       default: vue.withCtx(function () {
-        return [_ctx.optionShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$6, [vue.createElementVNode("div", _hoisted_3$3, [vue.createElementVNode("ul", null, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.optionsData, function (item, index) {
+        return [_ctx.optionShow ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$9, [vue.createElementVNode("div", _hoisted_3$5, [vue.createElementVNode("ul", null, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.optionsData, function (item, index) {
           return vue.openBlock(), vue.createElementBlock("li", {
             class: vue.normalizeClass(["select-option-li", {
               'select-active': _ctx.activeIndex == index || _ctx.selValue == item[_ctx.labelFiled] || item.selected,
@@ -468,7 +468,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
             class: "icon"
           })) : vue.createCommentVNode("v-if", true)], 10
           /* CLASS, PROPS */
-          , _hoisted_4$1);
+          , _hoisted_4$3);
         }), 128
         /* KEYED_FRAGMENT */
         ))])])])) : vue.createCommentVNode("v-if", true)];
@@ -481,14 +481,14 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$i.render = render$i;
-  script$i.__file = "src/components/Select/select.vue";
+  script$n.render = render$i;
+  script$n.__file = "src/components/Select/select.vue";
 
-  script$i.install = function (Vue) {
-    Vue.component(script$i.name, script$i);
+  script$n.install = function (Vue) {
+    Vue.component(script$n.name, script$n);
   };
 
-  var script$h = vue.defineComponent({
+  var script$m = vue.defineComponent({
     name: "MyRow",
     props: {
       gutter: {
@@ -577,15 +577,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$h.render = render$h;
-  script$h.__scopeId = "data-v-2a2adb2d";
-  script$h.__file = "src/components/MyRow/MyRow.vue";
+  script$m.render = render$h;
+  script$m.__scopeId = "data-v-2a2adb2d";
+  script$m.__file = "src/components/MyRow/MyRow.vue";
 
-  script$h.install = function (Vue) {
-    Vue.component(script$h.name, script$h);
+  script$m.install = function (Vue) {
+    Vue.component(script$m.name, script$m);
   };
 
-  var script$g = vue.defineComponent({
+  var script$l = vue.defineComponent({
     name: "MyCol",
     props: {
       span: {
@@ -623,15 +623,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$g.render = render$g;
-  script$g.__scopeId = "data-v-9edd600e";
-  script$g.__file = "src/components/MyCol/MyCol.vue";
+  script$l.render = render$g;
+  script$l.__scopeId = "data-v-9edd600e";
+  script$l.__file = "src/components/MyCol/MyCol.vue";
 
-  script$g.install = function (Vue) {
-    Vue.component(script$g.name, script$g);
+  script$l.install = function (Vue) {
+    Vue.component(script$l.name, script$l);
   };
 
-  var script$f = vue.defineComponent({
+  var script$k = vue.defineComponent({
     name: "MyAside",
     props: {
       width: {
@@ -652,11 +652,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$f.render = render$f;
-  script$f.__scopeId = "data-v-d5507784";
-  script$f.__file = "src/components/Container/MyAside.vue";
+  script$k.render = render$f;
+  script$k.__scopeId = "data-v-d5507784";
+  script$k.__file = "src/components/Container/MyAside.vue";
 
-  var script$e = vue.defineComponent({
+  var script$j = vue.defineComponent({
     name: "MyContainer",
     props: {
       direction: {
@@ -696,11 +696,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$e.render = render$e;
-  script$e.__scopeId = "data-v-aea0cff2";
-  script$e.__file = "src/components/Container/MyContainer.vue";
+  script$j.render = render$e;
+  script$j.__scopeId = "data-v-aea0cff2";
+  script$j.__file = "src/components/Container/MyContainer.vue";
 
-  var script$d = vue.defineComponent({
+  var script$i = vue.defineComponent({
     name: "MyFooter",
     props: {
       height: {
@@ -721,11 +721,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$d.render = render$d;
-  script$d.__scopeId = "data-v-4b468805";
-  script$d.__file = "src/components/Container/MyFooter.vue";
+  script$i.render = render$d;
+  script$i.__scopeId = "data-v-4b468805";
+  script$i.__file = "src/components/Container/MyFooter.vue";
 
-  var script$c = vue.defineComponent({
+  var script$h = vue.defineComponent({
     name: "MyHeader",
     props: {
       height: {
@@ -746,50 +746,50 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$c.render = render$c;
-  script$c.__scopeId = "data-v-6c78ebf7";
-  script$c.__file = "src/components/Container/MyHeader.vue";
+  script$h.render = render$c;
+  script$h.__scopeId = "data-v-6c78ebf7";
+  script$h.__file = "src/components/Container/MyHeader.vue";
 
-  var script$b = vue.defineComponent({
+  var script$g = vue.defineComponent({
     name: "MyMain"
   });
 
-  var _hoisted_1$7 = {
+  var _hoisted_1$a = {
     class: "my-main"
   };
   function render$b(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("main", _hoisted_1$7, [vue.renderSlot(_ctx.$slots, "default")]);
+    return vue.openBlock(), vue.createElementBlock("main", _hoisted_1$a, [vue.renderSlot(_ctx.$slots, "default")]);
   }
 
-  script$b.render = render$b;
-  script$b.__scopeId = "data-v-75f6c5a3";
-  script$b.__file = "src/components/Container/MyMain.vue";
+  script$g.render = render$b;
+  script$g.__scopeId = "data-v-75f6c5a3";
+  script$g.__file = "src/components/Container/MyMain.vue";
 
-  script$f.install = function (Vue) {
-    Vue.component(script$f.name, script$f);
+  script$k.install = function (Vue) {
+    Vue.component(script$k.name, script$k);
   };
 
-  script$e.install = function (Vue) {
-    Vue.component(script$e.name, script$e);
+  script$j.install = function (Vue) {
+    Vue.component(script$j.name, script$j);
   };
 
-  script$d.install = function (Vue) {
-    Vue.component(script$d.name, script$d);
+  script$i.install = function (Vue) {
+    Vue.component(script$i.name, script$i);
   };
 
-  script$c.install = function (Vue) {
-    Vue.component(script$c.name, script$c);
+  script$h.install = function (Vue) {
+    Vue.component(script$h.name, script$h);
   };
 
-  script$b.install = function (Vue) {
-    Vue.component(script$b.name, script$b);
+  script$g.install = function (Vue) {
+    Vue.component(script$g.name, script$g);
   };
 
-  var script$a = vue.defineComponent(_defineProperty({
+  var script$f = vue.defineComponent(_defineProperty({
     emits: ["update:modelValue", "focus", "clear", "blur", "input"],
     name: "MyInput",
     components: {
-      Icon: script$k
+      Icon: script$p
     },
     props: {
       modelValue: String | Number,
@@ -885,10 +885,10 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       };
     }
   }, "components", {
-    Icon: script$k
+    Icon: script$p
   }));
 
-  var _hoisted_1$6 = ["type", "value", "disabled", "placeholder", "readonly", "form"];
+  var _hoisted_1$9 = ["type", "value", "disabled", "placeholder", "readonly", "form"];
   function render$a(_ctx, _cache, $props, $setup, $data, $options) {
     var _component_Icon = vue.resolveComponent("Icon");
 
@@ -922,7 +922,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
       form: _ctx.form
     }, null, 40
     /* PROPS, HYDRATE_EVENTS */
-    , _hoisted_1$6), vue.createVNode(vue.Transition, {
+    , _hoisted_1$9), vue.createVNode(vue.Transition, {
       name: "slide-fade"
     }, {
       default: vue.withCtx(function () {
@@ -956,11 +956,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$a.render = render$a;
-  script$a.__file = "src/components/MyInput/MyInput.vue";
+  script$f.render = render$a;
+  script$f.__file = "src/components/MyInput/MyInput.vue";
 
-  script$a.install = function (Vue) {
-    Vue.component(script$a.name, script$a);
+  script$f.install = function (Vue) {
+    Vue.component(script$f.name, script$f);
   };
 
   var getOffset = function getOffset(el) {
@@ -990,11 +990,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     };
   };
 
-  var script$9 = vue.defineComponent({
+  var script$e = vue.defineComponent({
     name: "ToolTip",
     emits: ['click'],
     components: {
-      Icon: script$k
+      Icon: script$p
     },
     props: {
       content: {
@@ -1242,13 +1242,13 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$5 = /*#__PURE__*/vue.createElementVNode("i", {
+  var _hoisted_1$8 = /*#__PURE__*/vue.createElementVNode("i", {
     class: "arrow"
   }, null, -1
   /* HOISTED */
   );
 
-  var _hoisted_2$5 = ["innerHTML"];
+  var _hoisted_2$8 = ["innerHTML"];
   function render$9(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("span", {
       ref: "el",
@@ -1263,12 +1263,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
           class: vue.normalizeClass(['tooltip', _ctx.direction, _ctx.className]),
           style: vue.normalizeStyle(_ctx.state.tooltipStyle),
           onClick: _cache[0] || (_cache[0] = vue.withModifiers(function () {}, ["stop"]))
-        }, [_hoisted_1$5, _ctx.content ? (vue.openBlock(), vue.createElementBlock("span", {
+        }, [_hoisted_1$8, _ctx.content ? (vue.openBlock(), vue.createElementBlock("span", {
           key: 0,
           innerHTML: _ctx.content
         }, null, 8
         /* PROPS */
-        , _hoisted_2$5)) : vue.renderSlot(_ctx.$slots, "content", {
+        , _hoisted_2$8)) : vue.renderSlot(_ctx.$slots, "content", {
           key: 1
         })], 6
         /* CLASS, STYLE */
@@ -1282,15 +1282,15 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$9.render = render$9;
-  script$9.__file = "src/components/Tooltip/ToolTip.vue";
+  script$e.render = render$9;
+  script$e.__file = "src/components/Tooltip/ToolTip.vue";
 
-  var script$8 = vue.defineComponent({
+  var script$d = vue.defineComponent({
     name: "MenuItem",
     emits: ['click', 'select'],
     components: {
-      ToolTip: script$9,
-      Icon: script$k
+      ToolTip: script$e,
+      Icon: script$p
     },
     props: {
       items: {
@@ -1415,12 +1415,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$4 = ["data-height"];
-  var _hoisted_2$4 = ["onMouseenter", "onMouseleave", "onClick"];
-  var _hoisted_3$2 = {
+  var _hoisted_1$7 = ["data-height"];
+  var _hoisted_2$7 = ["onMouseenter", "onMouseleave", "onClick"];
+  var _hoisted_3$4 = {
     class: "menu-title"
   };
-  var _hoisted_4 = {
+  var _hoisted_4$2 = {
     class: "name"
   };
   function render$8(_ctx, _cache, $props, $setup, $data, $options) {
@@ -1461,7 +1461,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
             onClick: vue.withModifiers(function ($event) {
               return _ctx.click(item);
             }, ["stop"])
-          }, [vue.createElementVNode("span", _hoisted_3$2, [vue.createVNode(_component_tool_tip, {
+          }, [vue.createElementVNode("span", _hoisted_3$4, [vue.createVNode(_component_tool_tip, {
             content: item.label,
             direction: "right",
             x: 15,
@@ -1479,7 +1479,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
 
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
-          , ["content", "disabled"]), vue.createElementVNode("span", _hoisted_4, vue.toDisplayString(item.label), 1
+          , ["content", "disabled"]), vue.createElementVNode("span", _hoisted_4$2, vue.toDisplayString(item.label), 1
           /* TEXT */
           ), item.children ? (vue.openBlock(), vue.createBlock(_component_Icon, {
             key: 0,
@@ -1496,12 +1496,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
           /* PROPS */
           , ["items", "itemUl", "layer", "onClick", "onSelect"])) : vue.createCommentVNode("v-if", true)], 42
           /* CLASS, PROPS, HYDRATE_EVENTS */
-          , _hoisted_2$4);
+          , _hoisted_2$7);
         }), 128
         /* KEYED_FRAGMENT */
         ))], 10
         /* CLASS, PROPS */
-        , _hoisted_1$4), [[vue.vShow, !_ctx.itemUl || _ctx.visibleList.includes(_ctx.itemUl.key)]])];
+        , _hoisted_1$7), [[vue.vShow, !_ctx.itemUl || _ctx.visibleList.includes(_ctx.itemUl.key)]])];
       }),
       _: 1
       /* STABLE */
@@ -1511,14 +1511,14 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     , ["onBeforeEnter", "onAfterEnter", "onAfterLeave", "onBeforeLeave"]);
   }
 
-  script$8.render = render$8;
-  script$8.__file = "src/components/Menu/MenuItem.vue";
+  script$d.render = render$8;
+  script$d.__file = "src/components/Menu/MenuItem.vue";
 
-  var script$7 = vue.defineComponent({
+  var script$c = vue.defineComponent({
     name: "myMenu",
     emits: ['click', 'select'],
     components: {
-      MenuItem: script$8
+      MenuItem: script$d
     },
     props: {
       // 显示模式：横向、竖向
@@ -1648,22 +1648,22 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$7.render = render$7;
-  script$7.__file = "src/components/Menu/MyMenu.vue";
+  script$c.render = render$7;
+  script$c.__file = "src/components/Menu/MyMenu.vue";
 
-  script$7.install = function (Vue) {
-    Vue.component(script$7.name, script$7);
+  script$c.install = function (Vue) {
+    Vue.component(script$c.name, script$c);
   };
 
-  script$8.install = function (Vue) {
-    Vue.component(script$8.name, script$8);
+  script$d.install = function (Vue) {
+    Vue.component(script$d.name, script$d);
   };
 
-  script$9.install = function (Vue) {
-    Vue.component(script$9.name, script$9);
+  script$e.install = function (Vue) {
+    Vue.component(script$e.name, script$e);
   };
 
-  var script$6 = vue.defineComponent({
+  var script$b = vue.defineComponent({
     name: 'PopoverItem',
     emits: ['after-enter', 'after-leave'],
     props: {
@@ -1821,12 +1821,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$3 = ["aria-hidden"];
-  var _hoisted_2$3 = {
+  var _hoisted_1$6 = ["aria-hidden"];
+  var _hoisted_2$6 = {
     class: "popover-arrow",
     ref: "popoverArrow"
   };
-  var _hoisted_3$1 = {
+  var _hoisted_3$3 = {
     key: 0,
     class: "popover-title"
   };
@@ -1849,12 +1849,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
         return [vue.withDirectives(vue.createElementVNode("div", {
           class: vue.normalizeClass(['popover-outbox', _ctx.placement, _ctx.popoverClass]),
           "aria-hidden": _ctx.disabled || !_ctx.showPopover ? 'true' : 'false'
-        }, [vue.createCommentVNode(" popover arrow "), vue.createElementVNode("i", _hoisted_2$3, null, 512
+        }, [vue.createCommentVNode(" popover arrow "), vue.createElementVNode("i", _hoisted_2$6, null, 512
         /* NEED_PATCH */
         ), vue.createCommentVNode(" popover content "), vue.createElementVNode("div", {
           style: vue.normalizeStyle(_ctx.popoverStyles),
           class: vue.normalizeClass(['popover-box-content'])
-        }, [_ctx.title ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$1, vue.toDisplayString(_ctx.title), 1
+        }, [_ctx.title ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$3, vue.toDisplayString(_ctx.title), 1
         /* TEXT */
         )) : vue.createCommentVNode("v-if", true), vue.renderSlot(_ctx.$slots, "default", {}, function () {
           return [vue.createTextVNode(vue.toDisplayString(_ctx.content), 1
@@ -1864,7 +1864,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
         /* STYLE */
         )], 10
         /* CLASS, PROPS */
-        , _hoisted_1$3), [[vue.vShow, !_ctx.disabled && _ctx.showPopover]])];
+        , _hoisted_1$6), [[vue.vShow, !_ctx.disabled && _ctx.showPopover]])];
       }),
       _: 3
       /* FORWARDED */
@@ -1890,12 +1890,12 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$6.render = render$6;
-  script$6.__scopeId = "data-v-779845ce";
-  script$6.__file = "src/components/Popover/PopoverItem.vue";
+  script$b.render = render$6;
+  script$b.__scopeId = "data-v-779845ce";
+  script$b.__file = "src/components/Popover/PopoverItem.vue";
 
-  script$6.install = function (Vue) {
-    Vue.component(script$6.name, script$6);
+  script$b.install = function (Vue) {
+    Vue.component(script$b.name, script$b);
   };
 
   function _typeof(obj) {
@@ -1908,10 +1908,10 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }, _typeof(obj);
   }
 
-  var script$5 = vue.defineComponent({
+  var script$a = vue.defineComponent({
     name: 'CheckBox',
     components: {
-      Icon: script$k
+      Icon: script$p
     },
     props: {
       disabled: {
@@ -2012,11 +2012,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$2 = {
+  var _hoisted_1$5 = {
     key: 0,
     class: "checkbox-text"
   };
-  var _hoisted_2$2 = ["textContent"];
+  var _hoisted_2$5 = ["textContent"];
   function render$5(_ctx, _cache, $props, $setup, $data, $options) {
     var _normalizeClass2;
 
@@ -2039,28 +2039,28 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     /* PROPS */
     , ["class"])], 4
     /* STYLE */
-    ), _ctx.$slots.default ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_1$2, [vue.renderSlot(_ctx.$slots, "default")])) : (vue.openBlock(), vue.createElementBlock("span", {
+    ), _ctx.$slots.default ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_1$5, [vue.renderSlot(_ctx.$slots, "default")])) : (vue.openBlock(), vue.createElementBlock("span", {
       key: 1,
       class: "checkbox-text",
       textContent: vue.toDisplayString(_ctx.label)
     }, null, 8
     /* PROPS */
-    , _hoisted_2$2))])], 2
+    , _hoisted_2$5))])], 2
     /* CLASS */
     );
   }
 
-  script$5.render = render$5;
-  script$5.__file = "src/components/Checkbox/CheckBox.vue";
+  script$a.render = render$5;
+  script$a.__file = "src/components/Checkbox/CheckBox.vue";
 
-  script$5.install = function (Vue) {
-    Vue.component(script$5.name, script$5);
+  script$a.install = function (Vue) {
+    Vue.component(script$a.name, script$a);
   };
 
-  var script$4 = vue.defineComponent({
+  var script$9 = vue.defineComponent({
     name: 'Tag',
     components: {
-      Icon: script$k
+      Icon: script$p
     },
     props: {
       type: {
@@ -2136,11 +2136,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     )), [[vue.vShow, _ctx.visible]]);
   }
 
-  script$4.render = render$4;
-  script$4.__file = "src/components/Tag/Tag.vue";
+  script$9.render = render$4;
+  script$9.__file = "src/components/Tag/Tag.vue";
 
-  script$4.install = function (Vue) {
-    Vue.component(script$4.name, script$4);
+  script$9.install = function (Vue) {
+    Vue.component(script$9.name, script$9);
   };
 
   var TypeComponentsMap = {
@@ -2150,11 +2150,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     'error': 'round_close_fill_light'
   };
 
-  var script$3 = vue.defineComponent({
+  var script$8 = vue.defineComponent({
     name: 'Alert',
     components: _defineProperty({
-      Icon: script$k
-    }, "Icon", script$k),
+      Icon: script$p
+    }, "Icon", script$p),
     props: {
       title: {
         type: String,
@@ -2217,10 +2217,10 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1$1 = {
+  var _hoisted_1$4 = {
     class: "alert-content"
   };
-  var _hoisted_2$1 = {
+  var _hoisted_2$4 = {
     key: 1,
     class: /*#__PURE__*/vue.normalizeClass('alert-description')
   };
@@ -2242,7 +2242,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
           class: vue.normalizeClass(_ctx.iconClass)
         }, null, 8
         /* PROPS */
-        , ["name", "class"])) : vue.createCommentVNode("v-if", true), vue.createElementVNode("div", _hoisted_1$1, [_ctx.title || _ctx.$slots.title ? (vue.openBlock(), vue.createElementBlock("span", {
+        , ["name", "class"])) : vue.createCommentVNode("v-if", true), vue.createElementVNode("div", _hoisted_1$4, [_ctx.title || _ctx.$slots.title ? (vue.openBlock(), vue.createElementBlock("span", {
           key: 0,
           class: vue.normalizeClass(['alert-title', _ctx.isBoldTitle])
         }, [vue.renderSlot(_ctx.$slots, "title", {}, function () {
@@ -2251,7 +2251,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
           )];
         })], 2
         /* CLASS */
-        )) : vue.createCommentVNode("v-if", true), _ctx.$slots.default || _ctx.description ? (vue.openBlock(), vue.createElementBlock("p", _hoisted_2$1, [vue.renderSlot(_ctx.$slots, "default", {}, function () {
+        )) : vue.createCommentVNode("v-if", true), _ctx.$slots.default || _ctx.description ? (vue.openBlock(), vue.createElementBlock("p", _hoisted_2$4, [vue.renderSlot(_ctx.$slots, "default", {}, function () {
           return [vue.createTextVNode(vue.toDisplayString(_ctx.description), 1
           /* TEXT */
           )];
@@ -2284,14 +2284,14 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     });
   }
 
-  script$3.render = render$3;
-  script$3.__file = "src/components/Alert/Alert.vue";
+  script$8.render = render$3;
+  script$8.__file = "src/components/Alert/Alert.vue";
 
-  script$3.install = function (Vue) {
-    Vue.component(script$3.name, script$3);
+  script$8.install = function (Vue) {
+    Vue.component(script$8.name, script$8);
   };
 
-  var script$2 = vue.defineComponent({
+  var script$7 = vue.defineComponent({
     name: 'Loading',
     props: {
       text: String,
@@ -2371,11 +2371,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     }
   });
 
-  var _hoisted_1 = {
+  var _hoisted_1$3 = {
     class: "loading-spinner"
   };
 
-  var _hoisted_2 = /*#__PURE__*/vue.createElementVNode("svg", {
+  var _hoisted_2$3 = /*#__PURE__*/vue.createElementVNode("svg", {
     viewBox: "0 0 50 50",
     class: "loading-svg"
   }, [/*#__PURE__*/vue.createElementVNode("circle", {
@@ -2388,7 +2388,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
   /* HOISTED */
   );
 
-  var _hoisted_3 = {
+  var _hoisted_3$2 = {
     key: 0,
     class: "loading-text"
   };
@@ -2408,7 +2408,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
             'loading-full': !_ctx.el,
             'loading': true
           })
-        }, [vue.createElementVNode("div", _hoisted_1, [_hoisted_2, _ctx.text ? (vue.openBlock(), vue.createElementBlock("p", _hoisted_3, vue.toDisplayString(_ctx.text), 1
+        }, [vue.createElementVNode("div", _hoisted_1$3, [_hoisted_2$3, _ctx.text ? (vue.openBlock(), vue.createElementBlock("p", _hoisted_3$2, vue.toDisplayString(_ctx.text), 1
         /* TEXT */
         )) : vue.createCommentVNode("v-if", true)])], 6
         /* CLASS, STYLE */
@@ -2420,11 +2420,11 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     });
   }
 
-  script$2.render = render$2;
-  script$2.__file = "src/components/Loading/Loading.vue";
+  script$7.render = render$2;
+  script$7.__file = "src/components/Loading/Loading.vue";
 
   var appendChild = function appendChild(opt) {
-    var app = vue.createApp(script$2, opt);
+    var app = vue.createApp(script$7, opt);
 
     if (opt.el === document.body || !opt.el) {
       var container = document.createElement('div');
@@ -2487,7 +2487,7 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     });
   };
 
-  var script$1 = vue.defineComponent({
+  var script$6 = vue.defineComponent({
     name: 'Badge',
     props: {
       value: String | Number,
@@ -2539,14 +2539,14 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script$1.render = render$1;
-  script$1.__file = "src/components/Badge/Badge.vue";
+  script$6.render = render$1;
+  script$6.__file = "src/components/Badge/Badge.vue";
 
-  script$1.install = function (Vue) {
-    Vue.component(script$1.name, script$1);
+  script$6.install = function (Vue) {
+    Vue.component(script$6.name, script$6);
   };
 
-  var script = vue.defineComponent({
+  var script$5 = vue.defineComponent({
     name: "Divider",
     props: {
       direction: {
@@ -2607,41 +2607,1471 @@ var myLib = (function (exports, es_function_name_js, es_array_includes_js, vue) 
     );
   }
 
-  script.render = render;
-  script.__file = "src/components/Divider/Divider.vue";
+  script$5.render = render;
+  script$5.__file = "src/components/Divider/Divider.vue";
+
+  script$5.install = function (Vue) {
+    Vue.component(script$5.name, script$5);
+  };
+
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+
+  function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+  }
+
+  function _iterableToArray(iter) {
+    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+  }
+
+  function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+  }
+
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+  }
+
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      enumerableOnly && (symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      })), keys.push.apply(keys, symbols);
+    }
+
+    return keys;
+  }
+
+  function _objectSpread2(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = null != arguments[i] ? arguments[i] : {};
+      i % 2 ? ownKeys(Object(source), !0).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+
+    return target;
+  }
+
+  var script$4 = vue.defineComponent({
+    name: 'HeaderSlot',
+    props: {
+      data: Object,
+      index: Number
+    },
+    setup: function setup(props) {
+      if (props.data.slots && props.data.slots.header) {
+        return function () {
+          return [vue.h('span', {}, props.data.slots.header({
+            column: props.data,
+            index: props.index
+          }))];
+        };
+      } else {
+        return function () {
+          return [];
+        };
+      }
+    }
+  });
+
+  script$4.__file = "src/components/TableNew/HeaderSlot.vue";
+
+  var _hoisted_1$2 = ["title", "colspan", "rowspan", "onMousemove"];
+  var _hoisted_2$2 = {
+    key: 1
+  };
+  var _hoisted_3$1 = {
+    key: 2,
+    class: "caret-wrapper"
+  };
+  var _hoisted_4$1 = ["onClick"];
+  var _hoisted_5$1 = ["onClick"];
+  var _hoisted_6 = ["onMousedown"];
+  var script$3 = {
+    __name: 'TableHeader',
+    props: {
+      showHeader: Boolean,
+      drag: Boolean,
+      title: Boolean,
+      selectChecked: {
+        //表头checkbox勾选状态0全不选，1全选，2半选
+        type: Number,
+        default: 0
+      },
+      sortSingle: Boolean,
+      headMaxLayer: {
+        type: Number,
+        default: 1
+      }
+    },
+    setup: function setup(__props, _ref) {
+      var expose = _ref.expose,
+          emits = _ref.emit;
+      var props = __props;
+      var el = vue.ref();
+      var getColumns = vue.inject("GetColumns", []);
+      var state = vue.reactive({
+        checkboxChecked: props.selectChecked.toString(),
+        // columns: getColumns,
+        sortBy: {}
+      });
+      vue.watch(function () {
+        return props.selectChecked;
+      }, function (v) {
+        state.checkboxChecked = v.toString();
+      });
+
+      var getColumnsFilter = function getColumnsFilter(index) {
+        // console.log(index)
+        return getColumns.value.filter(function (item) {
+          return item.type !== 'extend' && item._layer === index;
+        });
+      }; // 鼠标滑过单元格时显示title提示，当设置为false时不显示，否则使用父级table的设置
+
+
+      var getShowHoverTitle = function getShowHoverTitle(item) {
+        if (!item.title) {
+          return null; // 当前设置了false不显示
+        } else {
+          if (props.title) {
+            return item.label;
+          }
+        }
+
+        return null;
+      }; // 表头拖动
+
+
+      var headMouseMove = function headMouseMove(evt, index) {
+        emitEvent('mouseMove', {
+          evt: evt,
+          index: index
+        });
+      };
+
+      var headMouseDown = function headMouseDown(evt, index) {
+        emitEvent('mouseDown', {
+          evt: evt,
+          index: index
+        });
+      }; // checkbox勾选事件
+
+
+      var checkboxChange = function checkboxChange(val) {
+        emitEvent('checkboxChange', !!val);
+      }; // 排序事件
+
+
+      var sortClick = function sortClick(prop, order) {
+        if (props.sortSingle) {
+          // 只支持单个，先清空
+          state.sortBy = {};
+        }
+
+        state.sortBy[prop] = order;
+        emitEvent('sortClick', state.sortBy);
+      };
+
+      var emitEvent = function emitEvent(type, obj) {
+        emits('event', type, obj);
+      }; // 由table组件调用，固定表头滚动时
+
+
+      var scrollTop = function scrollTop(_scrollTop) {
+        if (_scrollTop) {
+          el.value.style.transform = "translateY(".concat(_scrollTop, "px) translateZ(100px)");
+          el.value.className = 'transform';
+        } else {
+          el.value.style.transform = '';
+          el.value.className = '';
+        }
+      };
+
+      expose({
+        scrollTop: scrollTop
+      });
+      return function (_ctx, _cache) {
+        return __props.showHeader ? (vue.openBlock(), vue.createElementBlock("thead", {
+          key: 0,
+          ref_key: "el",
+          ref: el
+        }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(__props.headMaxLayer, function (thLayer) {
+          return vue.openBlock(), vue.createElementBlock("tr", {
+            key: thLayer,
+            class: vue.normalizeClass({
+              drag: __props.drag
+            })
+          }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(getColumnsFilter(thLayer), function (th, thIndex) {
+            return vue.openBlock(), vue.createElementBlock("th", {
+              key: thIndex,
+              class: vue.normalizeClass([th.fixed, th.className]),
+              style: vue.normalizeStyle({
+                textAlign: th.align
+              }),
+              title: getShowHoverTitle(th),
+              colspan: th._colspan,
+              rowspan: th._rowspan,
+              onMousemove: function onMousemove($event) {
+                return headMouseMove($event, thIndex);
+              }
+            }, [th.type === 'selection' ? (vue.openBlock(), vue.createBlock(script$a, {
+              key: 0,
+              modelValue: state.checkboxChecked,
+              "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+                return state.checkboxChecked = $event;
+              }),
+              class: vue.normalizeClass({
+                'some-select': __props.selectChecked === 2
+              }),
+              value: "1",
+              onChange: checkboxChange
+            }, null, 8
+            /* PROPS */
+            , ["modelValue", "class"])) : (vue.openBlock(), vue.createElementBlock(vue.Fragment, {
+              key: 1
+            }, [th.slots && th.slots.header ? (vue.openBlock(), vue.createBlock(script$4, {
+              key: 0,
+              data: th,
+              index: thIndex
+            }, null, 8
+            /* PROPS */
+            , ["data", "index"])) : (vue.openBlock(), vue.createElementBlock("span", _hoisted_2$2, vue.toDisplayString(th.label), 1
+            /* TEXT */
+            )), th.sortBy ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_3$1, [vue.createElementVNode("i", {
+              class: vue.normalizeClass(["sort-caret asc", {
+                active: state.sortBy[th.prop] === 'asc'
+              }]),
+              onClick: function onClick($event) {
+                return sortClick(th.prop, 'asc');
+              }
+            }, null, 10
+            /* CLASS, PROPS */
+            , _hoisted_4$1), vue.createElementVNode("i", {
+              class: vue.normalizeClass(["sort-caret desc", {
+                active: state.sortBy[th.prop] === 'desc'
+              }]),
+              onClick: function onClick($event) {
+                return sortClick(th.prop, 'desc');
+              }
+            }, null, 10
+            /* CLASS, PROPS */
+            , _hoisted_5$1)])) : vue.createCommentVNode("v-if", true)], 64
+            /* STABLE_FRAGMENT */
+            )), __props.drag && th.drag !== false ? (vue.openBlock(), vue.createElementBlock("a", {
+              key: 2,
+              class: "drag-line",
+              onMousedown: function onMousedown($event) {
+                return headMouseDown($event, thIndex);
+              }
+            }, null, 40
+            /* PROPS, HYDRATE_EVENTS */
+            , _hoisted_6)) : vue.createCommentVNode("v-if", true)], 46
+            /* CLASS, STYLE, PROPS, HYDRATE_EVENTS */
+            , _hoisted_1$2);
+          }), 128
+          /* KEYED_FRAGMENT */
+          ))], 2
+          /* CLASS */
+          );
+        }), 128
+        /* KEYED_FRAGMENT */
+        ))], 512
+        /* NEED_PATCH */
+        )) : vue.createCommentVNode("v-if", true);
+      };
+    }
+  };
+
+  script$3.__file = "src/components/TableNew/TableHeader.vue";
+
+  var script$2 = vue.defineComponent({
+    name: 'TableTd',
+    components: {
+      ToolTip: script$e,
+      CheckBox: script$a,
+      Tag: script$9
+    },
+    props: {
+      column: {
+        type: Object,
+        default: function _default() {}
+      },
+      columnIndex: {
+        //当前列号
+        type: Number,
+        default: 0
+      },
+      row: {
+        type: Object,
+        default: function _default() {}
+      },
+      index: {
+        //当前行号
+        type: Number,
+        default: 0
+      },
+      toggle: Boolean,
+      //扩展子级展开和收起状态
+      parentRow: Object,
+      //子级下拉时包含父级的信息
+      title: Boolean,
+      checked: Boolean,
+      colspan: {
+        // 有扩展列时才传
+        type: Number,
+        default: 0
+      },
+      rowcolspan: {
+        type: Object,
+        default: function _default() {}
+      },
+      rowspancolspanlist: {
+        type: Array,
+        default: function _default() {
+          return [];
+        }
+      }
+    },
+    emits: ['cellClick', 'toggleExtend'],
+    setup: function setup(props, _ref) {
+      var emit = _ref.emit;
+      // 接收table.vue传进来的SetSelectedRows
+      var setSelectedRows = inject('SetSelectedRows');
+      var classNameTd = vue.ref(props.column.fixed);
+      var pcl = vue.ref(props.column.className); // 列固定
+
+      if (pcl.value && props.column.fixed) {
+        classNameTd.value += ' ' + pcl.value;
+      } else {
+        classNameTd.value = pcl.value;
+      }
+
+      var display = false;
+      var rowspan = 0;
+      var colspan = vue.ref(props.colspan).value;
+
+      if (Object.keys(props.rowColSpan).length > 0) {
+        // 有合并项
+        // 不显示
+        display = props.rowColSpan.rowSpan === 0 || props.rowColSpan.colSpan === 0;
+        rowspan = props.rowColSpan && props.rowColSpan.rowSpan;
+        colspan = props.rowColSpan && props.rowColSpan.colSpan;
+      } // 鼠标滑过单元格时显示title提示，当设置为false时不显示，否则使用父级table的设置 todo 待优化
+
+
+      var hoverTitle = computed(function () {
+        if (!props.column.title || props.column.tooltip === true || props.column.tooltip && props.column.tooltip.show) {
+          return null; // 当前设置了false不显示，或者是使用了tooltip时不显示
+        } else {
+          if (props.title) {
+            return props.row[props.column.prop];
+          }
+        }
+
+        return null;
+      });
+
+      var onCellClick = function onCellClick() {
+        emit('cellClick', props.row, props.column, props.index, props.columnIndex); // 单元格点击
+        // evt.stopPropagation()
+      };
+
+      var checkValue = vue.ref(props.checked);
+      watch(function () {
+        return props.checked;
+      }, function (val) {
+        checkValue.value = val;
+      });
+
+      var extendToggle = function extendToggle() {
+        emit('toggleExtend');
+      };
+
+      var defaultSlots = function defaultSlots() {
+        var val = props.row[props.column.prop];
+
+        if (props.column.slots && props.column.slots.default) {
+          return props.column.slots.default({
+            row: props.row,
+            index: props.index,
+            extend: extendToggle,
+            toggle: props.toggle,
+            parentRow: props.parentRow
+          });
+        } else if (props.column.formatter) {
+          //日期格式化
+          if (['date', 'dateTime'].includes(props.column.formatter)) {
+            if (val) {
+              var pS = function pS(num) {
+                return num.toString().padStart(2, '0');
+              };
+
+              var date = new Date(val);
+              var ymd = "".concat(date.getFullYear(), "-").concat(pS(date.getMonth() + 1), "-").concat(pS(date.getDate()));
+
+              switch (props.column.formatter) {
+                case 'dateTime':
+                  return "".concat(ymd, " ").concat(pS(date.getHours()), ":").concat(pS(date.getMinutes()), ":").concat(pS(date.getSeconds()));
+
+                default:
+                  return ymd;
+              }
+            }
+
+            return val;
+          }
+
+          return props.column.formatter(props.row, props.column, val, props.index);
+        } else if (props.column.type === 'selection') {
+          // 如果类型是选择，就渲染一个checkbox
+          return h(script$a, {
+            modelValue: checkValue.value,
+            onChange: function onChange(val) {
+              setSelectedRows(val, props.row, props.index);
+              checkValue.value = val; // 这里要手动更新，暂不清楚原因
+            }
+          });
+        } else if (props.column.tooltip === true || props.column.tooltip && !props.column.tooltip.disabled) {
+          // 如果类型是tooltip，就渲染一个tooltip
+          var obj = {
+            content: val,
+            direction: 'top'
+          };
+
+          if (props.column.tooltip.disabled) {
+            obj = Object.assign(obj, props.column.tooltip);
+          }
+
+          return h(script$e, obj, function () {
+            return val;
+          });
+        } else if (_typeof(props.column.tag) === 'object') {
+          // 如果存在tag属性，渲染tag组件
+          if (!val) {
+            return val;
+          }
+
+          var _obj = Object.assign({
+            size: 'small'
+          }, props.column.tag, {
+            type: props.column.tag.dict[val]
+          });
+
+          var dictVal = val;
+
+          if (_typeof(props.column.dict) === 'object') {
+            dictVal = props.column.dict[val];
+          } //return h(Tag, obj, val)
+
+
+          return h(script$9, _obj, function () {
+            return dictVal;
+          });
+        } else if (props.column.type === 'index') {
+          return props.index + 1;
+        } else if (_typeof(props.column.dict) === 'object') {
+          if (val) {
+            return props.column.dict[val];
+          }
+
+          return val;
+        } else {
+          return val;
+        }
+      };
+
+      if (!display) {
+        return function () {
+          return [h('td', {
+            class: classNameTd.value,
+            rowspan: rowspan > 1 ? rowspan : null,
+            colspan: colspan > 1 ? colspan : null,
+            style: 'text-align:' + props.column.align,
+            title: hoverTitle.value,
+            onClick: onCellClick
+          }, defaultSlots() //子节点
+          )];
+        };
+      } else {
+        return function () {
+          return [];
+        };
+      }
+    }
+  });
+
+  script$2.__file = "src/components/TableNew/TableTd.vue";
+
+  var _hoisted_1$1 = ["onClick"];
+  var _hoisted_2$1 = ["onCllick"];
+  var script$1 = {
+    __name: 'TableBody',
+    props: {
+      data: Array,
+      rowColSpan: Array,
+      hasChild: Boolean,
+      lazyLoad: Function,
+      extendToggle: Boolean,
+      // 默认展开或收起状态
+      title: Boolean,
+      selectedRows: Array
+    },
+    emits: ['rowClick', 'cellClick'],
+    setup: function setup(__props, _ref) {
+      var emits = _ref.emit;
+      var props = __props;
+      var getColumns = vue.inject("GetColumns");
+      var state = vue.reactive({
+        toggle: {},
+        // {1: true, 2: false, 0: false} // 对应每行展开或收起状态
+        rowspanColspanList: []
+      });
+      var dataList = vue.ref(props.data); // 这里要转一下，加载子级时才能同步展示
+
+      var colsExtend = vue.computed(function () {
+        return getColumns.value.filter(function (item) {
+          return item.type === 'extend' && !item.children;
+        });
+      });
+      var colsNoExtend = vue.computed(function () {
+        // 不带扩展的
+        return getColumns.value.filter(function (item) {
+          return item.type !== 'extend' && !item.children;
+        });
+      });
+
+      var getToggle = function getToggle(rowIndex) {
+        return state.toggle[rowIndex] === undefined ? props.extendToggle : state.toggle[rowIndex];
+      }; // 展开或收起扩展行
+
+
+      var toggleExtend = function toggleExtend(index, row) {
+        // 存在扩展时或有子级时
+        if (colsExtend.value.length > 0 || props.hasChild) {
+          if (typeof state.toggle[index] === 'undefined') {
+            state.toggle[index] = !props.extendToggle;
+          } else {
+            state.toggle[index] = !state.toggle[index];
+          } // 展开时，如果是懒加载
+
+
+          console.log(state.toggle[index]);
+
+          if (state.toggle[index] && props.lazyLoad) {
+            props.lazyLoad(row, function (child) {
+              if (child && child.length > 0) {
+                row.children = child;
+              }
+            });
+          }
+        }
+      };
+
+      var rowClick = function rowClick(row, index) {
+        emits('rowClick', row, index);
+      };
+
+      var cellClick = function cellClick(row, column, rowIndex, columnIndex) {
+        emits('cellClick', row, column, rowIndex, columnIndex);
+      }; // 处理合并数理
+
+
+      var formatRowColSpan = vue.computed(function () {
+        var temp = [];
+
+        if (props.rowColSpan && props.rowColSpan.length > 0) {
+          props.rowColSpan.forEach(function (item) {
+            temp.push(item);
+
+            if (item.colSpan && item.colSpan > 1) {
+              // 计算不需要显示的列
+              for (var i = 1; i < item.colSpan; i++) {
+                temp.push({
+                  row: item.row,
+                  col: item.col + i,
+                  colSpan: 0
+                });
+              }
+            } // 计算不需要显示的行
+
+
+            if (item.rowSpan && item.rowSpan > 1) {
+              for (var _i = 1; _i < item.rowSpan; _i++) {
+                temp.push({
+                  row: item.row + _i,
+                  col: item.col,
+                  rowSpan: 0
+                });
+              }
+            }
+          });
+        }
+
+        return temp;
+      });
+
+      var getRowColSpan = function getRowColSpan(row, col) {
+        var newRow = formatRowColSpan.value.filter(function (item) {
+          return item.row === row && col === item.col;
+        });
+
+        if (newRow.length > 0) {
+          return newRow[0];
+        } else {
+          return [];
+        }
+      };
+
+      return function (_ctx, _cache) {
+        return vue.openBlock(), vue.createElementBlock("tbody", null, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(dataList.value, function (row, rowIndex) {
+          return vue.openBlock(), vue.createElementBlock(vue.Fragment, {
+            key: rowIndex
+          }, [vue.createElementVNode("tr", {
+            class: vue.normalizeClass(_defineProperty({
+              warning: __props.selectedRows.indexOf(row) !== -1
+            }, row.trClass, row.trClass)),
+            onClick: function onClick($event) {
+              return rowClick(row, rowIndex);
+            }
+          }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(vue.unref(colsNoExtend), function (column, indexTd) {
+            return vue.openBlock(), vue.createBlock(script$2, {
+              key: indexTd,
+              checked: __props.selectedRows.indexOf(row) !== -1,
+              column: column,
+              row: row,
+              index: rowIndex,
+              "column-index": indexTd,
+              title: __props.title,
+              toggle: getToggle(rowIndex),
+              "row-col-span": getRowColSpan(rowIndex, indexTd),
+              "rowspan-colspan-list": state.rowspanColspanList,
+              onToggleExtend: function onToggleExtend($event) {
+                return toggleExtend(rowIndex, row);
+              },
+              onCellClick: cellClick
+            }, null, 8
+            /* PROPS */
+            , ["checked", "column", "row", "index", "column-index", "title", "toggle", "row-col-span", "rowspan-colspan-list", "onToggleExtend"]);
+          }), 128
+          /* KEYED_FRAGMENT */
+          ))], 10
+          /* CLASS, PROPS */
+          , _hoisted_1$1), getToggle(rowIndex) && vue.unref(colsExtend).length > 0 ? (vue.openBlock(), vue.createElementBlock("tr", {
+            key: 'tr' + rowIndex,
+            class: vue.normalizeClass(["extend", {
+              warning: __props.selectedRows.indexOf(row) !== -1
+            }])
+          }, [vue.createVNode(script$2, {
+            column: vue.unref(colsExtend)[0],
+            row: row,
+            index: rowIndex,
+            colspan: vue.unref(colsNoExtend).length
+          }, null, 8
+          /* PROPS */
+          , ["column", "row", "index", "colspan"])], 2
+          /* CLASS */
+          )) : vue.createCommentVNode("v-if", true), __props.hasChild ? (vue.openBlock(true), vue.createElementBlock(vue.Fragment, {
+            key: 1
+          }, vue.renderList(row.children, function (item, index) {
+            return vue.withDirectives((vue.openBlock(), vue.createElementBlock("tr", {
+              key: 'child' + index,
+              class: vue.normalizeClass([_defineProperty({}, row.trClass, row.trClass), "tr-child"]),
+              onCllick: function onCllick($event) {
+                return rowClick(item, index);
+              }
+            }, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(vue.unref(colsNoExtend), function (child, childIndex) {
+              return vue.openBlock(), vue.createBlock(script$2, {
+                key: 'childTd' + childIndex,
+                column: child,
+                row: item,
+                index: index,
+                "column-index": childIndex,
+                title: __props.title,
+                "parent-row": row,
+                onCellClick: cellClick
+              }, null, 8
+              /* PROPS */
+              , ["column", "row", "index", "column-index", "title", "parent-row"]);
+            }), 128
+            /* KEYED_FRAGMENT */
+            ))], 42
+            /* CLASS, PROPS, HYDRATE_EVENTS */
+            , _hoisted_2$1)), [[vue.vShow, getToggle(rowIndex)]]);
+          }), 128
+          /* KEYED_FRAGMENT */
+          )) : vue.createCommentVNode("v-if", true)], 64
+          /* STABLE_FRAGMENT */
+          );
+        }), 128
+        /* KEYED_FRAGMENT */
+        ))]);
+      };
+    }
+  };
+
+  script$1.__file = "src/components/TableNew/TableBody.vue";
+
+  var _hoisted_1 = ["width"];
+  var _hoisted_2 = {
+    key: 0
+  };
+  var _hoisted_3 = ["colspan"];
+  var _hoisted_4 = {
+    key: 0,
+    class: "table-drag-line"
+  };
+  var _hoisted_5 = {
+    key: 0,
+    class: "table-page-space"
+  };
+  var script = {
+    __name: 'Table',
+    props: {
+      tableData: {
+        type: Array,
+        default: function _default() {
+          return [];
+        }
+      },
+      height: String,
+      //table的高，溢出显示滚动条，并表头固定
+      width: String,
+      className: {
+        type: String,
+        default: ''
+      },
+      hover: {
+        //鼠标悬停时高亮
+        type: Boolean,
+        default: true
+      },
+      border: {
+        // 表格纵向边框
+        type: Boolean,
+        default: false
+      },
+      stripe: {
+        //是否显示间隔斑马纹
+        type: Boolean,
+        default: true
+      },
+      ellipsis: {
+        // 表格单元格文字溢出显示…，在不指定列宽时，各列平分表格宽
+        type: Boolean,
+        default: true
+      },
+      showHeader: {
+        // 是否显示表头
+        type: Boolean,
+        default: true
+      },
+      drag: {
+        // 允许拖动表头改变当前单元格宽度
+        type: Boolean,
+        default: true
+      },
+      dragLine: {
+        // 拖动时显示垂直线
+        type: Boolean,
+        default: true
+      },
+      dragWidth: {
+        // 允许拖动的最大与最小宽度,0为不限制
+        type: Array,
+        default: [60, 0]
+      },
+      title: {
+        // 鼠标滑过单元格时显示title提示
+        type: Boolean,
+        default: true
+      },
+      emptyText: {
+        // data为空的时候显示
+        type: String,
+        default: '暂无数据'
+      },
+      rowColSpan: {
+        // 合并行或列方法。通过给传入 rowColSpan 方法可以实现合并行或列，
+        // 方法的参数(当前行号 rowIndex,当前列号 columnIndex,当前行 row,当前列 column)四个属性。
+        // 该函数返回一个包含两个数字的数组，第一个 rowspan，第二个 colspan，即向纵向和横向合并多少个单元格
+        type: Array
+      },
+      hasChild: Boolean,
+      //是否包含子节点数据，为true时，当 row 中包含 children 字段时，被视为子节点数据
+      lazyLoad: Function,
+      extendToggle: Boolean,
+      // 默认展开扩展
+      sortSingle: Boolean,
+      // 单个排序
+      columns: {
+        // 表头数据
+        type: Array
+      },
+      pagination: {
+        type: Object,
+        default: function _default() {}
+      },
+      fixedBottomScroll: Boolean | String
+    },
+    emits: ['selectClick', 'sortChange', 'rowClick', 'cellClick', 'dragChange', 'scroll'],
+    setup: function setup(__props, _ref) {
+      var expose = _ref.expose,
+          emits = _ref.emit;
+      var props = __props; // import { Pagination } from '../pagination'
+
+      var slots = vue.useSlots();
+      var el = vue.ref();
+      var tableEl = vue.ref();
+      var tableHeadEl = vue.ref();
+      var columnsData = vue.ref([]);
+      var state = vue.reactive({
+        colWidth: [],
+        selectedRows: [],
+        // 已选择的行
+        dragHead: {},
+        // 临时存放表头拖动信息
+        ctrlIsDown: false,
+        // 是否按下ctrl键
+        ctrlRowIndex: -1,
+        // 按下ctrl键盘时点击的checkbox序号
+        isSetThWidth: false,
+        // 用于记录是否已经重新设置过表头的实际宽
+        headMaxLayer: 1,
+        // 表头的层级
+        stateHeight: props.height
+      }); // 预防中途有修改高的时候
+
+      vue.watch(function () {
+        return props.height;
+      }, function (val) {
+        state.stateHeight = val;
+      }); //provide(`${prefixCls}ColumnsType`, !!props.columns) // column组件用来判断添加表头数据
+
+      var selectChecked = vue.computed(function () {
+        // 表头checkbox勾选状态0全不选，1全选，2半选
+        var len = state.selectedRows.length;
+
+        if (len === 0) {
+          return 0; // 全不选
+        } else if (len === props.data.length) {
+          return 1; // 全选
+        } else {
+          return 2;
+        }
+      }); // 对外提供的方法，用于多选或取消表格行
+
+      var toggleRowSelection = function toggleRowSelection(row) {
+        var selected = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+        // 用于多选表格，切换某一行的选中状态，如果使用了第二个参数，则是设置这一行选中与否（selected 为 true 则选中）row, selected
+        var index = state.selectedRows.indexOf(row);
+
+        if (!selected) {
+          // 取消勾选当前行
+          if (index !== -1) {
+            state.selectedRows.splice(index, 1);
+          }
+        } else {
+          // 勾选当前行，没有时添加。有时不重复添加
+          if (index === -1) {
+            state.selectedRows.push(row);
+          }
+        }
+      };
+
+      vue.watch(function () {
+        return props.columns;
+      }, function () {
+        columnsData.value = [];
+        formatColumns();
+      });
+
+      var formatColumns = function formatColumns() {
+        getColumns(props.columns, 0, '');
+        columnsData.value.forEach(function (item) {
+          // console.log(item)
+          if (!item.children) {
+            // 没有子级时，计算纵向合并
+            var rowspan = state.headMaxLayer - item._layer + 1; // 纵向合并
+
+            if (rowspan > 1) {
+              item._rowspan = rowspan;
+            }
+          } else {
+            // 计算横向合并
+            var colspan = columnsData.value.filter(function (col) {
+              var _col$_tProps;
+
+              var prop = (_col$_tProps = col._tProps) === null || _col$_tProps === void 0 ? void 0 : _col$_tProps.split(',');
+              return prop && prop.includes(item.prop) && !col.children;
+            });
+
+            if ((colspan === null || colspan === void 0 ? void 0 : colspan.length) > 0) {
+              item._colspan = colspan.length;
+            }
+          }
+        });
+      }; // 使用columns传参时
+
+
+      var getColumns = function getColumns(data) {
+        var layer = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+        var tProps = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+        layer++;
+
+        if (state.headMaxLayer < layer) {
+          state.headMaxLayer = layer;
+        } // 使用传参形式
+        // 有slots时，将slots添加到columns里
+
+
+        data.forEach(function (item) {
+          var prop = item.prop || '';
+          var newTProps = tProps ? tProps + ',' + prop : prop;
+
+          if (item.children) {
+            // 有多级表头
+            getColumns(item.children, layer, newTProps);
+          } else {
+            // 有具名插槽时
+            if (Object.keys(slots).length) {
+              for (var key in slots) {
+                if (item.prop === key) {
+                  if (!item.slots) {
+                    item.slots = {};
+                  }
+
+                  Object.assign(item.slots, {
+                    default: slots[key]
+                  });
+                }
+
+                if (item.prop + '-header' === key) {
+                  if (!item.slots) {
+                    item.slots = {};
+                  }
+
+                  Object.assign(item.slots, {
+                    header: slots[key]
+                  });
+                }
+              }
+            }
+          }
+
+          columnsData.value.push(_objectSpread2(_objectSpread2({}, item), {}, {
+            _layer: layer,
+            _tProps: newTProps
+          }));
+        });
+      }; // 表头使用参数形式
+
+
+      if (props.columns) {
+        formatColumns();
+      }
+
+      vue.provide("GetColumns", columnsData); // columns.value的形式不是双向的
+
+      vue.provide("SetSelectedRows", function (bool, row, index) {
+        // 由单元格勾选时触发，添加或删除
+        var indexOf = state.selectedRows.indexOf(row);
+
+        if (bool && indexOf === -1) {
+          state.selectedRows.push(row);
+        } else {
+          state.selectedRows.splice(indexOf, 1);
+        }
+
+        if (state.ctrlIsDown) {
+          // ctrl键盘当前为按下状态
+          if (state.ctrlRowIndex !== -1) {
+            // 不为空，表示已经点击了第一个。此时将上一次保存的即ctrlRowIndex和index之间的记录勾上或取消
+            var start = state.ctrlRowIndex;
+            var end = index;
+
+            if (state.ctrlRowIndex > index) {
+              start = index;
+              end = state.ctrlRowIndex;
+            }
+
+            for (var i = start; i < end; i++) {
+              toggleRowSelection(props.data[i], indexOf === -1);
+            }
+          }
+
+          state.ctrlRowIndex = index;
+        }
+
+        emits('selectClick', state.selectedRows, bool, row, index);
+      }); // 获取设置列宽
+
+      var getColWidth = function getColWidth() {
+        columnsData.value.forEach(function (item) {
+          state.colWidth.push(item.width);
+        });
+      }; // 全选或全不选事件
+
+
+      var toggleSelection = function toggleSelection(bool) {
+        // boolean=true全选，false全不选
+        if (bool) {
+          // 用于多选表格，切换所有行的选中状态
+          state.selectedRows = _toConsumableArray(props.data); // state.selectChecked = 1
+        } else {
+          // 用于多选表格，清空用户的选择
+          state.selectedRows.splice(0, state.selectedRows.length); // state.selectChecked = 0
+        }
+      }; // 拖动时的垂直线
+
+
+      var setTableDragLine = function setTableDragLine(event) {
+        vue.nextTick(function () {
+          // 当前表格偏移位置
+          var tableOffset = getOffset(el.value);
+          var dragLine = el.value.querySelector('.table-drag-line');
+
+          if (dragLine) {
+            dragLine.style.left = event.pageX - tableOffset.left + 'px';
+            dragLine.style.height = tableOffset.height + 'px';
+          }
+        });
+      };
+
+      var setTHWidth = function setTHWidth() {
+        if (!props.drag) {
+          return;
+        }
+
+        var th = el.value && el.value.querySelectorAll('th'); //      console.log(th)
+
+        state.colWidth = [];
+        th.forEach(function (item) {
+          state.colWidth.push(item.offsetWidth + 'px');
+        });
+      };
+
+      var mouseDown = function mouseDown(obj) {
+        if (!props.drag) {
+          return;
+        }
+
+        if (!state.isSetThWidth) {
+          // 重新设置表头的实际宽，仅在第一次点击时重置
+          setTHWidth();
+          state.isSetThWidth = true;
+        }
+
+        state.dragHead = {
+          mouseDown: true,
+          oldX: obj.evt.pageX,
+          oldWidth: parseInt(state.colWidth[obj.index].replace('px', '')) || 0,
+          // 拖动前的单元格宽
+          index: obj.index
+        };
+        setTableDragLine(obj.evt); // 不让选择
+
+        obj.evt.preventDefault();
+      };
+
+      var mouseMove = function mouseMove(obj) {
+        if (!props.drag) {
+          return;
+        }
+
+        var event = obj.evt;
+        var newWidth = state.dragHead.oldWidth + (event.pageX - state.dragHead.oldX); // 移动鼠标实现宽
+        // console.log(newWidth)
+        // 如果设置了最小宽或最大
+
+        if (props.dragWidth[0] > 0 && newWidth < props.dragWidth[0]) {
+          return;
+        }
+
+        if (props.dragWidth[1] > 0 && newWidth > props.dragWidth[1]) {
+          return;
+        }
+
+        if (state.dragHead.mouseDown) {
+          setTableDragLine(event); // 拖动时有可能会存在意外，这里也限制一下
+
+          if (props.dragWidth[0] > 0 && newWidth < props.dragWidth[0]) {
+            newWidth = props.dragWidth[0]; // 过小时使用最小值
+          }
+
+          if (props.dragWidth[1] > 0 && newWidth > props.dragWidth[1]) {
+            newWidth = props.dragWidth[1]; // 超出限制时使用最大值
+          }
+
+          state.colWidth[state.dragHead.index] = newWidth + 'px';
+        }
+      };
+
+      var headMouseUp = function headMouseUp() {
+        if (props.drag && state.dragHead && state.dragHead.mouseDown) {
+          emits('dragChange', state.colWidth);
+        }
+
+        state.dragHead = {
+          mouseDown: false,
+          oldX: '',
+          oldWidth: '',
+          index: ''
+        };
+      }; // 表头所有事件
+
+
+      var tableHeadEvent = function tableHeadEvent(type, obj) {
+        switch (type) {
+          case 'checkboxChange':
+            toggleSelection(obj);
+            emits('selectClick', state.selectedRows, obj);
+            break;
+
+          case 'mouseDown':
+            mouseDown(obj);
+            break;
+
+          case 'mouseMove':
+            mouseMove(obj);
+            break;
+
+          case 'sortClick':
+            emits('sortChange', obj);
+            break;
+        }
+      };
+
+      var rowClick = function rowClick(row, index) {
+        emits('rowClick', row, index);
+      };
+
+      var cellClick = function cellClick(row, column, rowIndex, columnIndex) {
+        emits('cellClick', row, column, rowIndex, columnIndex);
+      }; // 用于清空排序条件
+
+
+      var clearSort = function clearSort() {
+        tableHeadEl.value.sortBy = {};
+      };
+
+      var keyup = function keyup(evt) {
+        if (evt.key === 'Control') {
+          // 恢复
+          state.ctrlIsDown = false;
+          state.ctrlRowIndex = -1;
+        }
+      };
+
+      var keydown = function keydown(evt) {
+        // console.log(evt)
+        if (evt.key === 'Control' && !state.ctrlIsDown) {
+          state.ctrlIsDown = true;
+        }
+      };
+
+      var scrollHandle = function scrollHandle() {
+        var scrollTop = el.value.scrollTop;
+        var scrollLeft = el.value.scrollLeft;
+        tableHeadEl.value.scrollTop(scrollTop); // 左右滚动固定
+
+        var fixedLeft = el.value.querySelectorAll('.left');
+
+        if (fixedLeft.length > 0) {
+          // left
+          if (scrollLeft > 0) {
+            for (var i = 0, len = fixedLeft.length; i < len; i++) {
+              fixedLeft[i].style.transform = "translateX(".concat(scrollLeft, "px) translateZ(90px)");
+              fixedLeft[i].style.webkitTransform = "translateX(".concat(scrollLeft, "px) translateZ(90px)");
+            }
+          } else {
+            for (var _i = 0, _len = fixedLeft.length; _i < _len; _i++) {
+              fixedLeft[_i].style.transform = '';
+            }
+          }
+        }
+
+        fixedRight(scrollLeft);
+      };
+
+      var fixedRight = function fixedRight(scrollLeft) {
+        var fixedRight = el.value.querySelectorAll('.right');
+        var tableWidth = el.value.querySelector('table').offsetWidth; // 可移动的最大宽
+        // div可见宽
+
+        var moveMaxWidth = scrollLeft - (tableWidth - el.value.clientWidth);
+
+        if (fixedRight.length > 0) {
+          for (var i = 0, len = fixedRight.length; i < len; i++) {
+            fixedRight[i].style.transform = "translateX(".concat(moveMaxWidth, "px)translateZ(90px)");
+            fixedRight[i].style.webkitTransform = "translateX(".concat(moveMaxWidth, "px)translateZ(90px)");
+          }
+        }
+      };
+
+      var fixedHead = function fixedHead() {
+        // 如果有高和表头，则固定表头
+        if (props.height && props.showHeader && el) {
+          el.value.addEventListener('scroll', scrollHandle, false);
+        } // 目前初始时获取到的表格宽(tableWidth)有问题，需滚动下才能获取实际的宽，加个setTimeout处理
+
+
+        setTimeout(function () {
+          fixedRight(0); // 初始化时横向滚动条在0位置
+        }, 0); // fixedRight(0) // 初始化时横向滚动条在0位置
+      }; // 返回已勾选的行
+
+
+      var getSelectAll = function getSelectAll() {
+        return state.selectedRows;
+      }; // 监听表格滚到
+
+
+      var watchScroll = function watchScroll() {
+        var scrollTop = el.value.scrollTop; // 滚到条的位置
+
+        var tableHeight = el.value.clientHeight; // 窗口高度
+
+        var scrollHeight = el.value.scrollHeight; // 文档高度
+
+        var bottom = false;
+
+        if (scrollTop + tableHeight >= scrollHeight - 3) {
+          // 到底部
+          bottom = true;
+        }
+
+        emits('scroll', scrollTop, bottom, el.value); //scrollFixedBottom()
+      }; // 固定底部滚动条
+
+
+      var scrollFixedBottom = function scrollFixedBottom() {
+        if (!props.fixedBottomScroll) {
+          return;
+        }
+
+        var tableBodyWrapDom = el.value;
+        var tableBodyDom = tableEl.value;
+        var innerHeight = window.innerHeight; // const innerHeight = 400
+
+        if (typeof props.fixedBottomScroll === 'string') {
+          var fel = document.querySelector(props.fixedBottomScroll);
+
+          if (fel) {
+            innerHeight = fel.offsetHeight + 20;
+            console.log(innerHeight);
+          }
+        } //console.log(el.value)
+        // top为dom上侧距离可视窗口顶部的值
+
+
+        var _tableBodyWrapDom$get = tableBodyWrapDom.getBoundingClientRect(),
+            tableBodyDomTop = _tableBodyWrapDom$get.top;
+
+        if (tableBodyDomTop > innerHeight) {
+          // 此时列表在可视窗口的下侧不可见区域，因此不做任何修改
+          tableBodyWrapDom.style.height = 'unset';
+          tableBodyWrapDom.style.marginBottom = 'unset';
+        } else {
+          // 窗口高度 - 列表距顶部值 且 不超过自身实际值
+          var wrapHeight = Math.min(innerHeight - tableBodyDomTop, tableBodyDom.offsetHeight);
+          tableBodyWrapDom.style.minHeight = '60px'; // tableBodyWrapDom.style.height = wrapHeight + 'px'
+
+          state.stateHeight = wrapHeight + 'px'; // 需要用marginBottom填充，以保持列表原有高度，避免页面的纵向滚动条变化导致页面滚动的不流畅
+
+          tableBodyWrapDom.style.marginBottom = tableBodyDom.offsetHeight - wrapHeight + 'px';
+        }
+      }; // end 固定底部滚动条
+
+
+      vue.onMounted(function () {
+        getColWidth();
+        window.addEventListener('keydown', keydown);
+        window.addEventListener('keyup', keyup);
+
+        if (props.drag) {
+          document.addEventListener('mouseup', headMouseUp);
+        }
+
+        if (props.height) {
+          el.value.addEventListener('scroll', watchScroll);
+        } // 固定表头和列初始
+
+
+        vue.nextTick(function () {
+          if (props.fixedBottomScroll) {
+            if (typeof props.fixedBottomScroll === 'string') {
+              var scrollEl = document.querySelector(props.fixedBottomScroll);
+              scrollEl && scrollEl.addEventListener('scroll', scrollFixedBottom);
+            } else {
+              document.addEventListener('scroll', scrollFixedBottom);
+            }
+
+            window.addEventListener('resize', scrollFixedBottom);
+          }
+
+          fixedHead();
+          scrollFixedBottom();
+        });
+      });
+      vue.onUnmounted(function () {
+        window.removeEventListener('keydown', keydown);
+        window.removeEventListener('keyup', keyup); // window.removeEventListener('resize', resize)
+
+        if (props.drag) {
+          document.removeEventListener('mouseup', headMouseUp);
+        }
+
+        if (props.height) {
+          el.value && el.value.removeEventListener('scroll', watchScroll);
+        }
+
+        if (props.fixedBottomScroll) {
+          document.removeEventListener('scroll', scrollFixedBottom);
+          window.removeEventListener('resize', scrollFixedBottom);
+        }
+      });
+      expose({
+        getSelectAll: getSelectAll,
+        clearSort: clearSort,
+        toggleRowSelection: toggleRowSelection,
+        toggleSelection: toggleSelection
+      });
+      return function (_ctx, _cache) {
+        var _normalizeClass2;
+
+        var _component_Pagination = vue.resolveComponent("Pagination");
+
+        return vue.openBlock(), vue.createElementBlock("div", null, [vue.createElementVNode("div", {
+          ref_key: "el",
+          ref: el,
+          class: vue.normalizeClass((_normalizeClass2 = {}, _defineProperty(_normalizeClass2, 'table', true), _defineProperty(_normalizeClass2, __props.className, __props.className), _defineProperty(_normalizeClass2, 'is-scroll', __props.width || __props.height), _normalizeClass2)),
+          style: vue.normalizeStyle({
+            width: __props.width,
+            height: state.stateHeight,
+            overflowY: __props.height ? 'auto' : '',
+            overflowX: __props.width ? 'auto' : ''
+          })
+        }, [vue.createElementVNode("table", {
+          ref_key: "tableEl",
+          ref: tableEl,
+          class: vue.normalizeClass(_defineProperty({
+            'no-stripe': !__props.stripe,
+            'no-border': !__props.border,
+            'no-hover': !__props.hover,
+            'no-ellipsis': !__props.ellipsis
+          }, __props.className, __props.className))
+        }, [vue.createElementVNode("colgroup", null, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(state.colWidth, function (col, index) {
+          return vue.openBlock(), vue.createElementBlock("col", {
+            key: index,
+            width: col,
+            class: vue.normalizeClass("column".concat(index))
+          }, null, 10
+          /* CLASS, PROPS */
+          , _hoisted_1);
+        }), 128
+        /* KEYED_FRAGMENT */
+        ))]), vue.createVNode(script$3, {
+          ref_key: "tableHeadEl",
+          ref: tableHeadEl,
+          drag: __props.drag,
+          title: __props.title,
+          "sort-single": __props.sortSingle,
+          "show-header": __props.showHeader,
+          "select-checked": vue.unref(selectChecked),
+          "head-max-layer": state.headMaxLayer,
+          onEvent: tableHeadEvent
+        }, null, 8
+        /* PROPS */
+        , ["drag", "title", "sort-single", "show-header", "select-checked", "head-max-layer"]), __props.tableData.length === 0 ? (vue.openBlock(), vue.createElementBlock("tbody", _hoisted_2, [vue.createElementVNode("tr", null, [vue.createElementVNode("td", {
+          colspan: columnsData.value.length,
+          class: "empty"
+        }, vue.toDisplayString(__props.emptyText), 9
+        /* TEXT, PROPS */
+        , _hoisted_3)])])) : (vue.openBlock(), vue.createBlock(script$1, {
+          key: 1,
+          data: __props.tableData,
+          "row-col-span": __props.rowColSpan,
+          "has-child": __props.hasChild,
+          "lazy-load": __props.lazyLoad,
+          "extend-toggle": __props.extendToggle,
+          title: __props.title,
+          "selected-rows": state.selectedRows,
+          onRowClick: rowClick,
+          onCellClick: cellClick
+        }, null, 8
+        /* PROPS */
+        , ["data", "row-col-span", "has-child", "lazy-load", "extend-toggle", "title", "selected-rows"]))], 2
+        /* CLASS */
+        ), __props.dragLine && __props.drag && state.dragHead.mouseDown ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4)) : vue.createCommentVNode("v-if", true)], 6
+        /* CLASS, STYLE */
+        ), Object.keys(__props.pagination).length ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5)) : vue.createCommentVNode("v-if", true), Object.keys(__props.pagination).length > 0 ? (vue.openBlock(), vue.createBlock(_component_Pagination, vue.mergeProps({
+          key: 1,
+          total: __props.tableData && __props.tableData.length
+        }, __props.pagination), null, 16
+        /* FULL_PROPS */
+        , ["total"])) : vue.createCommentVNode("v-if", true)]);
+      };
+    }
+  };
+
+  script.__file = "src/components/TableNew/Table.vue";
 
   script.install = function (Vue) {
     Vue.component(script.name, script);
   };
 
   var install = function install(app) {
-    app.use(script$j);
+    app.use(script$o);
   };
 
   var UI = {
     install: install
   }; // 支持按需导入
 
-  exports.Alert = script$3;
-  exports.Badge = script$1;
-  exports.Button = script$j;
-  exports.CheckBox = script$5;
-  exports.Divider = script;
-  exports.Icon = script$k;
-  exports.MenuItem = script$8;
-  exports.MyAside = script$f;
-  exports.MyCol = script$g;
-  exports.MyContainer = script$e;
-  exports.MyFooter = script$d;
-  exports.MyHeader = script$c;
-  exports.MyInput = script$a;
-  exports.MyMain = script$b;
-  exports.MyMenu = script$7;
-  exports.MyRow = script$h;
-  exports.PopoverItem = script$6;
-  exports.Select = script$i;
-  exports.Tag = script$4;
-  exports.ToolTip = script$9;
+  exports.Alert = script$8;
+  exports.Badge = script$6;
+  exports.Button = script$o;
+  exports.CheckBox = script$a;
+  exports.Divider = script$5;
+  exports.Icon = script$p;
+  exports.MenuItem = script$d;
+  exports.MyAside = script$k;
+  exports.MyCol = script$l;
+  exports.MyContainer = script$j;
+  exports.MyFooter = script$i;
+  exports.MyHeader = script$h;
+  exports.MyInput = script$f;
+  exports.MyMain = script$g;
+  exports.MyMenu = script$c;
+  exports.MyRow = script$m;
+  exports.PopoverItem = script$b;
+  exports.Select = script$n;
+  exports.Table = script;
+  exports.Tag = script$9;
+  exports.ToolTip = script$e;
   exports["default"] = UI;
   exports.loading = loading;
   exports.vLoading = vLoading;

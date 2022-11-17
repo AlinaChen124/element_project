@@ -7,7 +7,8 @@ export default defineComponent({
   name:'TableTd',
   components:{
     ToolTip,
-    CheckBox
+    CheckBox,
+    Tag
   },
   props:{
     column:{
@@ -45,7 +46,7 @@ export default defineComponent({
     }
   },
   emits: ['cellClick', 'toggleExtend'],
-  setup(props) {
+  setup(props, {emit}) {
     // 接收table.vue传进来的SetSelectedRows
     const setSelectedRows = inject('SetSelectedRows')
     let classNameTd = ref(props.column.fixed)

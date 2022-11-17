@@ -51,7 +51,7 @@
           <my-aside width="200px" class="aside"><my-menu :items=items mode="vertical" trigger='click' /></my-aside>
           <my-container>
             <my-main>
-              <div class="button">
+              <!-- <div class="button">
                 <my-button  text @click="test" >保存</my-button>
                 <my-button type="primary" text>保存</my-button>
                 <my-button type="success" text>保存</my-button>
@@ -66,13 +66,13 @@
                 <my-button type="warning" >保存</my-button>
                 <my-button type="danger" >保存</my-button>
                 <my-button type="info" >保存</my-button>
-              </div>
-              <div class="select">
-                <!-- <my-select :options="selOptions" v-model="selVal_arr"  @change="selchange" multiple></my-select> -->
+              </div> -->
+             <!--  <div class="select">
+                <my-select :options="selOptions" v-model="selVal_arr"  @change="selchange" multiple></my-select>
                 <my-select :options="selOptions" v-model="selVal_arr"  @change="selchange" size="small"></my-select>
-              </div>
-              <div class="select">
-                <!-- <my-select :options="selOptions" v-model="selVal"  @change="selchange"></my-select> -->
+              </div> -->
+              <!-- <div class="select">
+                <my-select :options="selOptions" v-model="selVal"  @change="selchange"></my-select>
               </div>
               <bp-row :gutter="1">
                 <bp-col :span="8" title="span=8"><div class="row-demo bg-blue-5">shishi</div></bp-col>
@@ -181,6 +181,14 @@
               <span>查看</span>
               <divider direction="vertical"></divider>
               <span>删除</span>
+            </div> -->
+
+            <div>
+              <table :tableData="[]" :columns="columns">
+                <template #control="scope">
+                  <a >删除</a>
+                </template>
+              </table>
             </div>
             </my-main>
             <my-footer class="footer">Footer</my-footer>
@@ -192,6 +200,7 @@
   </div>
 </body>
 <script src="dist/my-lib-global.js"></script>
+
 <script>
   const { createApp } = Vue
 
@@ -217,7 +226,8 @@ const app = createApp({
     Tag:myLib.Tag,
     Alert:myLib.Alert,
     Badge:myLib.Badge,
-    Divider:myLib.Divider
+    Divider:myLib.Divider,
+    Table:myLib.Table
   },
   data() {
     return {
@@ -291,46 +301,98 @@ const app = createApp({
         }
       ],
       checkbox1:true,
-      columns:[
+      columns : [
+        { label: '日期', prop: 'date' },
+        { label: '姓名', prop: 'name' },
+        { label: '省份', prop: 'province' },
+        { label: '城市', prop: 'city' },
+        { label: '地址', prop: 'address' },
+        { label: '邮编', prop: 'zip' },
+        { label: '操作', prop: 'control' }
+      ],
+      tableData:[
         {
-          label: '日期',
-          prop: 'dateTime',
-          children: [
+          "date": "2016-05-03",
+          "name": "张三",
+          "province": "广东",
+          "city": "白云区",
+          "address": "广东省广州市白云区无名路888号",
+          "zip": 200330,
+          "sex": "男",
+          "children": [
             {
-              label: '年份',
-              prop: 'date'
-            },
-            {
-              label: '月份',
-              prop: 'date'
+              "date": "2016-05-00",
+              "name": "子级",
+              "province": "子级广东",
+              "city": "子级白云区",
+              "address": "子级广东省广州市白云区无名路888号",
+              "zip": 200330,
+              "sex": 0
             }
           ]
         },
         {
-          prop: 'name',
-          label: '姓名'
+          "date": "2016-05-04",
+          "name": "李四",
+          "province": "广东",
+          "city": "白云区",
+          "address": "广东省广州市白云区无名路888号",
+          "zip": 200330,
+          "sex": "男"
         },
         {
-          label: '收化地址',
-          prop: 'address2',
-          children: [
-            {
-              label: '省份',
-              prop: 'province'
-            },
-            {
-              label: '城市',
-              prop: 'city'
-            },
-            {
-              label: '地址',
-              prop: 'address'
-            }
-          ]
+          "date": "2016-05-05",
+          "name": "李四5",
+          "province": "广东",
+          "city": "白云区",
+          "address": "广东省广州市白云区无名路888号",
+          "zip": 200330,
+          "sex": "女"
         },
         {
-          prop: 'control',
-          label: '操作'
+          "date": "2016-05-06",
+          "name": "李四6",
+          "province": "广东",
+          "city": "白云区",
+          "address": "广东省广州市白云区无名路888号",
+          "zip": 200330,
+          "sex": "男"
+        },
+        {
+          "date": "2016-05-07",
+          "name": "李四7",
+          "province": "广东",
+          "city": "白云区",
+          "address": "广东省广州市白云区无名路888号",
+          "zip": 200330,
+          "sex": "女"
+        },
+        {
+          "date": "2016-05-08",
+          "name": "李四8",
+          "province": "广东",
+          "city": "白云区",
+          "address": "广东省广州市白云区无名路888号",
+          "zip": 200330,
+          "sex": "女"
+        },
+        {
+          "date": "2016-05-09",
+          "name": "李四9",
+          "province": "广东",
+          "city": "白云区",
+          "address": "广东省广州市白云区无名路888号",
+          "zip": 200330,
+          "sex": "女"
+        },
+        {
+          "date": "2016-05-10",
+          "name": "李四10",
+          "province": "广东",
+          "city": "白云区",
+          "address": "广东省广州市白云区无名路888号",
+          "zip": 200330,
+          "sex": "女"
         }
       ]
     }
